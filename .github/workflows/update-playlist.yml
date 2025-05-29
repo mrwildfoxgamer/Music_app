@@ -1,0 +1,55 @@
+name: Update Playlist
+
+on:
+  push:
+    paths:
+      - 'music/songs/**'
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * 0'  # Weekly update
+
+jobs:
+  update-playlist:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Install dependencies
+        run: |
+          pip install requests
+          
+      - name: Generate playlist
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python generate_playlist.py
+          
+      - name: Check for changes
+        id: changes
+        run: |
+          if git diff --quiet music/playlist.json; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add music/playlist.json
+          git commit -m "🎵 Auto-update playlist with $(git diff --name-only HEAD~1 HEAD music/songs/ | wc -l) changes"
+          git push
