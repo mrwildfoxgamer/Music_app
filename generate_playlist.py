@@ -1,120 +1,73 @@
 import json
-import requests
 import os
-
-def get_github_files(username, repo, path="music/songs", token=None):
-    url = f"https://api.github.com/repos/{username}/{repo}/contents/{path}"
-    headers = {}
-    if token:
-        headers['Authorization'] = f'token {token}'
-        headers['Accept'] = 'application/vnd.github.v3+json'
-    
-    try:
-        print(f"Fetching files from: {url}")
-        response = requests.get(url, headers=headers)
-        print(f"Response status: {response.status_code}")
-        
-        if response.status_code == 200:
-            files = response.json()
-            print(f"Found {len(files)} items")
-            return files
-        elif response.status_code == 404:
-            print("music/songs folder not found. Creating empty playlist.")
-            return []
-        else:
-            print(f"Error: {response.status_code} - {response.text}")
-            return []
-    except Exception as e:
-        print(f"Exception occurred: {e}")
-        return []
+from urllib.parse import quote
 
 def generate_playlist():
     # Get environment variables
     repo_full_name = os.environ.get('GITHUB_REPOSITORY', '')
-    token = os.environ.get('GITHUB_TOKEN', '')
+    branch = os.environ.get('GITHUB_BRANCH', 'main')  # Default to 'main'
     
     print(f"Repository: {repo_full_name}")
-    print(f"Token available: {'Yes' if token else 'No'}")
+    print(f"Branch: {branch}")
     
     if not repo_full_name:
         print("Error: GITHUB_REPOSITORY environment variable not found")
         return
-    
+
     try:
         username, repo = repo_full_name.split('/')
-        print(f"Username: {username}, Repo: {repo}")
     except ValueError:
         print(f"Error: Invalid repository format: {repo_full_name}")
         return
-    
-    # Get files from GitHub API
-    files = get_github_files(username, repo, "music/songs", token)
-    
-    # Generate playlist
+
+    # Generate playlist from LOCAL files
     playlist = []
     audio_extensions = ['.mp3', '.m4a', '.wav', '.ogg', '.flac']
+    songs_dir = 'music/songs'
     
-    for i, file_info in enumerate(files):
-        if not isinstance(file_info, dict):
-            continue
+    if not os.path.exists(songs_dir):
+        print(f"Directory not found: {songs_dir}")
+        os.makedirs(songs_dir, exist_ok=True)
+        print(f"Created directory: {songs_dir}")
+
+    print(f"Scanning local directory: {songs_dir}")
+    
+    for filename in os.listdir(songs_dir):
+        filepath = os.path.join(songs_dir, filename)
+        if os.path.isfile(filepath) and any(filename.lower().endswith(ext) for ext in audio_extensions):
+            # Create GitHub raw URL
+            encoded_filename = quote(filename)
+            download_url = f"https://raw.githubusercontent.com/{username}/{repo}/{branch}/music/songs/{encoded_filename}"
             
-        filename = file_info.get('name', '')
-        download_url = file_info.get('download_url', '')
-        
-        # Check if it's an audio file
-        if any(filename.lower().endswith(ext) for ext in audio_extensions):
-            # Remove extension for processing
+            # Parse artist and title
             name_without_ext = os.path.splitext(filename)[0]
-            
-            # Try to parse artist and title
             if ' - ' in name_without_ext:
-                parts = name_without_ext.split(' - ', 1)
-                artist = parts[0].strip()
-                title = parts[1].strip()
+                artist, title = name_without_ext.split(' - ', 1)
             else:
-                title = name_without_ext.strip()
                 artist = "Unknown Artist"
+                title = name_without_ext
             
-            # Create song entry
-            song = {
+            playlist.append({
                 "id": len(playlist) + 1,
-                "title": title,
-                "artist": artist,
-                "url": download_url,
-                "filename": filename
-            }
-            
-            playlist.append(song)
-            print(f"Added: {artist} - {title}")
+                "title": title.strip(),
+                "artist": artist.strip(),
+                "url": download_url
+            })
+            print(f"Added: {artist.strip()} - {title.strip()}")
+
+    # Sort by title
+    playlist.sort(key=lambda x: x['title'].lower())
     
-    # Sort playlist by filename for consistency
-    playlist.sort(key=lambda x: x['filename'].lower())
-    
-    # Update IDs after sorting and remove filename
+    # Update IDs after sorting
     for i, song in enumerate(playlist):
         song['id'] = i + 1
-        del song['filename']
-    
-    # Create music directory if it doesn't exist
-    os.makedirs('music', exist_ok=True)
-    
-    # Write playlist to file
+
+    # Write playlist
     playlist_path = 'music/playlist.json'
-    try:
-        with open(playlist_path, 'w', encoding='utf-8') as f:
-            json.dump(playlist, f, indent=2, ensure_ascii=False)
-        print(f"Successfully created {playlist_path} with {len(playlist)} songs")
-        
-        # Print first few songs for verification
-        if playlist:
-            print("\nFirst few songs in playlist:")
-            for song in playlist[:3]:
-                print(f"  {song['id']}. {song['artist']} - {song['title']}")
-        else:
-            print("Warning: No audio files found in music/songs folder")
-            
-    except Exception as e:
-        print(f"Error writing playlist file: {e}")
+    with open(playlist_path, 'w', encoding='utf-8') as f:
+        json.dump(playlist, f, indent=2, ensure_ascii=False)
+    
+    print(f"Playlist generated with {len(playlist)} songs at {playlist_path}")
 
 if __name__ == "__main__":
     generate_playlist()
