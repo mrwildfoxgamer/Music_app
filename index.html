@@ -104,11 +104,23 @@
             transform: scale(1.1);
         }
 
+        .control-btn.active {
+            background: #1DB954;
+        }
+
         .play-btn {
             width: 60px;
             height: 60px;
             font-size: 1.5em;
             background: #1DB954;
+        }
+
+        .repeat-one {
+            background: #ff6b35 !important;
+        }
+
+        .repeat-all {
+            background: #1DB954 !important;
         }
 
         .volume-container {
@@ -230,14 +242,14 @@
                 </div>
             </div>
 
-       
-<div class="controls">
-    <button id="shuffleBtn" class="control-btn" title="Shuffle">🔀</button>
-    <button id="prevBtn" class="control-btn">⏮</button>
-    <button id="playBtn" class="control-btn play-btn">▶</button>
-    <button id="nextBtn" class="control-btn">⏭</button>
-    <button id="repeatBtn" class="control-btn repeat-none" title="Repeat: none">🔁</button>
-</div>
+            <div class="controls">
+                <button id="shuffleBtn" class="control-btn" title="Shuffle: Off">🔀</button>
+                <button id="prevBtn" class="control-btn">⏮</button>
+                <button id="playBtn" class="control-btn play-btn">▶</button>
+                <button id="nextBtn" class="control-btn">⏭</button>
+                <button id="repeatBtn" class="control-btn repeat-none" title="Repeat: none">🔁</button>
+            </div>
+
             <div class="volume-container">
                 <span>🔊</span>
                 <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="50">
@@ -252,13 +264,16 @@
     <audio id="audioPlayer" preload="metadata"></audio>
 
     <script>
-        class MusicPlayer {
+        class EnhancedMusicPlayer {
             constructor() {
                 this.audio = document.getElementById('audioPlayer');
                 this.playlist = [];
                 this.currentIndex = 0;
                 this.isPlaying = false;
+                this.isShuffled = false;
+                this.repeatMode = 'none'; // 'none', 'all', 'one'
                 this.deferredPrompt = null;
+                this.shuffledOrder = [];
                 
                 this.initializePlayer();
                 this.loadPlaylist();
@@ -268,8 +283,38 @@
 
             async loadPlaylist() {
                 try {
-                    const response = await fetch('music/playlist.json');
-                    this.playlist = await response.json();
+                    // Create a sample playlist if playlist.json is not available
+                    const samplePlaylist = [
+                        {
+                            title: "Sample Song 1",
+                            artist: "Artist 1",
+                            url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
+                        },
+                        {
+                            title: "Sample Song 2", 
+                            artist: "Artist 2",
+                            url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
+                        },
+                        {
+                            title: "Sample Song 3",
+                            artist: "Artist 3", 
+                            url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
+                        }
+                    ];
+
+                    try {
+                        const response = await fetch('music/playlist.json');
+                        if (response.ok) {
+                            this.playlist = await response.json();
+                        } else {
+                            throw new Error('Playlist not found');
+                        }
+                    } catch (error) {
+                        console.log('Using sample playlist');
+                        this.playlist = samplePlaylist;
+                    }
+
+                    this.createShuffledOrder();
                     this.renderPlaylist();
                     document.getElementById('loading').classList.add('hidden');
                     document.getElementById('playlist').classList.remove('hidden');
@@ -279,13 +324,21 @@
                 }
             }
 
+            createShuffledOrder() {
+                this.shuffledOrder = [...Array(this.playlist.length).keys()];
+                for (let i = this.shuffledOrder.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [this.shuffledOrder[i], this.shuffledOrder[j]] = [this.shuffledOrder[j], this.shuffledOrder[i]];
+                }
+            }
+
             renderPlaylist() {
                 const playlistEl = document.getElementById('playlist');
                 playlistEl.innerHTML = this.playlist.map((song, index) => `
                     <div class="song-item" data-index="${index}">
                         <div class="song-info">
-                            <h4>${song.title}</h4>
-                            <p>${song.artist}</p>
+                            <h4>${this.escapeHtml(song.title)}</h4>
+                            <p>${this.escapeHtml(song.artist)}</p>
                         </div>
                     </div>
                 `).join('');
@@ -299,32 +352,136 @@
                 });
             }
 
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
             initializePlayer() {
                 const playBtn = document.getElementById('playBtn');
                 const prevBtn = document.getElementById('prevBtn');
                 const nextBtn = document.getElementById('nextBtn');
+                const shuffleBtn = document.getElementById('shuffleBtn');
+                const repeatBtn = document.getElementById('repeatBtn');
                 const progressBar = document.getElementById('progressBar');
                 const volumeSlider = document.getElementById('volumeSlider');
 
-                playBtn.addEventListener('click', () => this.togglePlay());
-                prevBtn.addEventListener('click', () => this.previousSong());
-                nextBtn.addEventListener('click', () => this.nextSong());
+                if (playBtn) playBtn.addEventListener('click', () => this.togglePlay());
+                if (prevBtn) prevBtn.addEventListener('click', () => this.previousSong());
+                if (nextBtn) nextBtn.addEventListener('click', () => this.nextSong());
+                if (shuffleBtn) shuffleBtn.addEventListener('click', () => this.toggleShuffle());
+                if (repeatBtn) repeatBtn.addEventListener('click', () => this.toggleRepeat());
                 
-                progressBar.addEventListener('click', (e) => {
-                    const rect = progressBar.getBoundingClientRect();
-                    const percent = (e.clientX - rect.left) / rect.width;
-                    this.audio.currentTime = percent * this.audio.duration;
-                });
+                if (progressBar) {
+                    progressBar.addEventListener('click', (e) => {
+                        if (!this.audio.duration) return;
+                        const rect = progressBar.getBoundingClientRect();
+                        const percent = (e.clientX - rect.left) / rect.width;
+                        this.audio.currentTime = percent * this.audio.duration;
+                    });
+                }
 
-                volumeSlider.addEventListener('input', (e) => {
-                    const volume = e.target.value / 100;
-                    this.audio.volume = volume;
-                    document.getElementById('volumeValue').textContent = e.target.value + '%';
-                });
+                if (volumeSlider) {
+                    volumeSlider.addEventListener('input', (e) => {
+                        const volume = e.target.value / 100;
+                        this.audio.volume = volume;
+                        const volumeValue = document.getElementById('volumeValue');
+                        if (volumeValue) volumeValue.textContent = e.target.value + '%';
+                    });
+                }
 
                 this.audio.addEventListener('timeupdate', () => this.updateProgress());
-                this.audio.addEventListener('ended', () => this.nextSong());
+                this.audio.addEventListener('ended', () => this.handleSongEnd());
                 this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
+                this.audio.addEventListener('play', () => this.updatePlayState(true));
+                this.audio.addEventListener('pause', () => this.updatePlayState(false));
+            }
+
+            toggleShuffle() {
+                this.isShuffled = !this.isShuffled;
+                const shuffleBtn = document.getElementById('shuffleBtn');
+                
+                if (shuffleBtn) {
+                    shuffleBtn.classList.toggle('active', this.isShuffled);
+                    shuffleBtn.title = this.isShuffled ? 'Shuffle: On' : 'Shuffle: Off';
+                }
+                
+                if (this.isShuffled) {
+                    this.createShuffledOrder();
+                }
+                
+                console.log('Shuffle toggled:', this.isShuffled);
+            }
+
+            toggleRepeat() {
+                const modes = ['none', 'all', 'one'];
+                const currentIndex = modes.indexOf(this.repeatMode);
+                this.repeatMode = modes[(currentIndex + 1) % modes.length];
+                
+                const repeatBtn = document.getElementById('repeatBtn');
+                if (repeatBtn) {
+                    // Remove all repeat classes
+                    repeatBtn.classList.remove('repeat-none', 'repeat-all', 'repeat-one');
+                    // Add current mode class
+                    repeatBtn.classList.add(`repeat-${this.repeatMode}`);
+                    repeatBtn.title = `Repeat: ${this.repeatMode}`;
+                    
+                    // Update button appearance
+                    switch(this.repeatMode) {
+                        case 'all':
+                            repeatBtn.classList.add('active');
+                            repeatBtn.innerHTML = '🔁';
+                            break;
+                        case 'one':
+                            repeatBtn.classList.add('active');
+                            repeatBtn.innerHTML = '🔂';
+                            break;
+                        default:
+                            repeatBtn.classList.remove('active');
+                            repeatBtn.innerHTML = '🔁';
+                    }
+                }
+                
+                console.log('Repeat mode:', this.repeatMode);
+            }
+
+            getNextIndex() {
+                if (this.isShuffled) {
+                    const currentShuffledPos = this.shuffledOrder.indexOf(this.currentIndex);
+                    const nextShuffledPos = (currentShuffledPos + 1) % this.shuffledOrder.length;
+                    return this.shuffledOrder[nextShuffledPos];
+                } else {
+                    return this.currentIndex < this.playlist.length - 1 ? this.currentIndex + 1 : 0;
+                }
+            }
+
+            getPreviousIndex() {
+                if (this.isShuffled) {
+                    const currentShuffledPos = this.shuffledOrder.indexOf(this.currentIndex);
+                    const prevShuffledPos = currentShuffledPos > 0 ? currentShuffledPos - 1 : this.shuffledOrder.length - 1;
+                    return this.shuffledOrder[prevShuffledPos];
+                } else {
+                    return this.currentIndex > 0 ? this.currentIndex - 1 : this.playlist.length - 1;
+                }
+            }
+
+            handleSongEnd() {
+                switch (this.repeatMode) {
+                    case 'one':
+                        this.audio.currentTime = 0;
+                        this.audio.play();
+                        break;
+                    case 'all':
+                        this.nextSong();
+                        break;
+                    default:
+                        if (this.isShuffled || this.currentIndex < this.playlist.length - 1) {
+                            this.nextSong();
+                        } else {
+                            this.updatePlayState(false);
+                        }
+                }
             }
 
             playSong(index) {
@@ -333,13 +490,14 @@
                     const song = this.playlist[index];
                     
                     this.audio.src = song.url;
-                    document.getElementById('currentTitle').textContent = song.title;
-                    document.getElementById('currentArtist').textContent = song.artist;
+                    const titleEl = document.getElementById('currentTitle');
+                    const artistEl = document.getElementById('currentArtist');
+                    
+                    if (titleEl) titleEl.textContent = song.title;
+                    if (artistEl) artistEl.textContent = song.artist;
                     
                     this.updatePlaylistView();
                     this.audio.play();
-                    this.isPlaying = true;
-                    this.updatePlayButton();
                     this.updateMediaSession();
                 }
             }
@@ -348,43 +506,52 @@
                 if (this.playlist.length === 0) return;
 
                 if (this.audio.paused) {
-                    if (!this.audio.src) {
+                    if (!this.audio.src && this.playlist.length > 0) {
                         this.playSong(0);
                     } else {
                         this.audio.play();
                     }
-                    this.isPlaying = true;
                 } else {
                     this.audio.pause();
-                    this.isPlaying = false;
                 }
-                this.updatePlayButton();
             }
 
             previousSong() {
-                const newIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.playlist.length - 1;
+                if (this.playlist.length === 0) return;
+                const newIndex = this.getPreviousIndex();
                 this.playSong(newIndex);
             }
 
             nextSong() {
-                const newIndex = this.currentIndex < this.playlist.length - 1 ? this.currentIndex + 1 : 0;
+                if (this.playlist.length === 0) return;
+                const newIndex = this.getNextIndex();
                 this.playSong(newIndex);
             }
 
-            updatePlayButton() {
-                document.getElementById('playBtn').textContent = this.isPlaying ? '⏸' : '▶';
-            }
-
-            updateProgress() {
-                if (this.audio.duration) {
-                    const percent = (this.audio.currentTime / this.audio.duration) * 100;
-                    document.getElementById('progress').style.width = percent + '%';
-                    document.getElementById('currentTime').textContent = this.formatTime(this.audio.currentTime);
+            updatePlayState(isPlaying) {
+                this.isPlaying = isPlaying;
+                const playBtn = document.getElementById('playBtn');
+                if (playBtn) {
+                    playBtn.innerHTML = isPlaying ? '⏸️' : '▶️';
                 }
             }
 
+            updateProgress() {
+                if (!this.audio.duration) return;
+
+                const percent = (this.audio.currentTime / this.audio.duration) * 100;
+                const progressEl = document.getElementById('progress');
+                const currentTimeEl = document.getElementById('currentTime');
+                
+                if (progressEl) progressEl.style.width = percent + '%';
+                if (currentTimeEl) currentTimeEl.textContent = this.formatTime(this.audio.currentTime);
+            }
+
             updateDuration() {
-                document.getElementById('totalTime').textContent = this.formatTime(this.audio.duration);
+                const totalTimeEl = document.getElementById('totalTime');
+                if (totalTimeEl && this.audio.duration) {
+                    totalTimeEl.textContent = this.formatTime(this.audio.duration);
+                }
             }
 
             updatePlaylistView() {
@@ -394,7 +561,7 @@
             }
 
             formatTime(seconds) {
-                if (isNaN(seconds)) return '0:00';
+                if (isNaN(seconds) || seconds === null) return '0:00';
                 const mins = Math.floor(seconds / 60);
                 const secs = Math.floor(seconds % 60);
                 return `${mins}:${secs.toString().padStart(2, '0')}`;
@@ -402,17 +569,39 @@
 
             setupInstallPrompt() {
                 window.addEventListener('beforeinstallprompt', (e) => {
+                    console.log('PWA install prompt triggered');
                     e.preventDefault();
                     this.deferredPrompt = e;
-                    document.getElementById('installPrompt').classList.remove('hidden');
+                    
+                    const installPrompt = document.getElementById('installPrompt');
+                    if (installPrompt) {
+                        installPrompt.classList.remove('hidden');
+                    }
                 });
 
-                document.getElementById('installBtn').addEventListener('click', async () => {
-                    if (this.deferredPrompt) {
-                        this.deferredPrompt.prompt();
-                        const result = await this.deferredPrompt.userChoice;
-                        this.deferredPrompt = null;
-                        document.getElementById('installPrompt').classList.add('hidden');
+                const installBtn = document.getElementById('installBtn');
+                if (installBtn) {
+                    installBtn.addEventListener('click', async () => {
+                        if (this.deferredPrompt) {
+                            this.deferredPrompt.prompt();
+                            const result = await this.deferredPrompt.userChoice;
+                            console.log('Install result:', result);
+                            this.deferredPrompt = null;
+                            
+                            const installPrompt = document.getElementById('installPrompt');
+                            if (installPrompt) {
+                                installPrompt.classList.add('hidden');
+                            }
+                        }
+                    });
+                }
+
+                // Check if already installed
+                window.addEventListener('appinstalled', () => {
+                    console.log('PWA was installed');
+                    const installPrompt = document.getElementById('installPrompt');
+                    if (installPrompt) {
+                        installPrompt.classList.add('hidden');
                     }
                 });
             }
@@ -438,16 +627,22 @@
             }
         }
 
-        // Initialize app
+        // Initialize enhanced music player
         document.addEventListener('DOMContentLoaded', () => {
-            new MusicPlayer();
+            window.musicPlayer = new EnhancedMusicPlayer();
         });
 
         // Register service worker
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(() => console.log('Service Worker registered'))
-                .catch(err => console.log('Service Worker registration failed'));
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then((registration) => {
+                        console.log('SW registered successfully:', registration);
+                    })
+                    .catch((registrationError) => {
+                        console.log('SW registration failed:', registrationError);
+                    });
+            });
         }
     </script>
 </body>
