@@ -1,0 +1,12 @@
+.control-btn.active {
+    background: #1DB954;
+    color: white;
+}
+
+.control-btn.repeat-all {
+    background: #1DB954;
+}
+
+.control-btn.repeat-one {
+    background: #ff6b35;
+}
