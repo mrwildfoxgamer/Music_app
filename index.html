@@ -83,7 +83,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
             margin: 20px 0;
         }
 
@@ -91,12 +91,15 @@
             background: rgba(255, 255, 255, 0.2);
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.1em;
             cursor: pointer;
             transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .control-btn:hover {
@@ -104,11 +107,22 @@
             transform: scale(1.1);
         }
 
+        .control-btn.active {
+            background: #1DB954;
+        }
+
         .play-btn {
             width: 60px;
             height: 60px;
             font-size: 1.5em;
             background: #1DB954;
+        }
+
+        .secondary-controls {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 15px 0;
         }
 
         .volume-container {
@@ -200,17 +214,48 @@
             border-radius: 5px;
             cursor: pointer;
             margin-top: 10px;
+            transition: all 0.2s;
+        }
+
+        .install-btn:hover {
+            background: #1ed760;
+            transform: translateY(-1px);
         }
 
         .hidden {
             display: none;
+        }
+
+        /* Repeat button states */
+        .repeat-none {
+            opacity: 0.6;
+        }
+
+        .repeat-all {
+            background: #1DB954 !important;
+        }
+
+        .repeat-one {
+            background: #1DB954 !important;
+            position: relative;
+        }
+
+        .repeat-one::after {
+            content: '1';
+            position: absolute;
+            font-size: 0.7em;
+            font-weight: bold;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div id="installPrompt" class="install-prompt hidden">
-            <p>Install this app for the best experience!</p>
+            <p>🎵 Install this music player for the best experience!</p>
+            <p style="font-size: 0.8em; margin: 5px 0; opacity: 0.8;">Works offline and integrates with your device's media controls</p>
             <button id="installBtn" class="install-btn">Install App</button>
         </div>
 
@@ -231,9 +276,14 @@
             </div>
 
             <div class="controls">
-                <button id="prevBtn" class="control-btn">⏮</button>
-                <button id="playBtn" class="control-btn play-btn">▶</button>
-                <button id="nextBtn" class="control-btn">⏭</button>
+                <button id="prevBtn" class="control-btn" title="Previous">⏮</button>
+                <button id="playBtn" class="control-btn play-btn" title="Play/Pause">▶</button>
+                <button id="nextBtn" class="control-btn" title="Next">⏭</button>
+            </div>
+
+            <div class="secondary-controls">
+                <button id="shuffleBtn" class="control-btn" title="Shuffle">🔀</button>
+                <button id="repeatBtn" class="control-btn repeat-none" title="Repeat: Off">🔁</button>
             </div>
 
             <div class="volume-container">
@@ -256,7 +306,11 @@
                 this.playlist = [];
                 this.currentIndex = 0;
                 this.isPlaying = false;
+                this.isShuffled = false;
+                this.repeatMode = 'none'; // 'none', 'all', 'one'
                 this.deferredPrompt = null;
+                this.originalPlaylist = []; // Keep track of original order
+                this.shuffledIndices = []; // Track shuffled order
                 
                 this.initializePlayer();
                 this.loadPlaylist();
@@ -266,8 +320,18 @@
 
             async loadPlaylist() {
                 try {
-                    const response = await fetch('music/playlist.json');
-                    this.playlist = await response.json();
+                    // Sample playlist - replace with your actual data source
+                    this.playlist = [
+                        { title: "Sample Song 1", artist: "Artist 1", url: "path/to/song1.mp3" },
+                        { title: "Sample Song 2", artist: "Artist 2", url: "path/to/song2.mp3" },
+                        { title: "Sample Song 3", artist: "Artist 3", url: "path/to/song3.mp3" }
+                    ];
+                    
+                    // Uncomment this when you have actual playlist.json
+                    // const response = await fetch('music/playlist.json');
+                    // this.playlist = await response.json();
+                    
+                    this.originalPlaylist = [...this.playlist];
                     this.renderPlaylist();
                     document.getElementById('loading').classList.add('hidden');
                     document.getElementById('playlist').classList.remove('hidden');
@@ -282,8 +346,8 @@
                 playlistEl.innerHTML = this.playlist.map((song, index) => `
                     <div class="song-item" data-index="${index}">
                         <div class="song-info">
-                            <h4>${song.title}</h4>
-                            <p>${song.artist}</p>
+                            <h4>${this.escapeHtml(song.title)}</h4>
+                            <p>${this.escapeHtml(song.artist)}</p>
                         </div>
                     </div>
                 `).join('');
@@ -297,21 +361,33 @@
                 });
             }
 
+            escapeHtml(text) {
+                const div = document.createElement('div');
+                div.textContent = text;
+                return div.innerHTML;
+            }
+
             initializePlayer() {
                 const playBtn = document.getElementById('playBtn');
                 const prevBtn = document.getElementById('prevBtn');
                 const nextBtn = document.getElementById('nextBtn');
+                const shuffleBtn = document.getElementById('shuffleBtn');
+                const repeatBtn = document.getElementById('repeatBtn');
                 const progressBar = document.getElementById('progressBar');
                 const volumeSlider = document.getElementById('volumeSlider');
 
                 playBtn.addEventListener('click', () => this.togglePlay());
                 prevBtn.addEventListener('click', () => this.previousSong());
                 nextBtn.addEventListener('click', () => this.nextSong());
+                shuffleBtn.addEventListener('click', () => this.toggleShuffle());
+                repeatBtn.addEventListener('click', () => this.toggleRepeat());
                 
                 progressBar.addEventListener('click', (e) => {
-                    const rect = progressBar.getBoundingClientRect();
-                    const percent = (e.clientX - rect.left) / rect.width;
-                    this.audio.currentTime = percent * this.audio.duration;
+                    if (this.audio.duration) {
+                        const rect = progressBar.getBoundingClientRect();
+                        const percent = (e.clientX - rect.left) / rect.width;
+                        this.audio.currentTime = percent * this.audio.duration;
+                    }
                 });
 
                 volumeSlider.addEventListener('input', (e) => {
@@ -321,8 +397,86 @@
                 });
 
                 this.audio.addEventListener('timeupdate', () => this.updateProgress());
-                this.audio.addEventListener('ended', () => this.nextSong());
+                this.audio.addEventListener('ended', () => this.handleSongEnd());
                 this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
+                this.audio.addEventListener('play', () => this.updatePlayButton(true));
+                this.audio.addEventListener('pause', () => this.updatePlayButton(false));
+            }
+
+            toggleShuffle() {
+                this.isShuffled = !this.isShuffled;
+                const shuffleBtn = document.getElementById('shuffleBtn');
+                shuffleBtn.classList.toggle('active', this.isShuffled);
+                
+                if (this.isShuffled) {
+                    // Create shuffled indices array
+                    this.shuffledIndices = Array.from({length: this.playlist.length}, (_, i) => i);
+                    // Fisher-Yates shuffle
+                    for (let i = this.shuffledIndices.length - 1; i > 0; i--) {
+                        const j = Math.floor(Math.random() * (i + 1));
+                        [this.shuffledIndices[i], this.shuffledIndices[j]] = [this.shuffledIndices[j], this.shuffledIndices[i]];
+                    }
+                    // Make sure current song stays in same position
+                    const currentShuffleIndex = this.shuffledIndices.indexOf(this.currentIndex);
+                    if (currentShuffleIndex !== -1) {
+                        [this.shuffledIndices[0], this.shuffledIndices[currentShuffleIndex]] = 
+                        [this.shuffledIndices[currentShuffleIndex], this.shuffledIndices[0]];
+                    }
+                }
+            }
+
+            toggleRepeat() {
+                const modes = ['none', 'all', 'one'];
+                const currentIndex = modes.indexOf(this.repeatMode);
+                this.repeatMode = modes[(currentIndex + 1) % modes.length];
+                
+                const repeatBtn = document.getElementById('repeatBtn');
+                repeatBtn.className = `control-btn repeat-${this.repeatMode}`;
+                
+                const titles = {
+                    'none': 'Repeat: Off',
+                    'all': 'Repeat: All',
+                    'one': 'Repeat: One'
+                };
+                repeatBtn.title = titles[this.repeatMode];
+            }
+
+            getNextIndex() {
+                if (this.isShuffled) {
+                    const currentShufflePos = this.shuffledIndices.indexOf(this.currentIndex);
+                    const nextShufflePos = (currentShufflePos + 1) % this.shuffledIndices.length;
+                    return this.shuffledIndices[nextShufflePos];
+                } else {
+                    return this.currentIndex < this.playlist.length - 1 ? this.currentIndex + 1 : 0;
+                }
+            }
+
+            getPreviousIndex() {
+                if (this.isShuffled) {
+                    const currentShufflePos = this.shuffledIndices.indexOf(this.currentIndex);
+                    const prevShufflePos = currentShufflePos > 0 ? currentShufflePos - 1 : this.shuffledIndices.length - 1;
+                    return this.shuffledIndices[prevShufflePos];
+                } else {
+                    return this.currentIndex > 0 ? this.currentIndex - 1 : this.playlist.length - 1;
+                }
+            }
+
+            handleSongEnd() {
+                switch (this.repeatMode) {
+                    case 'one':
+                        this.audio.currentTime = 0;
+                        this.audio.play();
+                        break;
+                    case 'all':
+                        this.nextSong();
+                        break;
+                    default:
+                        if (this.isShuffled || this.currentIndex < this.playlist.length - 1) {
+                            this.nextSong();
+                        } else {
+                            this.updatePlayButton(false);
+                        }
+                }
             }
 
             playSong(index) {
@@ -336,8 +490,6 @@
                     
                     this.updatePlaylistView();
                     this.audio.play();
-                    this.isPlaying = true;
-                    this.updatePlayButton();
                     this.updateMediaSession();
                 }
             }
@@ -351,26 +503,27 @@
                     } else {
                         this.audio.play();
                     }
-                    this.isPlaying = true;
                 } else {
                     this.audio.pause();
-                    this.isPlaying = false;
                 }
-                this.updatePlayButton();
             }
 
             previousSong() {
-                const newIndex = this.currentIndex > 0 ? this.currentIndex - 1 : this.playlist.length - 1;
+                if (this.playlist.length === 0) return;
+                const newIndex = this.getPreviousIndex();
                 this.playSong(newIndex);
             }
 
             nextSong() {
-                const newIndex = this.currentIndex < this.playlist.length - 1 ? this.currentIndex + 1 : 0;
+                if (this.playlist.length === 0) return;
+                const newIndex = this.getNextIndex();
                 this.playSong(newIndex);
             }
 
-            updatePlayButton() {
-                document.getElementById('playBtn').textContent = this.isPlaying ? '⏸' : '▶';
+            updatePlayButton(isPlaying) {
+                const playBtn = document.getElementById('playBtn');
+                playBtn.innerHTML = isPlaying ? '⏸' : '▶';
+                this.isPlaying = isPlaying;
             }
 
             updateProgress() {
@@ -400,27 +553,68 @@
 
             setupInstallPrompt() {
                 window.addEventListener('beforeinstallprompt', (e) => {
+                    console.log('PWA install prompt triggered');
                     e.preventDefault();
                     this.deferredPrompt = e;
-                    document.getElementById('installPrompt').classList.remove('hidden');
+                    
+                    const installPrompt = document.getElementById('installPrompt');
+                    installPrompt.classList.remove('hidden');
                 });
+
+                // Show install prompt for iOS Safari
+                if (this.shouldShowIOSInstallPrompt()) {
+                    document.getElementById('installPrompt').classList.remove('hidden');
+                    const installBtn = document.getElementById('installBtn');
+                    installBtn.textContent = 'Add to Home Screen';
+                    installBtn.addEventListener('click', () => {
+                        alert('To install: Tap the Share button in Safari, then "Add to Home Screen"');
+                    });
+                }
 
                 document.getElementById('installBtn').addEventListener('click', async () => {
                     if (this.deferredPrompt) {
                         this.deferredPrompt.prompt();
                         const result = await this.deferredPrompt.userChoice;
+                        console.log('Install prompt result:', result);
                         this.deferredPrompt = null;
                         document.getElementById('installPrompt').classList.add('hidden');
                     }
                 });
+
+                // Hide install prompt if already installed
+                window.addEventListener('appinstalled', () => {
+                    console.log('PWA was installed');
+                    document.getElementById('installPrompt').classList.add('hidden');
+                });
+            }
+
+            shouldShowIOSInstallPrompt() {
+                const iOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+                const webkit = /WebKit/.test(navigator.userAgent);
+                const standalone = window.navigator.standalone;
+                
+                return iOS && webkit && !standalone;
             }
 
             setupMediaSession() {
                 if ('mediaSession' in navigator) {
-                    navigator.mediaSession.setActionHandler('play', () => this.togglePlay());
-                    navigator.mediaSession.setActionHandler('pause', () => this.togglePlay());
-                    navigator.mediaSession.setActionHandler('previoustrack', () => this.previousSong());
-                    navigator.mediaSession.setActionHandler('nexttrack', () => this.nextSong());
+                    navigator.mediaSession.setActionHandler('play', () => {
+                        this.audio.play();
+                    });
+                    navigator.mediaSession.setActionHandler('pause', () => {
+                        this.audio.pause();
+                    });
+                    navigator.mediaSession.setActionHandler('previoustrack', () => {
+                        this.previousSong();
+                    });
+                    navigator.mediaSession.setActionHandler('nexttrack', () => {
+                        this.nextSong();
+                    });
+                    navigator.mediaSession.setActionHandler('seekto', (details) => {
+                        if (details.seekTime && this.audio.duration) {
+                            this.audio.currentTime = details.seekTime;
+                        }
+                    });
                 }
             }
 
@@ -430,7 +624,11 @@
                     navigator.mediaSession.metadata = new MediaMetadata({
                         title: song.title,
                         artist: song.artist,
-                        album: 'My Music Collection'
+                        album: 'My Music Collection',
+                        artwork: [
+                            { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
+                            { src: 'icon-512.png', sizes: '512x512', type: 'image/png' }
+                        ]
                     });
                 }
             }
@@ -438,14 +636,21 @@
 
         // Initialize app
         document.addEventListener('DOMContentLoaded', () => {
-            new MusicPlayer();
+            const player = new MusicPlayer();
+            window.musicPlayer = player; // Make it globally accessible for debugging
         });
 
-        // Register service worker
+        // Register service worker for PWA functionality
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(() => console.log('Service Worker registered'))
-                .catch(err => console.log('Service Worker registration failed'));
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then((registration) => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch((error) => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            });
         }
     </script>
 </body>
