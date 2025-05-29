@@ -1,0 +1,1017 @@
+[
+  {
+    "id": 1,
+    "title": "Bea_Miller_Playground_from_the_series_Arcane_League_of_Legends",
+    "artist": "01",
+    "filename": "01_Bea_Miller_Playground_from_the_series_Arcane_League_of_Legends.mp3",
+    "path": "01_Bea_Miller_Playground_from_the_series_Arcane_League_of_Legends.mp3"
+  },
+  {
+    "id": 2,
+    "title": "Imagine_Dragons_Enemy_from_the_series_Arcane_League_of_Legends",
+    "artist": "01",
+    "filename": "01_Imagine_Dragons_Enemy_from_the_series_Arcane_League_of_Legends.mp3",
+    "path": "01_Imagine_Dragons_Enemy_from_the_series_Arcane_League_of_Legends.mp3"
+  },
+  {
+    "id": 3,
+    "title": "Eurythmics_Sweet_Dreams_Are_Made_of_This_Remastered",
+    "artist": "06",
+    "filename": "06_Eurythmics_Sweet_Dreams_Are_Made_of_This_Remastered.mp3",
+    "path": "06_Eurythmics_Sweet_Dreams_Are_Made_of_This_Remastered.mp3"
+  },
+  {
+    "id": 4,
+    "title": "John_Denver_Take_Me_Home,_Country_Roads_Original_Version",
+    "artist": "07",
+    "filename": "07_John_Denver_Take_Me_Home,_Country_Roads_Original_Version.mp3",
+    "path": "07_John_Denver_Take_Me_Home,_Country_Roads_Original_Version.mp3"
+  },
+  {
+    "id": 5,
+    "title": "The_Smiths_There_Is_a_Light_That_Never_Goes_Out_2011_Remaster",
+    "artist": "29",
+    "filename": "29_The_Smiths_There_Is_a_Light_That_Never_Goes_Out_2011_Remaster.mp3",
+    "path": "29_The_Smiths_There_Is_a_Light_That_Never_Goes_Out_2011_Remaster.mp3"
+  },
+  {
+    "id": 6,
+    "title": "Teeth",
+    "artist": "5 Seconds of Summer",
+    "filename": "01 - 5 Seconds of Summer - Teeth.mp3",
+    "path": "01 - 5 Seconds of Summer - Teeth.mp3"
+  },
+  {
+    "id": 7,
+    "title": "Wall - Loverboy",
+    "artist": "A",
+    "filename": "A-Wall - Loverboy.mp3",
+    "path": "A-Wall - Loverboy.mp3"
+  },
+  {
+    "id": 8,
+    "title": "Skyfall",
+    "artist": "Adele",
+    "filename": "01. Adele - Skyfall.mp3",
+    "path": "01. Adele - Skyfall.mp3"
+  },
+  {
+    "id": 9,
+    "title": "Ignite",
+    "artist": "Alan Walker",
+    "filename": "01 - Alan Walker - Ignite.mp3",
+    "path": "01 - Alan Walker - Ignite.mp3"
+  },
+  {
+    "id": 10,
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "filename": "01 - Alec Benjamin - Let Me Down Slowly.mp3",
+    "path": "01 - Alec Benjamin - Let Me Down Slowly.mp3"
+  },
+  {
+    "id": 11,
+    "title": "The Hill I Will Die On (Lyrics)",
+    "artist": "Alec Benjamin",
+    "filename": "Alec Benjamin - The Hill I Will Die On (Lyrics).mp3",
+    "path": "Alec Benjamin - The Hill I Will Die On (Lyrics).mp3"
+  },
+  {
+    "id": 12,
+    "title": "I Found (Official Lyric Video)",
+    "artist": "Amber Run",
+    "filename": "21 - Amber Run - I Found (Official Lyric Video).mp3",
+    "path": "21 - Amber Run - I Found (Official Lyric Video).mp3"
+  },
+  {
+    "id": 13,
+    "title": "It's Ok If You Forget Me (Official Music Video)",
+    "artist": "Astrid S",
+    "filename": "17 - Astrid S - It's Ok If You Forget Me (Official Music Video).mp3",
+    "path": "17 - Astrid S - It's Ok If You Forget Me (Official Music Video).mp3"
+  },
+  {
+    "id": 14,
+    "title": "It´s Ok If You Forget Me (Official Lyric Video)",
+    "artist": "Astrid S",
+    "filename": "09 - Astrid S - It´s Ok If You Forget Me (Official Lyric Video).mp3",
+    "path": "09 - Astrid S - It´s Ok If You Forget Me (Official Lyric Video).mp3"
+  },
+  {
+    "id": 15,
+    "title": "Runaway",
+    "artist": "AURORA",
+    "filename": "01 - AURORA - Runaway.mp3",
+    "path": "01 - AURORA - Runaway.mp3"
+  },
+  {
+    "id": 16,
+    "title": "Space Song",
+    "artist": "Beach House",
+    "filename": "03 - Beach House - Space Song.mp3",
+    "path": "03 - Beach House - Space Song.mp3"
+  },
+  {
+    "id": 17,
+    "title": "Duvet",
+    "artist": "bôa",
+    "filename": "01 - bôa - Duvet.mp3",
+    "path": "01 - bôa - Duvet.mp3"
+  },
+  {
+    "id": 18,
+    "title": "Beanie",
+    "artist": "Chezile",
+    "filename": "05 - Chezile - Beanie.mp3",
+    "path": "05 - Chezile - Beanie.mp3"
+  },
+  {
+    "id": 19,
+    "title": "A Thousand Years",
+    "artist": "Christina Perri",
+    "filename": "06 - Christina Perri - A Thousand Years.mp3",
+    "path": "06 - Christina Perri - A Thousand Years.mp3"
+  },
+  {
+    "id": 20,
+    "title": "Apocalypse",
+    "artist": "Cigarettes After Sex",
+    "filename": "01 - Cigarettes After Sex - Apocalypse.mp3",
+    "path": "01 - Cigarettes After Sex - Apocalypse.mp3"
+  },
+  {
+    "id": 21,
+    "title": "Cry",
+    "artist": "Cigarettes After Sex",
+    "filename": "07 - Cigarettes After Sex - Cry.mp3",
+    "path": "07 - Cigarettes After Sex - Cry.mp3"
+  },
+  {
+    "id": 22,
+    "title": "Sunsetz",
+    "artist": "Cigarettes After Sex",
+    "filename": "03 - Cigarettes After Sex - Sunsetz.mp3",
+    "path": "03 - Cigarettes After Sex - Sunsetz.mp3"
+  },
+  {
+    "id": 23,
+    "title": "Astronomy (Official Video)",
+    "artist": "Conan Gray",
+    "filename": "07 - Conan Gray - Astronomy (Official Video).mp3",
+    "path": "07 - Conan Gray - Astronomy (Official Video).mp3"
+  },
+  {
+    "id": 24,
+    "title": "Heather (Official Lyric Video)",
+    "artist": "Conan Gray",
+    "filename": "Conan Gray - Heather (Official Lyric Video).mp3",
+    "path": "Conan Gray - Heather (Official Lyric Video).mp3"
+  },
+  {
+    "id": 25,
+    "title": "Gangsta's Paradise",
+    "artist": "Coolio, L.V.",
+    "filename": "02. Coolio, L.V. - Gangsta's Paradise.mp3",
+    "path": "02. Coolio, L.V. - Gangsta's Paradise.mp3"
+  },
+  {
+    "id": 26,
+    "title": "Always Forever",
+    "artist": "Cults",
+    "filename": "03 - Cults - Always Forever.mp3",
+    "path": "03 - Cults - Always Forever.mp3"
+  },
+  {
+    "id": 27,
+    "title": "A Different Age",
+    "artist": "Current Joys",
+    "filename": "07 - Current Joys - A Different Age.mp3",
+    "path": "07 - Current Joys - A Different Age.mp3"
+  },
+  {
+    "id": 28,
+    "title": "i’ll still have me (legendado)",
+    "artist": "CYN",
+    "filename": "12 - CYN - i’ll still have me (legendado).mp3",
+    "path": "12 - CYN - i’ll still have me (legendado).mp3"
+  },
+  {
+    "id": 29,
+    "title": "That's The Way It Is",
+    "artist": "Daniel Lanois",
+    "filename": "03 - Daniel Lanois - That's The Way It Is.mp3",
+    "path": "03 - Daniel Lanois - That's The Way It Is.mp3"
+  },
+  {
+    "id": 30,
+    "title": "Daylight",
+    "artist": "David Kushner",
+    "filename": "01 - David Kushner - Daylight.mp3",
+    "path": "01 - David Kushner - Daylight.mp3"
+  },
+  {
+    "id": 31,
+    "title": "Hero",
+    "artist": "David Kushner",
+    "filename": "01 - David Kushner - Hero.mp3",
+    "path": "01 - David Kushner - Hero.mp3"
+  },
+  {
+    "id": 32,
+    "title": "Let You Down",
+    "artist": "Dawid Podsiadło",
+    "filename": "01 - Dawid Podsiadło - Let You Down.mp3",
+    "path": "01 - Dawid Podsiadło - Let You Down.mp3"
+  },
+  {
+    "id": 33,
+    "title": "How Do I Say Goodbye",
+    "artist": "Dean Lewis",
+    "filename": "01 - Dean Lewis - How Do I Say Goodbye.mp3",
+    "path": "01 - Dean Lewis - How Do I Say Goodbye.mp3"
+  },
+  {
+    "id": 34,
+    "title": "Waves",
+    "artist": "Dean Lewis",
+    "filename": "01 - Dean Lewis - Waves.mp3",
+    "path": "01 - Dean Lewis - Waves.mp3"
+  },
+  {
+    "id": 35,
+    "title": "Arcade",
+    "artist": "Duncan Laurence",
+    "filename": "01 - Duncan Laurence - Arcade.mp3",
+    "path": "01 - Duncan Laurence - Arcade.mp3"
+  },
+  {
+    "id": 36,
+    "title": "Photograph (Official Lyric Video)",
+    "artist": "Ed Sheeran",
+    "filename": "13 - Ed Sheeran - Photograph (Official Lyric Video).mp3",
+    "path": "13 - Ed Sheeran - Photograph (Official Lyric Video).mp3"
+  },
+  {
+    "id": 37,
+    "title": "Royalty",
+    "artist": "Egzod",
+    "filename": "01 - Egzod - Royalty.mp3",
+    "path": "01 - Egzod - Royalty.mp3"
+  },
+  {
+    "id": 38,
+    "title": "Venom (Music From The Motion Picture)",
+    "artist": "Eminem",
+    "filename": "13. Eminem - Venom (Music From The Motion Picture).mp3",
+    "path": "13. Eminem - Venom (Music From The Motion Picture).mp3"
+  },
+  {
+    "id": 39,
+    "title": "Tarantella",
+    "artist": "Gabry Ponte",
+    "filename": "01 - Gabry Ponte - Tarantella.mp3",
+    "path": "01 - Gabry Ponte - Tarantella.mp3"
+  },
+  {
+    "id": 40,
+    "title": "Mary On A Cross",
+    "artist": "Ghost",
+    "filename": "02 - Ghost - Mary On A Cross.mp3",
+    "path": "02 - Ghost - Mary On A Cross.mp3"
+  },
+  {
+    "id": 41,
+    "title": "Sailor Song (Official Music Video)",
+    "artist": "Gigi Perez",
+    "filename": "Gigi Perez - Sailor Song (Official Music Video).mp3",
+    "path": "Gigi Perez - Sailor Song (Official Music Video).mp3"
+  },
+  {
+    "id": 42,
+    "title": "i hate u, i love u ft. olivia o'brien (music video)",
+    "artist": "gnash",
+    "filename": "04 - gnash - i hate u, i love u ft. olivia o'brien (music video).mp3",
+    "path": "04 - gnash - i hate u, i love u ft. olivia o'brien (music video).mp3"
+  },
+  {
+    "id": 43,
+    "title": "Somebody That I Used To Know",
+    "artist": "Gotye",
+    "filename": "03 - Gotye - Somebody That I Used To Know.mp3",
+    "path": "03 - Gotye - Somebody That I Used To Know.mp3"
+  },
+  {
+    "id": 44,
+    "title": "I Love You, I'm Sorry (Live) ｜ Vevo Extended Play",
+    "artist": "Gracie Abrams",
+    "filename": "20 - Gracie Abrams - I Love You, I'm Sorry (Live) ｜ Vevo Extended Play.mp3",
+    "path": "20 - Gracie Abrams - I Love You, I'm Sorry (Live) ｜ Vevo Extended Play.mp3"
+  },
+  {
+    "id": 45,
+    "title": "Take Me To Church",
+    "artist": "Hozier",
+    "filename": "01. Hozier - Take Me To Church.mp3",
+    "path": "01. Hozier - Take Me To Church.mp3"
+  },
+  {
+    "id": 46,
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "filename": "10 - Imagine Dragons - Believer.mp3",
+    "path": "10 - Imagine Dragons - Believer.mp3"
+  },
+  {
+    "id": 47,
+    "title": "Bones",
+    "artist": "Imagine Dragons",
+    "filename": "01 - Imagine Dragons - Bones.mp3",
+    "path": "01 - Imagine Dragons - Bones.mp3"
+  },
+  {
+    "id": 48,
+    "title": "Natural",
+    "artist": "Imagine Dragons",
+    "filename": "01 - Imagine Dragons - Natural.mp3",
+    "path": "01 - Imagine Dragons - Natural.mp3"
+  },
+  {
+    "id": 49,
+    "title": "Radioactive",
+    "artist": "Imagine Dragons",
+    "filename": "01. Imagine Dragons - Radioactive.mp3",
+    "path": "01. Imagine Dragons - Radioactive.mp3"
+  },
+  {
+    "id": 50,
+    "title": "Thunder",
+    "artist": "Imagine Dragons",
+    "filename": "02 - Imagine Dragons - Thunder.mp3",
+    "path": "02 - Imagine Dragons - Thunder.mp3"
+  },
+  {
+    "id": 51,
+    "title": "Love Story (Official Music Video)",
+    "artist": "Indila",
+    "filename": "10 - Indila - Love Story (Official Music Video).mp3",
+    "path": "10 - Indila - Love Story (Official Music Video).mp3"
+  },
+  {
+    "id": 52,
+    "title": "Glimpse of Us",
+    "artist": "Joji",
+    "filename": "01 - Joji - Glimpse of Us.mp3",
+    "path": "01 - Joji - Glimpse of Us.mp3"
+  },
+  {
+    "id": 53,
+    "title": "her (official lyric video)",
+    "artist": "JVKE",
+    "filename": "JVKE - her (official lyric video).mp3",
+    "path": "JVKE - her (official lyric video).mp3"
+  },
+  {
+    "id": 54,
+    "title": "L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev",
+    "artist": "Kaavalaai Chekavar Lyrical Video",
+    "filename": "Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3",
+    "path": "Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3"
+  },
+  {
+    "id": 55,
+    "title": "VILLAIN",
+    "artist": "KDA",
+    "filename": "03 - KDA - VILLAIN.mp3",
+    "path": "03 - KDA - VILLAIN.mp3"
+  },
+  {
+    "id": 56,
+    "title": "Somewhere Only We Know",
+    "artist": "Keane",
+    "filename": "01. Keane - Somewhere Only We Know.mp3",
+    "path": "01. Keane - Somewhere Only We Know.mp3"
+  },
+  {
+    "id": 57,
+    "title": "All I Want",
+    "artist": "Kodaline",
+    "filename": "05 - Kodaline - All I Want.mp3",
+    "path": "05 - Kodaline - All I Want.mp3"
+  },
+  {
+    "id": 58,
+    "title": "Die With A Smile",
+    "artist": "Lady Gaga",
+    "filename": "01 - Lady Gaga - Die With A Smile.mp3",
+    "path": "01 - Lady Gaga - Die With A Smile.mp3"
+  },
+  {
+    "id": 59,
+    "title": "Born To Die",
+    "artist": "Lana Del Rey",
+    "filename": "01 - Lana Del Rey - Born To Die.mp3",
+    "path": "01 - Lana Del Rey - Born To Die.mp3"
+  },
+  {
+    "id": 60,
+    "title": "Chemtrails Over The Country Club",
+    "artist": "Lana Del Rey",
+    "filename": "02 - Lana Del Rey - Chemtrails Over The Country Club.mp3",
+    "path": "02 - Lana Del Rey - Chemtrails Over The Country Club.mp3"
+  },
+  {
+    "id": 61,
+    "title": "Love",
+    "artist": "Lana Del Rey",
+    "filename": "16 - Lana Del Rey - Love.mp3",
+    "path": "16 - Lana Del Rey - Love.mp3"
+  },
+  {
+    "id": 62,
+    "title": "Say Yes To Heaven",
+    "artist": "Lana Del Rey",
+    "filename": "01 - Lana Del Rey - Say Yes To Heaven.mp3",
+    "path": "01 - Lana Del Rey - Say Yes To Heaven.mp3"
+  },
+  {
+    "id": 63,
+    "title": "Summertime Sadness",
+    "artist": "Lana Del Rey",
+    "filename": "11. Lana Del Rey - Summertime Sadness.mp3",
+    "path": "11. Lana Del Rey - Summertime Sadness.mp3"
+  },
+  {
+    "id": 64,
+    "title": "Young And Beautiful",
+    "artist": "Lana Del Rey",
+    "filename": "01 - Lana Del Rey - Young And Beautiful.mp3",
+    "path": "01 - Lana Del Rey - Young And Beautiful.mp3"
+  },
+  {
+    "id": 65,
+    "title": "Burn It All Down",
+    "artist": "League Of Legends",
+    "filename": "01 - League Of Legends - Burn It All Down.mp3",
+    "path": "01 - League Of Legends - Burn It All Down.mp3"
+  },
+  {
+    "id": 66,
+    "title": "Legends Never Die",
+    "artist": "League Of Legends",
+    "filename": "01 - League Of Legends - Legends Never Die.mp3",
+    "path": "01 - League Of Legends - Legends Never Die.mp3"
+  },
+  {
+    "id": 67,
+    "title": "RISE",
+    "artist": "League Of Legends",
+    "filename": "01 - League Of Legends - RISE.mp3",
+    "path": "01 - League Of Legends - RISE.mp3"
+  },
+  {
+    "id": 68,
+    "title": "ceilings (official video)",
+    "artist": "Lizzy McAlpine",
+    "filename": "01 - Lizzy McAlpine - ceilings (official video).mp3",
+    "path": "01 - Lizzy McAlpine - ceilings (official video).mp3"
+  },
+  {
+    "id": 69,
+    "title": "The Night We Met",
+    "artist": "Lord Huron",
+    "filename": "01 - Lord Huron - The Night We Met.mp3",
+    "path": "01 - Lord Huron - The Night We Met.mp3"
+  },
+  {
+    "id": 70,
+    "title": "Pretty Brown Eyes",
+    "artist": "Lovesick By Choice",
+    "filename": "01. Lovesick By Choice - Pretty Brown Eyes.mp3",
+    "path": "01. Lovesick By Choice - Pretty Brown Eyes.mp3"
+  },
+  {
+    "id": 71,
+    "title": "MEAN! (Official Music Video)",
+    "artist": "Madeline the Person",
+    "filename": "08 - Madeline the Person - MEAN! (Official Music Video).mp3",
+    "path": "08 - Madeline the Person - MEAN! (Official Music Video).mp3"
+  },
+  {
+    "id": 72,
+    "title": "Good In Goodbye",
+    "artist": "Madison Beer",
+    "filename": "01 - Madison Beer - Good In Goodbye.mp3",
+    "path": "01 - Madison Beer - Good In Goodbye.mp3"
+  },
+  {
+    "id": 73,
+    "title": "I Can't Fit In",
+    "artist": "Marino",
+    "filename": "Marino - I Can't Fit In.m4a",
+    "path": "Marino - I Can't Fit In.m4a"
+  },
+  {
+    "id": 74,
+    "title": "Past Lives (feat. Martin Arteta)",
+    "artist": "Martin Arteta",
+    "filename": "01 - Martin Arteta - Past Lives (feat. Martin Arteta).mp3",
+    "path": "01 - Martin Arteta - Past Lives (feat. Martin Arteta).mp3"
+  },
+  {
+    "id": 75,
+    "title": "Astronaut In The Ocean",
+    "artist": "Masked Wolf",
+    "filename": "01 - Masked Wolf - Astronaut In The Ocean.mp3",
+    "path": "01 - Masked Wolf - Astronaut In The Ocean.mp3"
+  },
+  {
+    "id": 76,
+    "title": "Homage",
+    "artist": "Mild High Club",
+    "filename": "02 - Mild High Club - Homage.mp3",
+    "path": "02 - Mild High Club - Homage.mp3"
+  },
+  {
+    "id": 77,
+    "title": "My Love Mine All Mine (Official Lyric Video)",
+    "artist": "Mitski",
+    "filename": "03 - Mitski - My Love Mine All Mine (Official Lyric Video).mp3",
+    "path": "03 - Mitski - My Love Mine All Mine (Official Lyric Video).mp3"
+  },
+  {
+    "id": 78,
+    "title": "Cheri Cheri Lady",
+    "artist": "Modern Talking",
+    "filename": "15 - Modern Talking - Cheri Cheri Lady.mp3",
+    "path": "15 - Modern Talking - Cheri Cheri Lady.mp3"
+  },
+  {
+    "id": 79,
+    "title": "After Dark",
+    "artist": "Mr.Kitty",
+    "filename": "09 - Mr.Kitty - After Dark.mp3",
+    "path": "09 - Mr.Kitty - After Dark.mp3"
+  },
+  {
+    "id": 80,
+    "title": "DARKSIDE",
+    "artist": "Neoni",
+    "filename": "01 - Neoni - DARKSIDE.mp3",
+    "path": "01 - Neoni - DARKSIDE.mp3"
+  },
+  {
+    "id": 81,
+    "title": "die first",
+    "artist": "Nessa Barrett",
+    "filename": "01 - Nessa Barrett - die first.mp3",
+    "path": "01 - Nessa Barrett - die first.mp3"
+  },
+  {
+    "id": 82,
+    "title": "Those Eyes",
+    "artist": "New West",
+    "filename": "01. New West - Those Eyes.mp3",
+    "path": "01. New West - Those Eyes.mp3"
+  },
+  {
+    "id": 83,
+    "title": "How",
+    "artist": "NewDad",
+    "filename": "15 - NewDad - How.mp3",
+    "path": "15 - NewDad - How.mp3"
+  },
+  {
+    "id": 84,
+    "title": "Reed Wonder, Aurora Olivas - I'm All In",
+    "artist": "Ninjaxxp",
+    "filename": "Ninjaxxp - Reed Wonder, Aurora Olivas - I'm All In.m4a",
+    "path": "Ninjaxxp - Reed Wonder, Aurora Olivas - I'm All In.m4a"
+  },
+  {
+    "id": 85,
+    "title": "Anyway",
+    "artist": "Noah Kahan",
+    "filename": "04 - Noah Kahan - Anyway.mp3",
+    "path": "04 - Noah Kahan - Anyway.mp3"
+  },
+  {
+    "id": 86,
+    "title": "drivers license (Lyric Video)",
+    "artist": "Olivia Rodrigo",
+    "filename": "Olivia Rodrigo - drivers license (Lyric Video).mp3",
+    "path": "Olivia Rodrigo - drivers license (Lyric Video).mp3"
+  },
+  {
+    "id": 87,
+    "title": "LABOUR (the cacophony)",
+    "artist": "Paris Paloma",
+    "filename": "01 - Paris Paloma - LABOUR (the cacophony).mp3",
+    "path": "01 - Paris Paloma - LABOUR (the cacophony).mp3"
+  },
+  {
+    "id": 88,
+    "title": "Let Her Go",
+    "artist": "Passenger",
+    "filename": "01. Passenger - Let Her Go.mp3",
+    "path": "01. Passenger - Let Her Go.mp3"
+  },
+  {
+    "id": 89,
+    "title": "Je te laisserai des mots",
+    "artist": "Patrick Watson",
+    "filename": "01 - Patrick Watson - Je te laisserai des mots.mp3",
+    "path": "01 - Patrick Watson - Je te laisserai des mots.mp3"
+  },
+  {
+    "id": 90,
+    "title": "In My Head",
+    "artist": "Peter Manos",
+    "filename": "01. Peter Manos - In My Head.mp3",
+    "path": "01. Peter Manos - In My Head.mp3"
+  },
+  {
+    "id": 91,
+    "title": "death bed (coffee for your head)",
+    "artist": "Powfu",
+    "filename": "01 - Powfu - death bed (coffee for your head).mp3",
+    "path": "01 - Powfu - death bed (coffee for your head).mp3"
+  },
+  {
+    "id": 92,
+    "title": "Co2",
+    "artist": "Prateek Kuhad",
+    "filename": "04 - Prateek Kuhad - Co2.mp3",
+    "path": "04 - Prateek Kuhad - Co2.mp3"
+  },
+  {
+    "id": 93,
+    "title": "No Surprises",
+    "artist": "Radiohead",
+    "filename": "01. Radiohead - No Surprises.mp3",
+    "path": "01. Radiohead - No Surprises.mp3"
+  },
+  {
+    "id": 94,
+    "title": "Suzume (feat. Toaka)",
+    "artist": "Radwimps",
+    "filename": "01 - Radwimps - Suzume (feat. Toaka).mp3",
+    "path": "01 - Radwimps - Suzume (feat. Toaka).mp3"
+  },
+  {
+    "id": 95,
+    "title": "Light It Up",
+    "artist": "Robin Hustin",
+    "filename": "01 - Robin Hustin - Light It Up.mp3",
+    "path": "01 - Robin Hustin - Light It Up.mp3"
+  },
+  {
+    "id": 96,
+    "title": "If By Chance",
+    "artist": "Ruth B.",
+    "filename": "08 - Ruth B. - If By Chance.mp3",
+    "path": "08 - Ruth B. - If By Chance.mp3"
+  },
+  {
+    "id": 97,
+    "title": "Legends Are Made",
+    "artist": "Sam Tinnesz",
+    "filename": "01 - Sam Tinnesz - Legends Are Made.mp3",
+    "path": "01 - Sam Tinnesz - Legends Are Made.mp3"
+  },
+  {
+    "id": 98,
+    "title": "Play with Fire (feat. Yacht Money)",
+    "artist": "Sam Tinnesz",
+    "filename": "01 - Sam Tinnesz - Play with Fire (feat. Yacht Money).mp3",
+    "path": "01 - Sam Tinnesz - Play with Fire (feat. Yacht Money).mp3"
+  },
+  {
+    "id": 99,
+    "title": "I Really Want to Stay at Your House",
+    "artist": "Samuel Kim",
+    "filename": "01 - Samuel Kim - I Really Want to Stay at Your House.mp3",
+    "path": "01 - Samuel Kim - I Really Want to Stay at Your House.mp3"
+  },
+  {
+    "id": 100,
+    "title": "Dancing With Your Ghost",
+    "artist": "Sasha Alex Sloan",
+    "filename": "01 - Sasha Alex Sloan - Dancing With Your Ghost.mp3",
+    "path": "01 - Sasha Alex Sloan - Dancing With Your Ghost.mp3"
+  },
+  {
+    "id": 101,
+    "title": "Older",
+    "artist": "Sasha Alex Sloan",
+    "filename": "01 - Sasha Alex Sloan - Older.mp3",
+    "path": "01 - Sasha Alex Sloan - Older.mp3"
+  },
+  {
+    "id": 102,
+    "title": "Smiling When I Die (Official Video)",
+    "artist": "Sasha Alex Sloan",
+    "filename": "14 - Sasha Alex Sloan - Smiling When I Die (Official Video).mp3",
+    "path": "14 - Sasha Alex Sloan - Smiling When I Die (Official Video).mp3"
+  },
+  {
+    "id": 103,
+    "title": "everything",
+    "artist": "Sensi Sye",
+    "filename": "01 - Sensi Sye - everything.mp3",
+    "path": "01 - Sensi Sye - everything.mp3"
+  },
+  {
+    "id": 104,
+    "title": "Until I Found You",
+    "artist": "Stephen Sanchez",
+    "filename": "01 - Stephen Sanchez - Until I Found You.mp3",
+    "path": "01 - Stephen Sanchez - Until I Found You.mp3"
+  },
+  {
+    "id": 105,
+    "title": "＂The Pool＂ (Official Audio)",
+    "artist": "Stephen Sanchez",
+    "filename": "06 - Stephen Sanchez - ＂The Pool＂ (Official Audio).mp3",
+    "path": "06 - Stephen Sanchez - ＂The Pool＂ (Official Audio).mp3"
+  },
+  {
+    "id": 106,
+    "title": "Bad Habit",
+    "artist": "Steve Lacy",
+    "filename": "01 - Steve Lacy - Bad Habit.mp3",
+    "path": "01 - Steve Lacy - Bad Habit.mp3"
+  },
+  {
+    "id": 107,
+    "title": "Cradles",
+    "artist": "Sub Urban",
+    "filename": "01 - Sub Urban - Cradles.mp3",
+    "path": "01 - Sub Urban - Cradles.mp3"
+  },
+  {
+    "id": 108,
+    "title": "Good Looking",
+    "artist": "Suki Waterhouse",
+    "filename": "01 - Suki Waterhouse - Good Looking.mp3",
+    "path": "01 - Suki Waterhouse - Good Looking.mp3"
+  },
+  {
+    "id": 109,
+    "title": "Freaks",
+    "artist": "Surf Curse",
+    "filename": "01 - Surf Curse - Freaks.mp3",
+    "path": "01 - Surf Curse - Freaks.mp3"
+  },
+  {
+    "id": 110,
+    "title": "you broke me first (Official Video)",
+    "artist": "Tate McRae",
+    "filename": "02 - Tate McRae - you broke me first (Official Video).mp3",
+    "path": "02 - Tate McRae - you broke me first (Official Video).mp3"
+  },
+  {
+    "id": 111,
+    "title": "Everybody Wants To Rule The World",
+    "artist": "Tears For Fears",
+    "filename": "13 - Tears For Fears - Everybody Wants To Rule The World.mp3",
+    "path": "13 - Tears For Fears - Everybody Wants To Rule The World.mp3"
+  },
+  {
+    "id": 112,
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "filename": "11. The Goo Goo Dolls - Iris.mp3",
+    "path": "11. The Goo Goo Dolls - Iris.mp3"
+  },
+  {
+    "id": 113,
+    "title": "Far From Any Road (True Detective Opening Video)",
+    "artist": "The Handsome Family",
+    "filename": "19 - The Handsome Family - Far From Any Road (True Detective Opening Video).mp3",
+    "path": "19 - The Handsome Family - Far From Any Road (True Detective Opening Video).mp3"
+  },
+  {
+    "id": 114,
+    "title": "In This Shirt",
+    "artist": "The Irrepressibles",
+    "filename": "01 - The Irrepressibles - In This Shirt.mp3",
+    "path": "01 - The Irrepressibles - In This Shirt.mp3"
+  },
+  {
+    "id": 115,
+    "title": "...baby one more time",
+    "artist": "The Marías",
+    "filename": "01 - The Marías - ...baby one more time.mp3",
+    "path": "01 - The Marías - ...baby one more time.mp3"
+  },
+  {
+    "id": 116,
+    "title": "Hold It Together",
+    "artist": "The Marías",
+    "filename": "05 - The Marías - Hold It Together.mp3",
+    "path": "05 - The Marías - Hold It Together.mp3"
+  },
+  {
+    "id": 117,
+    "title": "Nobody New",
+    "artist": "The Marías",
+    "filename": "The Marías - Nobody New.mp3",
+    "path": "The Marías - Nobody New.mp3"
+  },
+  {
+    "id": 118,
+    "title": "Softcore",
+    "artist": "The Neighbourhood",
+    "filename": "05 - The Neighbourhood - Softcore.mp3",
+    "path": "05 - The Neighbourhood - Softcore.mp3"
+  },
+  {
+    "id": 119,
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "filename": "04. The Neighbourhood - Sweater Weather.mp3",
+    "path": "04. The Neighbourhood - Sweater Weather.mp3"
+  },
+  {
+    "id": 120,
+    "title": "Notion",
+    "artist": "The Rare Occasions",
+    "filename": "01 - The Rare Occasions - Notion.mp3",
+    "path": "01 - The Rare Occasions - Notion.mp3"
+  },
+  {
+    "id": 121,
+    "title": "Born For This",
+    "artist": "The Score",
+    "filename": "04 - The Score - Born For This.mp3",
+    "path": "04 - The Score - Born For This.mp3"
+  },
+  {
+    "id": 122,
+    "title": "Fighter",
+    "artist": "The Score",
+    "filename": "11 - The Score - Fighter.mp3",
+    "path": "11 - The Score - Fighter.mp3"
+  },
+  {
+    "id": 123,
+    "title": "Stronger",
+    "artist": "The Score",
+    "filename": "02 - The Score - Stronger.mp3",
+    "path": "02 - The Score - Stronger.mp3"
+  },
+  {
+    "id": 124,
+    "title": "Unstoppable",
+    "artist": "The Score",
+    "filename": "06 - The Score - Unstoppable.mp3",
+    "path": "06 - The Score - Unstoppable.mp3"
+  },
+  {
+    "id": 125,
+    "title": "Fly Away",
+    "artist": "TheFatRat",
+    "filename": "01 - TheFatRat - Fly Away.mp3",
+    "path": "01 - TheFatRat - Fly Away.mp3"
+  },
+  {
+    "id": 126,
+    "title": "Another Love",
+    "artist": "Tom Odell",
+    "filename": "01 - Tom Odell - Another Love.mp3",
+    "path": "01 - Tom Odell - Another Love.mp3"
+  },
+  {
+    "id": 127,
+    "title": "Heal",
+    "artist": "Tom Odell",
+    "filename": "13 - Tom Odell - Heal.mp3",
+    "path": "13 - Tom Odell - Heal.mp3"
+  },
+  {
+    "id": 128,
+    "title": "Go Solo",
+    "artist": "Tom Rosenthal",
+    "filename": "05. Tom Rosenthal - Go Solo.mp3",
+    "path": "05. Tom Rosenthal - Go Solo.mp3"
+  },
+  {
+    "id": 129,
+    "title": "Champion",
+    "artist": "Tommee Profitt",
+    "filename": "01 - Tommee Profitt - Champion.mp3",
+    "path": "01 - Tommee Profitt - Champion.mp3"
+  },
+  {
+    "id": 130,
+    "title": "Heathens",
+    "artist": "Twenty One Pilots",
+    "filename": "01 - Twenty One Pilots - Heathens.mp3",
+    "path": "01 - Twenty One Pilots - Heathens.mp3"
+  },
+  {
+    "id": 131,
+    "title": "Tell Me The Truth",
+    "artist": "Two Feet",
+    "filename": "01 - Two Feet - Tell Me The Truth.mp3",
+    "path": "01 - Two Feet - Tell Me The Truth.mp3"
+  },
+  {
+    "id": 132,
+    "title": "Love You Still (abcdefu romantic version)",
+    "artist": "Tyler Shaw",
+    "filename": "01 - Tyler Shaw - Love You Still (abcdefu romantic version).mp3",
+    "path": "01 - Tyler Shaw - Love You Still (abcdefu romantic version).mp3"
+  },
+  {
+    "id": 133,
+    "title": "Can’t Catch Me Now (from The Hunger Games： The Ballad of Songbirds & Snakes)",
+    "artist": "Unknown Artist",
+    "filename": "18 - Can’t Catch Me Now (from The Hunger Games： The Ballad of Songbirds & Snakes).mp3",
+    "path": "18 - Can’t Catch Me Now (from The Hunger Games： The Ballad of Songbirds & Snakes).mp3"
+  },
+  {
+    "id": 134,
+    "title": "Džanum",
+    "artist": "Unknown Artist",
+    "filename": "11 - Džanum.mp3",
+    "path": "11 - Džanum.mp3"
+  },
+  {
+    "id": 135,
+    "title": "K.",
+    "artist": "Unknown Artist",
+    "filename": "K..mp3",
+    "path": "K..mp3"
+  },
+  {
+    "id": 136,
+    "title": "No One Noticed (Extended English)",
+    "artist": "Unknown Artist",
+    "filename": "No One Noticed (Extended English).mp3",
+    "path": "No One Noticed (Extended English).mp3"
+  },
+  {
+    "id": 137,
+    "title": "The Saddest Song (Lyrics)  ~ Alec Benjamin",
+    "artist": "Unknown Artist",
+    "filename": "The Saddest Song (Lyrics)  ~ Alec Benjamin.mp3",
+    "path": "The Saddest Song (Lyrics)  ~ Alec Benjamin.mp3"
+  },
+  {
+    "id": 138,
+    "title": "Everything Black (feat. Mike Taylor)",
+    "artist": "Unlike Pluto",
+    "filename": "01 - Unlike Pluto - Everything Black (feat. Mike Taylor).mp3",
+    "path": "01 - Unlike Pluto - Everything Black (feat. Mike Taylor).mp3"
+  },
+  {
+    "id": 139,
+    "title": "Die For You",
+    "artist": "VALORANT",
+    "filename": "01 - VALORANT - Die For You.mp3",
+    "path": "01 - VALORANT - Die For You.mp3"
+  },
+  {
+    "id": 140,
+    "title": "one (greater than one)",
+    "artist": "Valorant",
+    "filename": "01 - Valorant - one (greater than one).mp3",
+    "path": "01 - Valorant - one (greater than one).mp3"
+  },
+  {
+    "id": 141,
+    "title": "Goliath",
+    "artist": "Woodkid",
+    "filename": "01 - Woodkid - Goliath.mp3",
+    "path": "01 - Woodkid - Goliath.mp3"
+  },
+  {
+    "id": 142,
+    "title": "Iron",
+    "artist": "Woodkid",
+    "filename": "13 - Woodkid - Iron.mp3",
+    "path": "13 - Woodkid - Iron.mp3"
+  },
+  {
+    "id": 143,
+    "title": "Pale Yellow",
+    "artist": "Woodkid",
+    "filename": "01 - Woodkid - Pale Yellow.mp3",
+    "path": "01 - Woodkid - Pale Yellow.mp3"
+  },
+  {
+    "id": 144,
+    "title": "Run Boy Run",
+    "artist": "Woodkid",
+    "filename": "02 - Woodkid - Run Boy Run.mp3",
+    "path": "02 - Woodkid - Run Boy Run.mp3"
+  },
+  {
+    "id": 145,
+    "title": "blue",
+    "artist": "Yung Kai",
+    "filename": "01 - Yung Kai - blue.mp3",
+    "path": "01 - Yung Kai - blue.mp3"
+  }
+]
