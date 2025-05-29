@@ -1,6 +1,60 @@
 [
   {
-    "id": 21,
+    "id": 1,
+    "title": "Teeth",
+    "artist": "5 Seconds of Summer",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%205%20Seconds%20of%20Summer%20-%20Teeth.mp3",
+    "duration": "8:42",
+    "filename": "01 - 5 Seconds of Summer - Teeth.mp3",
+    "path": "music/songs/01 - 5 Seconds of Summer - Teeth.mp3"
+  },
+  {
+    "id": 133,
+    "title": "Loverboy",
+    "artist": "A-Wall",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/A-Wall%20-%20Loverboy.mp3",
+    "duration": "9:40",
+    "filename": "A-Wall - Loverboy.mp3",
+    "path": "music/songs/A-Wall - Loverboy.mp3"
+  },
+  {
+    "id": 63,
+    "title": "Skyfall",
+    "artist": "Adele",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Adele%20-%20Skyfall.mp3",
+    "duration": "12:02",
+    "filename": "01. Adele - Skyfall.mp3",
+    "path": "music/songs/01. Adele - Skyfall.mp3"
+  },
+  {
+    "id": 3,
+    "title": "Ignite",
+    "artist": "Alan Walker",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Alan%20Walker%20-%20Ignite.mp3",
+    "duration": "9:04",
+    "filename": "01 - Alan Walker - Ignite.mp3",
+    "path": "music/songs/01 - Alan Walker - Ignite.mp3"
+  },
+  {
+    "id": 4,
+    "title": "Let Me Down Slowly",
+    "artist": "Alec Benjamin",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Alec%20Benjamin%20-%20Let%20Me%20Down%20Slowly.mp3",
+    "duration": "7:17",
+    "filename": "01 - Alec Benjamin - Let Me Down Slowly.mp3",
+    "path": "music/songs/01 - Alec Benjamin - Let Me Down Slowly.mp3"
+  },
+  {
+    "id": 134,
+    "title": "The Hill I Will Die On (Lyrics)",
+    "artist": "Alec Benjamin",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Alec%20Benjamin%20-%20The%20Hill%20I%20Will%20Die%20On%20(Lyrics).mp3",
+    "duration": "4:39",
+    "filename": "Alec Benjamin - The Hill I Will Die On (Lyrics).mp3",
+    "path": "music/songs/Alec Benjamin - The Hill I Will Die On (Lyrics).mp3"
+  },
+  {
+    "id": 131,
     "title": "I Found (Official Lyric Video)",
     "artist": "Amber Run",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/21%20-%20Amber%20Run%20-%20I%20Found%20(Official%20Lyric%20Video).mp3",
@@ -9,16 +63,16 @@
     "path": "music/songs/21 - Amber Run - I Found (Official Lyric Video).mp3"
   },
   {
-    "id": 17,
-    "title": "It's Ok If You Forget Me (Official Music Video)",
+    "id": 127,
+    "title": "It_s Ok If You Forget Me (Official Music Video)",
     "artist": "Astrid S",
-    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/17%20-%20Astrid%20S%20-%20It's%20Ok%20If%20You%20Forget%20Me%20(Official%20Music%20Video).mp3",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/17%20-%20Astrid%20S%20-%20It_s%20Ok%20If%20You%20Forget%20Me%20(Official%20Music%20Video).mp3",
     "duration": "6:46",
-    "filename": "17 - Astrid S - It's Ok If You Forget Me (Official Music Video).mp3",
-    "path": "music/songs/17 - Astrid S - It's Ok If You Forget Me (Official Music Video).mp3"
+    "filename": "17 - Astrid S - It_s Ok If You Forget Me (Official Music Video).mp3",
+    "path": "music/songs/17 - Astrid S - It_s Ok If You Forget Me (Official Music Video).mp3"
   },
   {
-    "id": 9,
+    "id": 109,
     "title": "It´s Ok If You Forget Me (Official Lyric Video)",
     "artist": "Astrid S",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/09 - Astrid S - It´s Ok If You Forget Me (Official Lyric Video).mp3",
@@ -27,7 +81,79 @@
     "path": "music/songs/09 - Astrid S - It´s Ok If You Forget Me (Official Lyric Video).mp3"
   },
   {
-    "id": 7,
+    "id": 2,
+    "title": "Runaway",
+    "artist": "AURORA",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20AURORA%20-%20Runaway.mp3",
+    "duration": "10:47",
+    "filename": "01 - AURORA - Runaway.mp3",
+    "path": "music/songs/01 - AURORA - Runaway.mp3"
+  },
+  {
+    "id": 82,
+    "title": "Space Song",
+    "artist": "Beach House",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/03%20-%20Beach%20House%20-%20Space%20Song.mp3",
+    "duration": "13:34",
+    "filename": "03 - Beach House - Space Song.mp3",
+    "path": "music/songs/03 - Beach House - Space Song.mp3"
+  },
+  {
+    "id": 62,
+    "title": "Duvet",
+    "artist": "bôa",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01 - bôa - Duvet.mp3",
+    "duration": "8:41",
+    "filename": "01 - bôa - Duvet.mp3",
+    "path": "music/songs/01 - bôa - Duvet.mp3"
+  },
+  {
+    "id": 94,
+    "title": "Beanie",
+    "artist": "Chezile",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/05%20-%20Chezile%20-%20Beanie.mp3",
+    "duration": "5:43",
+    "filename": "05 - Chezile - Beanie.mp3",
+    "path": "music/songs/05 - Chezile - Beanie.mp3"
+  },
+  {
+    "id": 99,
+    "title": "A Thousand Years",
+    "artist": "Christina Perri",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/06%20-%20Christina%20Perri%20-%20A%20Thousand%20Years.mp3",
+    "duration": "12:03",
+    "filename": "06 - Christina Perri - A Thousand Years.mp3",
+    "path": "music/songs/06 - Christina Perri - A Thousand Years.mp3"
+  },
+  {
+    "id": 5,
+    "title": "Apocalypse",
+    "artist": "Cigarettes After Sex",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Cigarettes%20After%20Sex%20-%20Apocalypse.mp3",
+    "duration": "12:13",
+    "filename": "01 - Cigarettes After Sex - Apocalypse.mp3",
+    "path": "music/songs/01 - Cigarettes After Sex - Apocalypse.mp3"
+  },
+  {
+    "id": 103,
+    "title": "Cry",
+    "artist": "Cigarettes After Sex",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/07%20-%20Cigarettes%20After%20Sex%20-%20Cry.mp3",
+    "duration": "10:52",
+    "filename": "07 - Cigarettes After Sex - Cry.mp3",
+    "path": "music/songs/07 - Cigarettes After Sex - Cry.mp3"
+  },
+  {
+    "id": 83,
+    "title": "Sunsetz",
+    "artist": "Cigarettes After Sex",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/03%20-%20Cigarettes%20After%20Sex%20-%20Sunsetz.mp3",
+    "duration": "9:03",
+    "filename": "03 - Cigarettes After Sex - Sunsetz.mp3",
+    "path": "music/songs/03 - Cigarettes After Sex - Sunsetz.mp3"
+  },
+  {
+    "id": 104,
     "title": "Astronomy (Official Video)",
     "artist": "Conan Gray",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/07%20-%20Conan%20Gray%20-%20Astronomy%20(Official%20Video).mp3",
@@ -36,7 +162,43 @@
     "path": "music/songs/07 - Conan Gray - Astronomy (Official Video).mp3"
   },
   {
-    "id": 12,
+    "id": 135,
+    "title": "Heather (Official Lyric Video)",
+    "artist": "Conan Gray",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Conan%20Gray%20-%20Heather%20(Official%20Lyric%20Video).mp3",
+    "duration": "8:21",
+    "filename": "Conan Gray - Heather (Official Lyric Video).mp3",
+    "path": "music/songs/Conan Gray - Heather (Official Lyric Video).mp3"
+  },
+  {
+    "id": 81,
+    "title": "Gangsta_s Paradise",
+    "artist": "Coolio, L.V.",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02.%20Coolio%2C%20L.V.%20-%20Gangsta_s%20Paradise.mp3",
+    "duration": "10:16",
+    "filename": "02. Coolio, L.V. - Gangsta_s Paradise.mp3",
+    "path": "music/songs/02. Coolio, L.V. - Gangsta_s Paradise.mp3"
+  },
+  {
+    "id": 84,
+    "title": "Always Forever",
+    "artist": "Cults",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/03%20-%20Cults%20-%20Always%20Forever.mp3",
+    "duration": "9:40",
+    "filename": "03 - Cults - Always Forever.mp3",
+    "path": "music/songs/03 - Cults - Always Forever.mp3"
+  },
+  {
+    "id": 105,
+    "title": "A Different Age",
+    "artist": "Current Joys",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/07%20-%20Current%20Joys%20-%20A%20Different%20Age.mp3",
+    "duration": "17:28",
+    "filename": "07 - Current Joys - A Different Age.mp3",
+    "path": "music/songs/07 - Current Joys - A Different Age.mp3"
+  },
+  {
+    "id": 117,
     "title": "i’ll still have me (legendado)",
     "artist": "CYN",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/12 - CYN - i’ll still have me (legendado).mp3",
@@ -45,7 +207,70 @@
     "path": "music/songs/12 - CYN - i’ll still have me (legendado).mp3"
   },
   {
-    "id": 13,
+    "id": 85,
+    "title": "That_s The Way It Is",
+    "artist": "Daniel Lanois",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/03%20-%20Daniel%20Lanois%20-%20That_s%20The%20Way%20It%20Is.mp3",
+    "duration": "10:42",
+    "filename": "03 - Daniel Lanois - That_s The Way It Is.mp3",
+    "path": "music/songs/03 - Daniel Lanois - That_s The Way It Is.mp3"
+  },
+  {
+    "id": 6,
+    "title": "Daylight",
+    "artist": "David Kushner",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20David%20Kushner%20-%20Daylight.mp3",
+    "duration": "9:12",
+    "filename": "01 - David Kushner - Daylight.mp3",
+    "path": "music/songs/01 - David Kushner - Daylight.mp3"
+  },
+  {
+    "id": 7,
+    "title": "Hero",
+    "artist": "David Kushner",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20David%20Kushner%20-%20Hero.mp3",
+    "duration": "8:51",
+    "filename": "01 - David Kushner - Hero.mp3",
+    "path": "music/songs/01 - David Kushner - Hero.mp3"
+  },
+  {
+    "id": 8,
+    "title": "Let You Down",
+    "artist": "Dawid Podsiadło",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01 - Dawid Podsiadło - Let You Down.mp3",
+    "duration": "9:42",
+    "filename": "01 - Dawid Podsiadło - Let You Down.mp3",
+    "path": "music/songs/01 - Dawid Podsiadło - Let You Down.mp3"
+  },
+  {
+    "id": 9,
+    "title": "How Do I Say Goodbye",
+    "artist": "Dean Lewis",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Dean%20Lewis%20-%20How%20Do%20I%20Say%20Goodbye.mp3",
+    "duration": "6:56",
+    "filename": "01 - Dean Lewis - How Do I Say Goodbye.mp3",
+    "path": "music/songs/01 - Dean Lewis - How Do I Say Goodbye.mp3"
+  },
+  {
+    "id": 10,
+    "title": "Waves",
+    "artist": "Dean Lewis",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Dean%20Lewis%20-%20Waves.mp3",
+    "duration": "10:18",
+    "filename": "01 - Dean Lewis - Waves.mp3",
+    "path": "music/songs/01 - Dean Lewis - Waves.mp3"
+  },
+  {
+    "id": 11,
+    "title": "Arcade",
+    "artist": "Duncan Laurence",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Duncan%20Laurence%20-%20Arcade.mp3",
+    "duration": "7:45",
+    "filename": "01 - Duncan Laurence - Arcade.mp3",
+    "path": "music/songs/01 - Duncan Laurence - Arcade.mp3"
+  },
+  {
+    "id": 118,
     "title": "Photograph (Official Lyric Video)",
     "artist": "Ed Sheeran",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/13%20-%20Ed%20Sheeran%20-%20Photograph%20(Official%20Lyric%20Video).mp3",
@@ -54,25 +279,133 @@
     "path": "music/songs/13 - Ed Sheeran - Photograph (Official Lyric Video).mp3"
   },
   {
-    "id": 4,
-    "title": "i hate u, i love u ft. olivia o'brien (music video)",
+    "id": 12,
+    "title": "Royalty",
+    "artist": "Egzod",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Egzod%20-%20Royalty.mp3",
+    "duration": "9:26",
+    "filename": "01 - Egzod - Royalty.mp3",
+    "path": "music/songs/01 - Egzod - Royalty.mp3"
+  },
+  {
+    "id": 122,
+    "title": "Venom (Music From The Motion Picture)",
+    "artist": "Eminem",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/13.%20Eminem%20-%20Venom%20(Music%20From%20The%20Motion%20Picture).mp3",
+    "duration": "11:29",
+    "filename": "13. Eminem - Venom (Music From The Motion Picture).mp3",
+    "path": "music/songs/13. Eminem - Venom (Music From The Motion Picture).mp3"
+  },
+  {
+    "id": 13,
+    "title": "Tarantella",
+    "artist": "Gabry Ponte",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Gabry%20Ponte%20-%20Tarantella.mp3",
+    "duration": "6:25",
+    "filename": "01 - Gabry Ponte - Tarantella.mp3",
+    "path": "music/songs/01 - Gabry Ponte - Tarantella.mp3"
+  },
+  {
+    "id": 74,
+    "title": "Mary On A Cross",
+    "artist": "Ghost",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02%20-%20Ghost%20-%20Mary%20On%20A%20Cross.mp3",
+    "duration": "10:26",
+    "filename": "02 - Ghost - Mary On A Cross.mp3",
+    "path": "music/songs/02 - Ghost - Mary On A Cross.mp3"
+  },
+  {
+    "id": 136,
+    "title": "Sailor Song (Official Music Video)",
+    "artist": "Gigi Perez",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Gigi%20Perez%20-%20Sailor%20Song%20(Official%20Music%20Video).mp3",
+    "duration": "9:03",
+    "filename": "Gigi Perez - Sailor Song (Official Music Video).mp3",
+    "path": "music/songs/Gigi Perez - Sailor Song (Official Music Video).mp3"
+  },
+  {
+    "id": 92,
+    "title": "i hate u, i love u ft. olivia o_brien (music video)",
     "artist": "gnash",
-    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/04%20-%20gnash%20-%20i%20hate%20u%2C%20i%20love%20u%20ft.%20olivia%20o'brien%20(music%20video).mp3",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/04%20-%20gnash%20-%20i%20hate%20u%2C%20i%20love%20u%20ft.%20olivia%20o_brien%20(music%20video).mp3",
     "duration": "6:51",
-    "filename": "04 - gnash - i hate u, i love u ft. olivia o'brien (music video).mp3",
-    "path": "music/songs/04 - gnash - i hate u, i love u ft. olivia o'brien (music video).mp3"
+    "filename": "04 - gnash - i hate u, i love u ft. olivia o_brien (music video).mp3",
+    "path": "music/songs/04 - gnash - i hate u, i love u ft. olivia o_brien (music video).mp3"
   },
   {
-    "id": 20,
-    "title": "I Love You, I'm Sorry (Live) ｜ Vevo Extended Play",
+    "id": 86,
+    "title": "Somebody That I Used To Know",
+    "artist": "Gotye",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/03%20-%20Gotye%20-%20Somebody%20That%20I%20Used%20To%20Know.mp3",
+    "duration": "10:24",
+    "filename": "03 - Gotye - Somebody That I Used To Know.mp3",
+    "path": "music/songs/03 - Gotye - Somebody That I Used To Know.mp3"
+  },
+  {
+    "id": 130,
+    "title": "I Love You, I_m Sorry (Live) ｜ Vevo Extended Play",
     "artist": "Gracie Abrams",
-    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/20 - Gracie Abrams - I Love You, I'm Sorry (Live) ｜ Vevo Extended Play.mp3",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/20 - Gracie Abrams - I Love You, I_m Sorry (Live) ｜ Vevo Extended Play.mp3",
     "duration": "7:07",
-    "filename": "20 - Gracie Abrams - I Love You, I'm Sorry (Live) ｜ Vevo Extended Play.mp3",
-    "path": "music/songs/20 - Gracie Abrams - I Love You, I'm Sorry (Live) ｜ Vevo Extended Play.mp3"
+    "filename": "20 - Gracie Abrams - I Love You, I_m Sorry (Live) ｜ Vevo Extended Play.mp3",
+    "path": "music/songs/20 - Gracie Abrams - I Love You, I_m Sorry (Live) ｜ Vevo Extended Play.mp3"
   },
   {
-    "id": 10,
+    "id": 64,
+    "title": "Take Me To Church",
+    "artist": "Hozier",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Hozier%20-%20Take%20Me%20To%20Church.mp3",
+    "duration": "10:23",
+    "filename": "01. Hozier - Take Me To Church.mp3",
+    "path": "music/songs/01. Hozier - Take Me To Church.mp3"
+  },
+  {
+    "id": 111,
+    "title": "Believer",
+    "artist": "Imagine Dragons",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/10%20-%20Imagine%20Dragons%20-%20Believer.mp3",
+    "duration": "8:37",
+    "filename": "10 - Imagine Dragons - Believer.mp3",
+    "path": "music/songs/10 - Imagine Dragons - Believer.mp3"
+  },
+  {
+    "id": 14,
+    "title": "Bones",
+    "artist": "Imagine Dragons",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Imagine%20Dragons%20-%20Bones.mp3",
+    "duration": "7:06",
+    "filename": "01 - Imagine Dragons - Bones.mp3",
+    "path": "music/songs/01 - Imagine Dragons - Bones.mp3"
+  },
+  {
+    "id": 15,
+    "title": "Natural",
+    "artist": "Imagine Dragons",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Imagine%20Dragons%20-%20Natural.mp3",
+    "duration": "8:16",
+    "filename": "01 - Imagine Dragons - Natural.mp3",
+    "path": "music/songs/01 - Imagine Dragons - Natural.mp3"
+  },
+  {
+    "id": 65,
+    "title": "Radioactive",
+    "artist": "Imagine Dragons",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Imagine%20Dragons%20-%20Radioactive.mp3",
+    "duration": "7:55",
+    "filename": "01. Imagine Dragons - Radioactive.mp3",
+    "path": "music/songs/01. Imagine Dragons - Radioactive.mp3"
+  },
+  {
+    "id": 75,
+    "title": "Thunder",
+    "artist": "Imagine Dragons",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02%20-%20Imagine%20Dragons%20-%20Thunder.mp3",
+    "duration": "8:00",
+    "filename": "02 - Imagine Dragons - Thunder.mp3",
+    "path": "music/songs/02 - Imagine Dragons - Thunder.mp3"
+  },
+  {
+    "id": 112,
     "title": "Love Story (Official Music Video)",
     "artist": "Indila",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/10%20-%20Indila%20-%20Love%20Story%20(Official%20Music%20Video).mp3",
@@ -82,6 +415,87 @@
   },
   {
     "id": 16,
+    "title": "Glimpse of Us",
+    "artist": "Joji",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Joji%20-%20Glimpse%20of%20Us.mp3",
+    "duration": "10:08",
+    "filename": "01 - Joji - Glimpse of Us.mp3",
+    "path": "music/songs/01 - Joji - Glimpse of Us.mp3"
+  },
+  {
+    "id": 137,
+    "title": "her (official lyric video)",
+    "artist": "JVKE",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/JVKE%20-%20her%20(official%20lyric%20video).mp3",
+    "duration": "7:11",
+    "filename": "JVKE - her (official lyric video).mp3",
+    "path": "music/songs/JVKE - her (official lyric video).mp3"
+  },
+  {
+    "id": 139,
+    "title": "L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev",
+    "artist": "Kaavalaai Chekavar Lyrical Video",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3",
+    "duration": "10:12",
+    "filename": "Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3",
+    "path": "music/songs/Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3"
+  },
+  {
+    "id": 87,
+    "title": "VILLAIN",
+    "artist": "KDA",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/03%20-%20KDA%20-%20VILLAIN.mp3",
+    "duration": "8:31",
+    "filename": "03 - KDA - VILLAIN.mp3",
+    "path": "music/songs/03 - KDA - VILLAIN.mp3"
+  },
+  {
+    "id": 66,
+    "title": "Somewhere Only We Know",
+    "artist": "Keane",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Keane%20-%20Somewhere%20Only%20We%20Know.mp3",
+    "duration": "10:02",
+    "filename": "01. Keane - Somewhere Only We Know.mp3",
+    "path": "music/songs/01. Keane - Somewhere Only We Know.mp3"
+  },
+  {
+    "id": 95,
+    "title": "All I Want",
+    "artist": "Kodaline",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/05%20-%20Kodaline%20-%20All%20I%20Want.mp3",
+    "duration": "12:57",
+    "filename": "05 - Kodaline - All I Want.mp3",
+    "path": "music/songs/05 - Kodaline - All I Want.mp3"
+  },
+  {
+    "id": 17,
+    "title": "Die With A Smile",
+    "artist": "Lady Gaga",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Lady%20Gaga%20-%20Die%20With%20A%20Smile.mp3",
+    "duration": "10:40",
+    "filename": "01 - Lady Gaga - Die With A Smile.mp3",
+    "path": "music/songs/01 - Lady Gaga - Die With A Smile.mp3"
+  },
+  {
+    "id": 18,
+    "title": "Born To Die",
+    "artist": "Lana Del Rey",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Lana%20Del%20Rey%20-%20Born%20To%20Die.mp3",
+    "duration": "12:07",
+    "filename": "01 - Lana Del Rey - Born To Die.mp3",
+    "path": "music/songs/01 - Lana Del Rey - Born To Die.mp3"
+  },
+  {
+    "id": 76,
+    "title": "Chemtrails Over The Country Club",
+    "artist": "Lana Del Rey",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02%20-%20Lana%20Del%20Rey%20-%20Chemtrails%20Over%20The%20Country%20Club.mp3",
+    "duration": "11:39",
+    "filename": "02 - Lana Del Rey - Chemtrails Over The Country Club.mp3",
+    "path": "music/songs/02 - Lana Del Rey - Chemtrails Over The Country Club.mp3"
+  },
+  {
+    "id": 126,
     "title": "Love",
     "artist": "Lana Del Rey",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/16%20-%20Lana%20Del%20Rey%20-%20Love.mp3",
@@ -90,7 +504,61 @@
     "path": "music/songs/16 - Lana Del Rey - Love.mp3"
   },
   {
-    "id": 1,
+    "id": 19,
+    "title": "Say Yes To Heaven",
+    "artist": "Lana Del Rey",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Lana%20Del%20Rey%20-%20Say%20Yes%20To%20Heaven.mp3",
+    "duration": "8:53",
+    "filename": "01 - Lana Del Rey - Say Yes To Heaven.mp3",
+    "path": "music/songs/01 - Lana Del Rey - Say Yes To Heaven.mp3"
+  },
+  {
+    "id": 115,
+    "title": "Summertime Sadness",
+    "artist": "Lana Del Rey",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/11.%20Lana%20Del%20Rey%20-%20Summertime%20Sadness.mp3",
+    "duration": "11:13",
+    "filename": "11. Lana Del Rey - Summertime Sadness.mp3",
+    "path": "music/songs/11. Lana Del Rey - Summertime Sadness.mp3"
+  },
+  {
+    "id": 20,
+    "title": "Young And Beautiful",
+    "artist": "Lana Del Rey",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Lana%20Del%20Rey%20-%20Young%20And%20Beautiful.mp3",
+    "duration": "10:12",
+    "filename": "01 - Lana Del Rey - Young And Beautiful.mp3",
+    "path": "music/songs/01 - Lana Del Rey - Young And Beautiful.mp3"
+  },
+  {
+    "id": 21,
+    "title": "Burn It All Down",
+    "artist": "League Of Legends",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20League%20Of%20Legends%20-%20Burn%20It%20All%20Down.mp3",
+    "duration": "8:42",
+    "filename": "01 - League Of Legends - Burn It All Down.mp3",
+    "path": "music/songs/01 - League Of Legends - Burn It All Down.mp3"
+  },
+  {
+    "id": 22,
+    "title": "Legends Never Die",
+    "artist": "League Of Legends",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20League%20Of%20Legends%20-%20Legends%20Never%20Die.mp3",
+    "duration": "9:58",
+    "filename": "01 - League Of Legends - Legends Never Die.mp3",
+    "path": "music/songs/01 - League Of Legends - Legends Never Die.mp3"
+  },
+  {
+    "id": 23,
+    "title": "RISE",
+    "artist": "League Of Legends",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20League%20Of%20Legends%20-%20RISE.mp3",
+    "duration": "8:17",
+    "filename": "01 - League Of Legends - RISE.mp3",
+    "path": "music/songs/01 - League Of Legends - RISE.mp3"
+  },
+  {
+    "id": 24,
     "title": "ceilings (official video)",
     "artist": "Lizzy McAlpine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Lizzy%20McAlpine%20-%20ceilings%20(official%20video).mp3",
@@ -99,7 +567,25 @@
     "path": "music/songs/01 - Lizzy McAlpine - ceilings (official video).mp3"
   },
   {
-    "id": 8,
+    "id": 25,
+    "title": "The Night We Met",
+    "artist": "Lord Huron",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Lord%20Huron%20-%20The%20Night%20We%20Met.mp3",
+    "duration": "8:53",
+    "filename": "01 - Lord Huron - The Night We Met.mp3",
+    "path": "music/songs/01 - Lord Huron - The Night We Met.mp3"
+  },
+  {
+    "id": 67,
+    "title": "Pretty Brown Eyes",
+    "artist": "Lovesick By Choice",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Lovesick%20By%20Choice%20-%20Pretty%20Brown%20Eyes.mp3",
+    "duration": "4:58",
+    "filename": "01. Lovesick By Choice - Pretty Brown Eyes.mp3",
+    "path": "music/songs/01. Lovesick By Choice - Pretty Brown Eyes.mp3"
+  },
+  {
+    "id": 107,
     "title": "MEAN! (Official Music Video)",
     "artist": "Madeline the Person",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/08%20-%20Madeline%20the%20Person%20-%20MEAN!%20(Official%20Music%20Video).mp3",
@@ -108,7 +594,52 @@
     "path": "music/songs/08 - Madeline the Person - MEAN! (Official Music Video).mp3"
   },
   {
-    "id": 3,
+    "id": 26,
+    "title": "Good In Goodbye",
+    "artist": "Madison Beer",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Madison%20Beer%20-%20Good%20In%20Goodbye.mp3",
+    "duration": "6:04",
+    "filename": "01 - Madison Beer - Good In Goodbye.mp3",
+    "path": "music/songs/01 - Madison Beer - Good In Goodbye.mp3"
+  },
+  {
+    "id": 140,
+    "title": "I Can_t Fit In",
+    "artist": "Marino",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Marino%20-%20I%20Can_t%20Fit%20In.m4a",
+    "duration": "4:54",
+    "filename": "Marino - I Can_t Fit In.m4a",
+    "path": "music/songs/Marino - I Can_t Fit In.m4a"
+  },
+  {
+    "id": 27,
+    "title": "Past Lives (feat. Martin Arteta)",
+    "artist": "Martin Arteta",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Martin%20Arteta%20-%20Past%20Lives%20(feat.%20Martin%20Arteta).mp3",
+    "duration": "5:47",
+    "filename": "01 - Martin Arteta - Past Lives (feat. Martin Arteta).mp3",
+    "path": "music/songs/01 - Martin Arteta - Past Lives (feat. Martin Arteta).mp3"
+  },
+  {
+    "id": 28,
+    "title": "Astronaut In The Ocean",
+    "artist": "Masked Wolf",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Masked%20Wolf%20-%20Astronaut%20In%20The%20Ocean.mp3",
+    "duration": "5:46",
+    "filename": "01 - Masked Wolf - Astronaut In The Ocean.mp3",
+    "path": "music/songs/01 - Masked Wolf - Astronaut In The Ocean.mp3"
+  },
+  {
+    "id": 77,
+    "title": "Homage",
+    "artist": "Mild High Club",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02%20-%20Mild%20High%20Club%20-%20Homage.mp3",
+    "duration": "7:50",
+    "filename": "02 - Mild High Club - Homage.mp3",
+    "path": "music/songs/02 - Mild High Club - Homage.mp3"
+  },
+  {
+    "id": 88,
     "title": "My Love Mine All Mine (Official Lyric Video)",
     "artist": "Mitski",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/03%20-%20Mitski%20-%20My%20Love%20Mine%20All%20Mine%20(Official%20Lyric%20Video).mp3",
@@ -117,7 +648,52 @@
     "path": "music/songs/03 - Mitski - My Love Mine All Mine (Official Lyric Video).mp3"
   },
   {
-    "id": 15,
+    "id": 124,
+    "title": "Cheri Cheri Lady",
+    "artist": "Modern Talking",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/15%20-%20Modern%20Talking%20-%20Cheri%20Cheri%20Lady.mp3",
+    "duration": "9:30",
+    "filename": "15 - Modern Talking - Cheri Cheri Lady.mp3",
+    "path": "music/songs/15 - Modern Talking - Cheri Cheri Lady.mp3"
+  },
+  {
+    "id": 110,
+    "title": "After Dark",
+    "artist": "Mr.Kitty",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/09%20-%20Mr.Kitty%20-%20After%20Dark.mp3",
+    "duration": "11:00",
+    "filename": "09 - Mr.Kitty - After Dark.mp3",
+    "path": "music/songs/09 - Mr.Kitty - After Dark.mp3"
+  },
+  {
+    "id": 29,
+    "title": "DARKSIDE",
+    "artist": "Neoni",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Neoni%20-%20DARKSIDE.mp3",
+    "duration": "7:11",
+    "filename": "01 - Neoni - DARKSIDE.mp3",
+    "path": "music/songs/01 - Neoni - DARKSIDE.mp3"
+  },
+  {
+    "id": 30,
+    "title": "die first",
+    "artist": "Nessa Barrett",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Nessa%20Barrett%20-%20die%20first.mp3",
+    "duration": "7:35",
+    "filename": "01 - Nessa Barrett - die first.mp3",
+    "path": "music/songs/01 - Nessa Barrett - die first.mp3"
+  },
+  {
+    "id": 68,
+    "title": "Those Eyes",
+    "artist": "New West",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20New%20West%20-%20Those%20Eyes.mp3",
+    "duration": "9:25",
+    "filename": "01. New West - Those Eyes.mp3",
+    "path": "music/songs/01. New West - Those Eyes.mp3"
+  },
+  {
+    "id": 125,
     "title": "How",
     "artist": "NewDad",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/15%20-%20NewDad%20-%20How.mp3",
@@ -126,7 +702,169 @@
     "path": "music/songs/15 - NewDad - How.mp3"
   },
   {
-    "id": 14,
+    "id": 141,
+    "title": "Reed Wonder, Aurora Olivas - I_m All In",
+    "artist": "Ninjaxxp",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Ninjaxxp%20-%20Reed%20Wonder%2C%20Aurora%20Olivas%20-%20I_m%20All%20In.m4a",
+    "duration": "5:55",
+    "filename": "Ninjaxxp - Reed Wonder, Aurora Olivas - I_m All In.m4a",
+    "path": "music/songs/Ninjaxxp - Reed Wonder, Aurora Olivas - I_m All In.m4a"
+  },
+  {
+    "id": 89,
+    "title": "Anyway",
+    "artist": "Noah Kahan",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/04%20-%20Noah%20Kahan%20-%20Anyway.mp3",
+    "duration": "13:34",
+    "filename": "04 - Noah Kahan - Anyway.mp3",
+    "path": "music/songs/04 - Noah Kahan - Anyway.mp3"
+  },
+  {
+    "id": 143,
+    "title": "drivers license (Lyric Video)",
+    "artist": "Olivia Rodrigo",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Olivia%20Rodrigo%20-%20drivers%20license%20(Lyric%20Video).mp3",
+    "duration": "10:09",
+    "filename": "Olivia Rodrigo - drivers license (Lyric Video).mp3",
+    "path": "music/songs/Olivia Rodrigo - drivers license (Lyric Video).mp3"
+  },
+  {
+    "id": 31,
+    "title": "LABOUR (the cacophony)",
+    "artist": "Paris Paloma",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Paris%20Paloma%20-%20LABOUR%20(the%20cacophony).mp3",
+    "duration": "10:31",
+    "filename": "01 - Paris Paloma - LABOUR (the cacophony).mp3",
+    "path": "music/songs/01 - Paris Paloma - LABOUR (the cacophony).mp3"
+  },
+  {
+    "id": 69,
+    "title": "Let Her Go",
+    "artist": "Passenger",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Passenger%20-%20Let%20Her%20Go.mp3",
+    "duration": "10:50",
+    "filename": "01. Passenger - Let Her Go.mp3",
+    "path": "music/songs/01. Passenger - Let Her Go.mp3"
+  },
+  {
+    "id": 32,
+    "title": "Je te laisserai des mots",
+    "artist": "Patrick Watson",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Patrick%20Watson%20-%20Je%20te%20laisserai%20des%20mots.mp3",
+    "duration": "7:12",
+    "filename": "01 - Patrick Watson - Je te laisserai des mots.mp3",
+    "path": "music/songs/01 - Patrick Watson - Je te laisserai des mots.mp3"
+  },
+  {
+    "id": 70,
+    "title": "In My Head",
+    "artist": "Peter Manos",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Peter%20Manos%20-%20In%20My%20Head.mp3",
+    "duration": "9:14",
+    "filename": "01. Peter Manos - In My Head.mp3",
+    "path": "music/songs/01. Peter Manos - In My Head.mp3"
+  },
+  {
+    "id": 33,
+    "title": "death bed (coffee for your head)",
+    "artist": "Powfu",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Powfu%20-%20death%20bed%20(coffee%20for%20your%20head).mp3",
+    "duration": "7:38",
+    "filename": "01 - Powfu - death bed (coffee for your head).mp3",
+    "path": "music/songs/01 - Powfu - death bed (coffee for your head).mp3"
+  },
+  {
+    "id": 90,
+    "title": "Co2",
+    "artist": "Prateek Kuhad",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/04%20-%20Prateek%20Kuhad%20-%20Co2.mp3",
+    "duration": "6:57",
+    "filename": "04 - Prateek Kuhad - Co2.mp3",
+    "path": "music/songs/04 - Prateek Kuhad - Co2.mp3"
+  },
+  {
+    "id": 71,
+    "title": "No Surprises",
+    "artist": "Radiohead",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01.%20Radiohead%20-%20No%20Surprises.mp3",
+    "duration": "9:48",
+    "filename": "01. Radiohead - No Surprises.mp3",
+    "path": "music/songs/01. Radiohead - No Surprises.mp3"
+  },
+  {
+    "id": 34,
+    "title": "Suzume (feat. Toaka)",
+    "artist": "Radwimps",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Radwimps%20-%20Suzume%20(feat.%20Toaka).mp3",
+    "duration": "10:07",
+    "filename": "01 - Radwimps - Suzume (feat. Toaka).mp3",
+    "path": "music/songs/01 - Radwimps - Suzume (feat. Toaka).mp3"
+  },
+  {
+    "id": 35,
+    "title": "Light It Up",
+    "artist": "Robin Hustin",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Robin%20Hustin%20-%20Light%20It%20Up.mp3",
+    "duration": "7:58",
+    "filename": "01 - Robin Hustin - Light It Up.mp3",
+    "path": "music/songs/01 - Robin Hustin - Light It Up.mp3"
+  },
+  {
+    "id": 108,
+    "title": "If By Chance",
+    "artist": "Ruth B.",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/08%20-%20Ruth%20B.%20-%20If%20By%20Chance.mp3",
+    "duration": "12:52",
+    "filename": "08 - Ruth B. - If By Chance.mp3",
+    "path": "music/songs/08 - Ruth B. - If By Chance.mp3"
+  },
+  {
+    "id": 36,
+    "title": "Legends Are Made",
+    "artist": "Sam Tinnesz",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Sam%20Tinnesz%20-%20Legends%20Are%20Made.mp3",
+    "duration": "7:09",
+    "filename": "01 - Sam Tinnesz - Legends Are Made.mp3",
+    "path": "music/songs/01 - Sam Tinnesz - Legends Are Made.mp3"
+  },
+  {
+    "id": 37,
+    "title": "Play with Fire (feat. Yacht Money)",
+    "artist": "Sam Tinnesz",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Sam%20Tinnesz%20-%20Play%20with%20Fire%20(feat.%20Yacht%20Money).mp3",
+    "duration": "7:40",
+    "filename": "01 - Sam Tinnesz - Play with Fire (feat. Yacht Money).mp3",
+    "path": "music/songs/01 - Sam Tinnesz - Play with Fire (feat. Yacht Money).mp3"
+  },
+  {
+    "id": 38,
+    "title": "I Really Want to Stay at Your House",
+    "artist": "Samuel Kim",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Samuel%20Kim%20-%20I%20Really%20Want%20to%20Stay%20at%20Your%20House.mp3",
+    "duration": "10:29",
+    "filename": "01 - Samuel Kim - I Really Want to Stay at Your House.mp3",
+    "path": "music/songs/01 - Samuel Kim - I Really Want to Stay at Your House.mp3"
+  },
+  {
+    "id": 39,
+    "title": "Dancing With Your Ghost",
+    "artist": "Sasha Alex Sloan",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Sasha%20Alex%20Sloan%20-%20Dancing%20With%20Your%20Ghost.mp3",
+    "duration": "8:26",
+    "filename": "01 - Sasha Alex Sloan - Dancing With Your Ghost.mp3",
+    "path": "music/songs/01 - Sasha Alex Sloan - Dancing With Your Ghost.mp3"
+  },
+  {
+    "id": 40,
+    "title": "Older",
+    "artist": "Sasha Alex Sloan",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Sasha%20Alex%20Sloan%20-%20Older.mp3",
+    "duration": "8:06",
+    "filename": "01 - Sasha Alex Sloan - Older.mp3",
+    "path": "music/songs/01 - Sasha Alex Sloan - Older.mp3"
+  },
+  {
+    "id": 123,
     "title": "Smiling When I Die (Official Video)",
     "artist": "Sasha Alex Sloan",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/14%20-%20Sasha%20Alex%20Sloan%20-%20Smiling%20When%20I%20Die%20(Official%20Video).mp3",
@@ -135,7 +873,16 @@
     "path": "music/songs/14 - Sasha Alex Sloan - Smiling When I Die (Official Video).mp3"
   },
   {
-    "id": 6,
+    "id": 41,
+    "title": "everything",
+    "artist": "Sensi Sye",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Sensi%20Sye%20-%20everything.mp3",
+    "duration": "6:56",
+    "filename": "01 - Sensi Sye - everything.mp3",
+    "path": "music/songs/01 - Sensi Sye - everything.mp3"
+  },
+  {
+    "id": 100,
     "title": "＂The Pool＂ (Official Audio)",
     "artist": "Stephen Sanchez",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/06 - Stephen Sanchez - ＂The Pool＂ (Official Audio).mp3",
@@ -144,7 +891,52 @@
     "path": "music/songs/06 - Stephen Sanchez - ＂The Pool＂ (Official Audio).mp3"
   },
   {
-    "id": 2,
+    "id": 42,
+    "title": "Until I Found You",
+    "artist": "Stephen Sanchez",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Stephen%20Sanchez%20-%20Until%20I%20Found%20You.mp3",
+    "duration": "7:39",
+    "filename": "01 - Stephen Sanchez - Until I Found You.mp3",
+    "path": "music/songs/01 - Stephen Sanchez - Until I Found You.mp3"
+  },
+  {
+    "id": 43,
+    "title": "Bad Habit",
+    "artist": "Steve Lacy",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Steve%20Lacy%20-%20Bad%20Habit.mp3",
+    "duration": "10:00",
+    "filename": "01 - Steve Lacy - Bad Habit.mp3",
+    "path": "music/songs/01 - Steve Lacy - Bad Habit.mp3"
+  },
+  {
+    "id": 44,
+    "title": "Cradles",
+    "artist": "Sub Urban",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Sub%20Urban%20-%20Cradles.mp3",
+    "duration": "8:51",
+    "filename": "01 - Sub Urban - Cradles.mp3",
+    "path": "music/songs/01 - Sub Urban - Cradles.mp3"
+  },
+  {
+    "id": 45,
+    "title": "Good Looking",
+    "artist": "Suki Waterhouse",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Suki%20Waterhouse%20-%20Good%20Looking.mp3",
+    "duration": "9:02",
+    "filename": "01 - Suki Waterhouse - Good Looking.mp3",
+    "path": "music/songs/01 - Suki Waterhouse - Good Looking.mp3"
+  },
+  {
+    "id": 46,
+    "title": "Freaks",
+    "artist": "Surf Curse",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Surf%20Curse%20-%20Freaks.mp3",
+    "duration": "6:16",
+    "filename": "01 - Surf Curse - Freaks.mp3",
+    "path": "music/songs/01 - Surf Curse - Freaks.mp3"
+  },
+  {
+    "id": 78,
     "title": "you broke me first (Official Video)",
     "artist": "Tate McRae",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02%20-%20Tate%20McRae%20-%20you%20broke%20me%20first%20(Official%20Video).mp3",
@@ -153,7 +945,25 @@
     "path": "music/songs/02 - Tate McRae - you broke me first (Official Video).mp3"
   },
   {
-    "id": 19,
+    "id": 119,
+    "title": "Everybody Wants To Rule The World",
+    "artist": "Tears For Fears",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/13%20-%20Tears%20For%20Fears%20-%20Everybody%20Wants%20To%20Rule%20The%20World.mp3",
+    "duration": "10:43",
+    "filename": "13 - Tears For Fears - Everybody Wants To Rule The World.mp3",
+    "path": "music/songs/13 - Tears For Fears - Everybody Wants To Rule The World.mp3"
+  },
+  {
+    "id": 116,
+    "title": "Iris",
+    "artist": "The Goo Goo Dolls",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/11.%20The%20Goo%20Goo%20Dolls%20-%20Iris.mp3",
+    "duration": "12:16",
+    "filename": "11. The Goo Goo Dolls - Iris.mp3",
+    "path": "music/songs/11. The Goo Goo Dolls - Iris.mp3"
+  },
+  {
+    "id": 129,
     "title": "Far From Any Road (True Detective Opening Video)",
     "artist": "The Handsome Family",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/19%20-%20The%20Handsome%20Family%20-%20Far%20From%20Any%20Road%20(True%20Detective%20Opening%20Video).mp3",
@@ -162,7 +972,25 @@
     "path": "music/songs/19 - The Handsome Family - Far From Any Road (True Detective Opening Video).mp3"
   },
   {
-    "id": 5,
+    "id": 47,
+    "title": "In This Shirt",
+    "artist": "The Irrepressibles",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20The%20Irrepressibles%20-%20In%20This%20Shirt.mp3",
+    "duration": "14:08",
+    "filename": "01 - The Irrepressibles - In This Shirt.mp3",
+    "path": "music/songs/01 - The Irrepressibles - In This Shirt.mp3"
+  },
+  {
+    "id": 48,
+    "title": "...baby one more time",
+    "artist": "The Marías",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01 - The Marías - ...baby one more time.mp3",
+    "duration": "5:20",
+    "filename": "01 - The Marías - ...baby one more time.mp3",
+    "path": "music/songs/01 - The Marías - ...baby one more time.mp3"
+  },
+  {
+    "id": 96,
     "title": "Hold It Together",
     "artist": "The Marías",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/05 - The Marías - Hold It Together.mp3",
@@ -171,7 +999,196 @@
     "path": "music/songs/05 - The Marías - Hold It Together.mp3"
   },
   {
-    "id": 18,
+    "id": 144,
+    "title": "Nobody New",
+    "artist": "The Marías",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/The Marías - Nobody New.mp3",
+    "duration": "9:03",
+    "filename": "The Marías - Nobody New.mp3",
+    "path": "music/songs/The Marías - Nobody New.mp3"
+  },
+  {
+    "id": 97,
+    "title": "Softcore",
+    "artist": "The Neighbourhood",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/05%20-%20The%20Neighbourhood%20-%20Softcore.mp3",
+    "duration": "8:56",
+    "filename": "05 - The Neighbourhood - Softcore.mp3",
+    "path": "music/songs/05 - The Neighbourhood - Softcore.mp3"
+  },
+  {
+    "id": 93,
+    "title": "Sweater Weather",
+    "artist": "The Neighbourhood",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/04.%20The%20Neighbourhood%20-%20Sweater%20Weather.mp3",
+    "duration": "10:14",
+    "filename": "04. The Neighbourhood - Sweater Weather.mp3",
+    "path": "music/songs/04. The Neighbourhood - Sweater Weather.mp3"
+  },
+  {
+    "id": 49,
+    "title": "Notion",
+    "artist": "The Rare Occasions",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20The%20Rare%20Occasions%20-%20Notion.mp3",
+    "duration": "8:18",
+    "filename": "01 - The Rare Occasions - Notion.mp3",
+    "path": "music/songs/01 - The Rare Occasions - Notion.mp3"
+  },
+  {
+    "id": 91,
+    "title": "Born For This",
+    "artist": "The Score",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/04%20-%20The%20Score%20-%20Born%20For%20This.mp3",
+    "duration": "10:08",
+    "filename": "04 - The Score - Born For This.mp3",
+    "path": "music/songs/04 - The Score - Born For This.mp3"
+  },
+  {
+    "id": 114,
+    "title": "Fighter",
+    "artist": "The Score",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/11%20-%20The%20Score%20-%20Fighter.mp3",
+    "duration": "6:45",
+    "filename": "11 - The Score - Fighter.mp3",
+    "path": "music/songs/11 - The Score - Fighter.mp3"
+  },
+  {
+    "id": 79,
+    "title": "Stronger",
+    "artist": "The Score",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02%20-%20The%20Score%20-%20Stronger.mp3",
+    "duration": "8:21",
+    "filename": "02 - The Score - Stronger.mp3",
+    "path": "music/songs/02 - The Score - Stronger.mp3"
+  },
+  {
+    "id": 101,
+    "title": "Unstoppable",
+    "artist": "The Score",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/06%20-%20The%20Score%20-%20Unstoppable.mp3",
+    "duration": "8:19",
+    "filename": "06 - The Score - Unstoppable.mp3",
+    "path": "music/songs/06 - The Score - Unstoppable.mp3"
+  },
+  {
+    "id": 50,
+    "title": "Fly Away",
+    "artist": "TheFatRat",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20TheFatRat%20-%20Fly%20Away.mp3",
+    "duration": "8:18",
+    "filename": "01 - TheFatRat - Fly Away.mp3",
+    "path": "music/songs/01 - TheFatRat - Fly Away.mp3"
+  },
+  {
+    "id": 51,
+    "title": "Another Love",
+    "artist": "Tom Odell",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Tom%20Odell%20-%20Another%20Love.mp3",
+    "duration": "10:38",
+    "filename": "01 - Tom Odell - Another Love.mp3",
+    "path": "music/songs/01 - Tom Odell - Another Love.mp3"
+  },
+  {
+    "id": 120,
+    "title": "Heal",
+    "artist": "Tom Odell",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/13%20-%20Tom%20Odell%20-%20Heal.mp3",
+    "duration": "8:17",
+    "filename": "13 - Tom Odell - Heal.mp3",
+    "path": "music/songs/13 - Tom Odell - Heal.mp3"
+  },
+  {
+    "id": 98,
+    "title": "Go Solo",
+    "artist": "Tom Rosenthal",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/05.%20Tom%20Rosenthal%20-%20Go%20Solo.mp3",
+    "duration": "6:10",
+    "filename": "05. Tom Rosenthal - Go Solo.mp3",
+    "path": "music/songs/05. Tom Rosenthal - Go Solo.mp3"
+  },
+  {
+    "id": 52,
+    "title": "Champion",
+    "artist": "Tommee Profitt",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Tommee%20Profitt%20-%20Champion.mp3",
+    "duration": "9:12",
+    "filename": "01 - Tommee Profitt - Champion.mp3",
+    "path": "music/songs/01 - Tommee Profitt - Champion.mp3"
+  },
+  {
+    "id": 53,
+    "title": "Heathens",
+    "artist": "Twenty One Pilots",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Twenty%20One%20Pilots%20-%20Heathens.mp3",
+    "duration": "8:37",
+    "filename": "01 - Twenty One Pilots - Heathens.mp3",
+    "path": "music/songs/01 - Twenty One Pilots - Heathens.mp3"
+  },
+  {
+    "id": 54,
+    "title": "Tell Me The Truth",
+    "artist": "Two Feet",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Two%20Feet%20-%20Tell%20Me%20The%20Truth.mp3",
+    "duration": "10:26",
+    "filename": "01 - Two Feet - Tell Me The Truth.mp3",
+    "path": "music/songs/01 - Two Feet - Tell Me The Truth.mp3"
+  },
+  {
+    "id": 55,
+    "title": "Love You Still (abcdefu romantic version)",
+    "artist": "Tyler Shaw",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Tyler%20Shaw%20-%20Love%20You%20Still%20(abcdefu%20romantic%20version).mp3",
+    "duration": "6:31",
+    "filename": "01 - Tyler Shaw - Love You Still (abcdefu romantic version).mp3",
+    "path": "music/songs/01 - Tyler Shaw - Love You Still (abcdefu romantic version).mp3"
+  },
+  {
+    "id": 72,
+    "title": "01_Bea_Miller_Playground_from_the_series_Arcane_League_of_Legends",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01_Bea_Miller_Playground_from_the_series_Arcane_League_of_Legends.mp3",
+    "duration": "9:47",
+    "filename": "01_Bea_Miller_Playground_from_the_series_Arcane_League_of_Legends.mp3",
+    "path": "music/songs/01_Bea_Miller_Playground_from_the_series_Arcane_League_of_Legends.mp3"
+  },
+  {
+    "id": 73,
+    "title": "01_Imagine_Dragons_Enemy_from_the_series_Arcane_League_of_Legends",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01_Imagine_Dragons_Enemy_from_the_series_Arcane_League_of_Legends.mp3",
+    "duration": "7:23",
+    "filename": "01_Imagine_Dragons_Enemy_from_the_series_Arcane_League_of_Legends.mp3",
+    "path": "music/songs/01_Imagine_Dragons_Enemy_from_the_series_Arcane_League_of_Legends.mp3"
+  },
+  {
+    "id": 102,
+    "title": "06_Eurythmics_Sweet_Dreams_Are_Made_of_This_Remastered",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/06_Eurythmics_Sweet_Dreams_Are_Made_of_This_Remastered.mp3",
+    "duration": "9:06",
+    "filename": "06_Eurythmics_Sweet_Dreams_Are_Made_of_This_Remastered.mp3",
+    "path": "music/songs/06_Eurythmics_Sweet_Dreams_Are_Made_of_This_Remastered.mp3"
+  },
+  {
+    "id": 106,
+    "title": "07_John_Denver_Take_Me_Home,_Country_Roads_Original_Version",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/07_John_Denver_Take_Me_Home%2C_Country_Roads_Original_Version.mp3",
+    "duration": "8:05",
+    "filename": "07_John_Denver_Take_Me_Home,_Country_Roads_Original_Version.mp3",
+    "path": "music/songs/07_John_Denver_Take_Me_Home,_Country_Roads_Original_Version.mp3"
+  },
+  {
+    "id": 132,
+    "title": "29_The_Smiths_There_Is_a_Light_That_Never_Goes_Out_2011_Remaster",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/29_The_Smiths_There_Is_a_Light_That_Never_Goes_Out_2011_Remaster.mp3",
+    "duration": "10:29",
+    "filename": "29_The_Smiths_There_Is_a_Light_That_Never_Goes_Out_2011_Remaster.mp3",
+    "path": "music/songs/29_The_Smiths_There_Is_a_Light_That_Never_Goes_Out_2011_Remaster.mp3"
+  },
+  {
+    "id": 128,
     "title": "Can’t Catch Me Now (from The Hunger Games： The Ballad of Songbirds & Snakes)",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/18 - Can’t Catch Me Now (from The Hunger Games： The Ballad of Songbirds & Snakes).mp3",
@@ -180,12 +1197,111 @@
     "path": "music/songs/18 - Can’t Catch Me Now (from The Hunger Games： The Ballad of Songbirds & Snakes).mp3"
   },
   {
-    "id": 11,
+    "id": 113,
     "title": "Džanum",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/11 - Džanum.mp3",
     "duration": "5:23",
     "filename": "11 - Džanum.mp3",
     "path": "music/songs/11 - Džanum.mp3"
+  },
+  {
+    "id": 138,
+    "title": "K.",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/K..mp3",
+    "duration": "13:20",
+    "filename": "K..mp3",
+    "path": "music/songs/K..mp3"
+  },
+  {
+    "id": 142,
+    "title": "No One Noticed (Extended English)",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/No%20One%20Noticed%20(Extended%20English).mp3",
+    "duration": "11:57",
+    "filename": "No One Noticed (Extended English).mp3",
+    "path": "music/songs/No One Noticed (Extended English).mp3"
+  },
+  {
+    "id": 145,
+    "title": "The Saddest Song (Lyrics)  ~ Alec Benjamin",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/The%20Saddest%20Song%20(Lyrics)%20%20%7E%20Alec%20Benjamin.mp3",
+    "duration": "5:51",
+    "filename": "The Saddest Song (Lyrics)  ~ Alec Benjamin.mp3",
+    "path": "music/songs/The Saddest Song (Lyrics)  ~ Alec Benjamin.mp3"
+  },
+  {
+    "id": 56,
+    "title": "Everything Black (feat. Mike Taylor)",
+    "artist": "Unlike Pluto",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Unlike%20Pluto%20-%20Everything%20Black%20(feat.%20Mike%20Taylor).mp3",
+    "duration": "9:41",
+    "filename": "01 - Unlike Pluto - Everything Black (feat. Mike Taylor).mp3",
+    "path": "music/songs/01 - Unlike Pluto - Everything Black (feat. Mike Taylor).mp3"
+  },
+  {
+    "id": 58,
+    "title": "one (greater than one)",
+    "artist": "Valorant",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Valorant%20-%20one%20(greater%20than%20one).mp3",
+    "duration": "5:39",
+    "filename": "01 - Valorant - one (greater than one).mp3",
+    "path": "music/songs/01 - Valorant - one (greater than one).mp3"
+  },
+  {
+    "id": 57,
+    "title": "Die For You",
+    "artist": "VALORANT",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20VALORANT%20-%20Die%20For%20You.mp3",
+    "duration": "9:03",
+    "filename": "01 - VALORANT - Die For You.mp3",
+    "path": "music/songs/01 - VALORANT - Die For You.mp3"
+  },
+  {
+    "id": 59,
+    "title": "Goliath",
+    "artist": "Woodkid",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Woodkid%20-%20Goliath.mp3",
+    "duration": "9:54",
+    "filename": "01 - Woodkid - Goliath.mp3",
+    "path": "music/songs/01 - Woodkid - Goliath.mp3"
+  },
+  {
+    "id": 121,
+    "title": "Iron",
+    "artist": "Woodkid",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/13%20-%20Woodkid%20-%20Iron.mp3",
+    "duration": "8:33",
+    "filename": "13 - Woodkid - Iron.mp3",
+    "path": "music/songs/13 - Woodkid - Iron.mp3"
+  },
+  {
+    "id": 60,
+    "title": "Pale Yellow",
+    "artist": "Woodkid",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Woodkid%20-%20Pale%20Yellow.mp3",
+    "duration": "10:40",
+    "filename": "01 - Woodkid - Pale Yellow.mp3",
+    "path": "music/songs/01 - Woodkid - Pale Yellow.mp3"
+  },
+  {
+    "id": 80,
+    "title": "Run Boy Run",
+    "artist": "Woodkid",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/02%20-%20Woodkid%20-%20Run%20Boy%20Run.mp3",
+    "duration": "9:02",
+    "filename": "02 - Woodkid - Run Boy Run.mp3",
+    "path": "music/songs/02 - Woodkid - Run Boy Run.mp3"
+  },
+  {
+    "id": 61,
+    "title": "blue",
+    "artist": "Yung Kai",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%20Yung%20Kai%20-%20blue.mp3",
+    "duration": "9:09",
+    "filename": "01 - Yung Kai - blue.mp3",
+    "path": "music/songs/01 - Yung Kai - blue.mp3"
   }
 ]
