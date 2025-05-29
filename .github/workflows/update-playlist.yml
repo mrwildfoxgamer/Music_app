@@ -13,38 +13,47 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
+      actions: read
+      
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
+          fetch-depth: 0
+          
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-
+          
       - name: Install dependencies
-        run: pip install requests
-
+        run: |
+          pip install requests
+          
       - name: Generate playlist
-        run: python generate_playlist.py
-
-      - name: Check for changes in playlist.json
-        id: detect_changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: |
+          python generate_playlist.py
+          
+      - name: Check for changes
+        id: changes
         run: |
           git add music/playlist.json
-          if git diff --cached --quiet; then
+          if git diff --staged --quiet; then
             echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit"
           else
             echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in playlist"
           fi
-
-      - name: Commit and push if changed
-        if: steps.detect_changes.outputs.changed == 'true'
+          
+      - name: Commit and push changes
+        if: steps.changes.outputs.changed == 'true'
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "🎵 Auto-update playlist"
+          git config --local user.name "GitHub Action Bot"
+          git commit -m "🎵 Auto-update playlist [skip ci]"
           git push
