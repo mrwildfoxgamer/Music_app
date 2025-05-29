@@ -14,7 +14,7 @@ const CONFIG = {
   // GitHub repository details
   GITHUB_OWNER: 'mrwildfoxgamer',        // Replace with your GitHub username
   GITHUB_REPO: 'mskwild',       // Replace with your repository name
-  GITHUB_TOKEN: process.env.GITHUB_TOKEN || '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', // Optional: GitHub token for private repos
+  GITHUB_TOKEN: process.env.GITHUB_TOKEN || '', // Optional: GitHub token for private repos
   
   // Music folder path in the repository (empty string for root)
   MUSIC_FOLDER: '',                // e.g., 'music', 'songs', or '' for root
