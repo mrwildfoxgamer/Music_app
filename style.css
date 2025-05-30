@@ -10,3 +10,26 @@
 .control-btn.repeat-one {
     background: #ff6b35;
 }
+
+/* Install status indicator */
+.install-status {
+    position: fixed;
+    top: 20px;
+    right: -300px;
+    background: rgba(29, 185, 84, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease;
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.install-status.show {
+    right: 20px;
+}
