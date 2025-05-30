@@ -167,27 +167,27 @@ html {
 }
 
 .control-btn.active {
-    background: #1DB954;
+    background: #174730;
     color: white;
 }
 
 .control-btn.repeat-all {
-    background: #1DB954;
+    background: #174730;
 }
 
 .control-btn.repeat-one {
-    background: #ff6b35;
+    background: #227081;
 }
 
 .play-btn {
     width: 60px;
     height: 60px;
     font-size: 1.5em;
-    background: rgba(29, 185, 84, 0.8);
+    background: rgba(23, 71, 48, 0.8);
 }
 
 .play-btn:hover {
-    background: rgba(29, 185, 84, 1);
+    background: rgba(23, 71, 48, 1);
 }
 
 .controls {
@@ -214,7 +214,7 @@ html {
 
 .progress {
     height: 100%;
-    background: linear-gradient(90deg, #1DB954, #17a848);
+    background: linear-gradient(90deg, #161751, #227081);
     width: 0%;
     transition: width 0.1s linear;
 }
@@ -249,7 +249,7 @@ html {
     appearance: none;
     width: 16px;
     height: 16px;
-    background: #1DB954;
+    background: #174730;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -257,7 +257,7 @@ html {
 .volume-slider::-moz-range-thumb {
     width: 16px;
     height: 16px;
-    background: #1DB954;
+    background: #174730;
     border-radius: 50%;
     cursor: pointer;
     border: none;
@@ -265,7 +265,7 @@ html {
 
 /* Enhanced Install Prompt Styles */
 .install-prompt {
-    background: linear-gradient(135deg, #1DB954 0%, #17a848 100%);
+    background: linear-gradient(135deg, #174730 0%, #174730 100%);
     border: none;
     border-radius: 15px;
     padding: 20px;
@@ -359,7 +359,7 @@ html {
 
 .song-item.active {
     background: rgba(29, 185, 84, 0.3);
-    border: 1px solid #1DB954;
+    border: 1px solid #174730;
 }
 
 .song-info {
