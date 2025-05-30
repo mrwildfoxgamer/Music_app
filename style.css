@@ -5,14 +5,126 @@
     box-sizing: border-box;
 }
 
-/* Body and HTML base styles */
+/* Space Background */
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background: #000000;
     color: white;
     min-height: 100vh;
     padding: 10px;
+    margin: 0;
+    position: relative;
+    overflow-x: hidden;
 }
+
+/* Stars container */
+.stars-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Galaxy background */
+.galaxy {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200vmax;
+    height: 200vmax;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.02) 50%,
+        transparent 70%
+    );
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotate-galaxy 120s linear infinite;
+    z-index: -3;
+}
+
+/* Star styles */
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    animation: twinkle 3s infinite;
+}
+
+.star-small {
+    width: 1px;
+    height: 1px;
+    animation-duration: 2s;
+}
+
+.star-medium {
+    width: 2px;
+    height: 2px;
+    animation-duration: 3s;
+}
+
+.star-large {
+    width: 3px;
+    height: 3px;
+    animation-duration: 4s;
+}
+
+/* Animations */
+@keyframes rotate-galaxy {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Shooting stars */
+.shooting-star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: shooting 8s linear infinite;
+    opacity: 0;
+}
+
+@keyframes shooting {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px) translateY(100px);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(100vw) translateY(-100px);
+    }
+}
+
+
+
 
 html {
     font-size: clamp(14px, 2.5vw, 16px);
@@ -21,14 +133,15 @@ html {
 /* Container base styles */
 .container {
     width: 100%;
-    max-width: none; /* Remove max-width constraint initially */
+    max-width: none;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     padding: clamp(20px, 5vw, 40px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-    min-height: calc(100vh - 40px); /* Take full viewport height minus padding */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+    min-height: calc(100vh - 40px);
 }
 
 /* Control button styling */
