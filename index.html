@@ -6,6 +6,7 @@
     <title>Music Player PWA</title>
     <link rel="manifest" href="manifest.json">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="space-background.js"></script>
     <meta name="theme-color" content="#1DB954">
 </head>
@@ -15,16 +16,16 @@
         <div id="installPrompt" class="install-prompt hidden">
             <h3>📱 Install Music Player</h3>
             <p>Install this app on your device for the best offline experience and quick access!</p>
-            <div class="install-buttons">
-                <button id="installBtn" class="install-btn">
-                    <span>📥</span>
-                    Install App
-                </button>
-                <button id="dismissBtn" class="install-btn dismiss-btn">
-                    <span>✕</span>
-                    Maybe Later
-                </button>
-            </div>
+           <div class="install-buttons">
+    <button id="installBtn" class="install-btn">
+        <i class="fas fa-download"></i>
+        Install App
+    </button>
+    <button id="dismissBtn" class="install-btn dismiss-btn">
+        <i class="fas fa-times"></i>
+        Maybe Later
+    </button>
+</div>
         </div>
 
         <div class="player">
@@ -43,20 +44,29 @@
                 </div>
             </div>
 
-            <div class="controls">
-                <button id="shuffleBtn" class="control-btn" title="Shuffle: Off">🔀</button>
-                <button id="prevBtn" class="control-btn">⏮</button>
-                <button id="playBtn" class="control-btn play-btn">▶</button>
-                <button id="nextBtn" class="control-btn">⏭</button>
-                <button id="repeatBtn" class="control-btn repeat-none" title="Repeat: none">🔁</button>
-            </div>
+        <div class="controls">
+    <button id="shuffleBtn" class="control-btn" title="Shuffle: Off">
+        <i class="fas fa-random"></i>
+    </button>
+    <button id="prevBtn" class="control-btn">
+        <i class="fas fa-step-backward"></i>
+    </button>
+    <button id="playBtn" class="control-btn play-btn">
+        <i class="fas fa-play"></i>
+    </button>
+    <button id="nextBtn" class="control-btn">
+        <i class="fas fa-step-forward"></i>
+    </button>
+    <button id="repeatBtn" class="control-btn repeat-none" title="Repeat: none">
+        <i class="fas fa-redo"></i>
+    </button>
+</div>
 
-            <div class="volume-container">
-                <span>🔊</span>
-                <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
-                <span id="volumeValue">100%</span>
-            </div>
-        </div>
+          <div class="volume-container">
+    <i class="fas fa-volume-up"></i>
+    <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
+    <span id="volumeValue">100%</span>
+</div>
 
         <div id="loading" class="loading">Loading playlist...</div>
         <div id="playlist" class="playlist hidden"></div>
@@ -185,25 +195,23 @@
                 this.checkiOSInstallation();
             }
 
-            checkiOSInstallation() {
-                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-                const isInStandaloneMode = window.navigator.standalone;
-                
-                if (isIOS && !isInStandaloneMode) {
-                    // Modify install prompt for iOS users
-                    setTimeout(() => {
-                        const installPrompt = document.getElementById('installPrompt');
-                        const installBtnText = document.querySelector('#installBtn');
-                        if (installPrompt && installBtnText && !this.installPromptDismissed) {
-                            installPrompt.querySelector('p').innerHTML = 
-                                'Tap the share button <strong>↗️</strong> and select "Add to Home Screen" to install this app!';
-                            installBtnText.innerHTML = '<span>ℹ️</span> Show Instructions';
-                            installPrompt.classList.remove('hidden');
-                        }
-                    }, 2000);
-                }
+           checkiOSInstallation() {
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    const isInStandaloneMode = window.navigator.standalone;
+    
+    if (isIOS && !isInStandaloneMode) {
+        setTimeout(() => {
+            const installPrompt = document.getElementById('installPrompt');
+            const installBtnText = document.querySelector('#installBtn');
+            if (installPrompt && installBtnText && !this.installPromptDismissed) {
+                installPrompt.querySelector('p').innerHTML = 
+                    'Tap the share button <i class="fas fa-share"></i> and select "Add to Home Screen" to install this app!';
+                installBtnText.innerHTML = '<i class="fas fa-info-circle"></i> Show Instructions';
+                installPrompt.classList.remove('hidden');
             }
-
+        }, 2000);
+    }
+}
             showManualInstallInstructions() {
                 const userAgent = navigator.userAgent.toLowerCase();
                 let instructions = '';
@@ -380,31 +388,31 @@
             }
 
             toggleRepeat() {
-                const modes = ['none', 'all', 'one'];
-                const currentIndex = modes.indexOf(this.repeatMode);
-                this.repeatMode = modes[(currentIndex + 1) % modes.length];
-                
-                const repeatBtn = document.getElementById('repeatBtn');
-                if (repeatBtn) {
-                    repeatBtn.classList.remove('repeat-none', 'repeat-all', 'repeat-one');
-                    repeatBtn.classList.add(`repeat-${this.repeatMode}`);
-                    repeatBtn.title = `Repeat: ${this.repeatMode}`;
-                    
-                    switch(this.repeatMode) {
-                        case 'all':
-                            repeatBtn.classList.add('active');
-                            repeatBtn.innerHTML = '🔁';
-                            break;
-                        case 'one':
-                            repeatBtn.classList.add('active');
-                            repeatBtn.innerHTML = '🔂';
-                            break;
-                        default:
-                            repeatBtn.classList.remove('active');
-                            repeatBtn.innerHTML = '🔁';
-                    }
-                }
-            }
+    const modes = ['none', 'all', 'one'];
+    const currentIndex = modes.indexOf(this.repeatMode);
+    this.repeatMode = modes[(currentIndex + 1) % modes.length];
+    
+    const repeatBtn = document.getElementById('repeatBtn');
+    if (repeatBtn) {
+        repeatBtn.classList.remove('repeat-none', 'repeat-all', 'repeat-one');
+        repeatBtn.classList.add(`repeat-${this.repeatMode}`);
+        repeatBtn.title = `Repeat: ${this.repeatMode}`;
+        
+        switch(this.repeatMode) {
+            case 'all':
+                repeatBtn.classList.add('active');
+                repeatBtn.innerHTML = '<i class="fas fa-redo"></i>';
+                break;
+            case 'one':
+                repeatBtn.classList.add('active');
+                repeatBtn.innerHTML = '<i class="fas fa-redo-alt"></i>';
+                break;
+            default:
+                repeatBtn.classList.remove('active');
+                repeatBtn.innerHTML = '<i class="fas fa-redo"></i>';
+        }
+    }
+}
 
             getNextIndex() {
                 if (this.isShuffled) {
@@ -488,14 +496,13 @@
                 this.playSong(newIndex);
             }
 
-            updatePlayState(isPlaying) {
-                this.isPlaying = isPlaying;
-                const playBtn = document.getElementById('playBtn');
-                if (playBtn) {
-                    playBtn.innerHTML = isPlaying ? '⏸️' : '▶️';
-                }
-            }
-
+          updatePlayState(isPlaying) {
+    this.isPlaying = isPlaying;
+    const playBtn = document.getElementById('playBtn');
+    if (playBtn) {
+        playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
+    }
+}
             updateProgress() {
                 if (!this.audio.duration) return;
 
