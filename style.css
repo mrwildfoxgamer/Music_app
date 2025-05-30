@@ -135,8 +135,8 @@ html {
     width: 100%;
     max-width: none;
     margin: 0 auto;
-    background: rgba(0, 0, 0, 0.15); /* Very transparent */
-    backdrop-filter: blur(3px); /* Minimal blur */
+    background: rgba(0, 0, 0, 0.1); /* Very transparent */
+    backdrop-filter: blur(1px); /* Minimal blur */
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 20px;
     padding: clamp(20px, 5vw, 40px);
