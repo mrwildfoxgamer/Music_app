@@ -33,3 +33,85 @@
 .install-status.show {
     right: 20px;
 }
+
+
+/*responsive design*/
+
+html {
+    font-size: clamp(14px, 2.5vw, 16px);
+}
+
+.container {
+    width: 100%;
+    max-width: min(95vw, 800px); /* Responsive max-width */
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: clamp(15px, 4vw, 30px); /* Responsive padding */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+    .container {
+        max-width: 600px;
+    }
+    
+    .controls {
+        gap: 30px;
+    }
+    
+    .control-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3em;
+    }
+    
+    .play-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.7em;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        max-width: 800px;
+    }
+    
+    .song-title {
+        font-size: 1.5em;
+    }
+    
+    .controls {
+        gap: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        border-radius: 15px;
+        padding: 15px;
+    }
+    
+    .controls {
+        gap: 15px;
+    }
+    
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1em;
+    }
+    
+    .play-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4em;
+    }
+}
