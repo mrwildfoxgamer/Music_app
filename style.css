@@ -129,3 +129,121 @@ body {
     padding: 10px; /* Reduced padding */
     margin: 0;
 }
+
+
+
+/* Updated responsive adjustments */
+@media (min-width: 768px) {
+    .container {
+        width: 90vw;
+        max-width: 1200px;
+    }
+    
+    /* Keep the player layout normal, don't use grid */
+    .player {
+        display: block; /* Reset to normal flow */
+    }
+    
+    .current-song {
+        margin-bottom: 30px;
+    }
+    
+    .progress-container {
+        margin: 30px 0;
+        max-width: 800px; /* Limit progress bar width */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .controls {
+        gap: 40px;
+        margin: 30px 0;
+    }
+    
+    .control-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.3em;
+    }
+    
+    .play-btn {
+        width: 70px;
+        height: 70px;
+        font-size: 1.7em;
+    }
+    
+    .volume-container {
+        max-width: 600px; /* Limit volume slider width */
+        margin: 30px auto;
+    }
+    
+    .playlist {
+        max-height: 400px;
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        width: 85vw;
+    }
+    
+    .song-title {
+        font-size: 2em;
+    }
+    
+    .song-artist {
+        font-size: 1.2em;
+    }
+    
+    .progress-container {
+        max-width: 900px;
+    }
+    
+    .controls {
+        gap: 50px;
+        margin: 40px 0;
+    }
+    
+    .control-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4em;
+    }
+    
+    .play-btn {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+    }
+    
+    .volume-container {
+        max-width: 700px;
+        margin: 40px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95vw;
+        border-radius: 15px;
+        padding: 20px;
+        min-height: calc(100vh - 20px);
+    }
+    
+    .controls {
+        gap: 15px;
+    }
+    
+    .control-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1.1em;
+    }
+    
+    .play-btn {
+        width: 55px;
+        height: 55px;
+        font-size: 1.4em;
+    }
+}
