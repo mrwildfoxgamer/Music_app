@@ -41,77 +41,91 @@ html {
     font-size: clamp(14px, 2.5vw, 16px);
 }
 
-.container {
+..container {
     width: 100%;
-    max-width: min(95vw, 800px); /* Responsive max-width */
+    max-width: none; /* Remove max-width constraint */
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 20px;
-    padding: clamp(15px, 4vw, 30px); /* Responsive padding */
+    padding: clamp(20px, 5vw, 40px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    min-height: calc(100vh - 40px); /* Take full viewport height minus padding */
 }
 
-/* Responsive adjustments */
+/* Updated responsive adjustments */
 @media (min-width: 768px) {
     .container {
-        max-width: 600px;
+        width: 90vw; /* Use 90% of viewport width */
+        max-width: 1200px; /* Only limit on very large screens */
+    }
+    
+    .player {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+    
+    .current-song {
+        grid-column: 1 / -1; /* Span full width */
     }
     
     .controls {
         gap: 30px;
+        justify-self: center;
     }
     
-    .control-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 1.3em;
-    }
-    
-    .play-btn {
-        width: 70px;
-        height: 70px;
-        font-size: 1.7em;
+    .playlist {
+        grid-column: 1 / -1;
+        max-height: 400px;
     }
 }
 
 @media (min-width: 1024px) {
     .container {
-        max-width: 800px;
+        width: 85vw;
     }
     
     .song-title {
-        font-size: 1.5em;
+        font-size: 2em;
+    }
+    
+    .song-artist {
+        font-size: 1.2em;
     }
     
     .controls {
-        gap: 40px;
+        gap: 50px;
+    }
+    
+    .control-btn {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4em;
+    }
+    
+    .play-btn {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
     }
 }
 
 @media (max-width: 480px) {
-    body {
-        padding: 10px;
-    }
-    
     .container {
+        width: 95vw;
         border-radius: 15px;
-        padding: 15px;
+        padding: 20px;
+        min-height: calc(100vh - 20px);
     }
-    
-    .controls {
-        gap: 15px;
-    }
-    
-    .control-btn {
-        width: 45px;
-        height: 45px;
-        font-size: 1.1em;
-    }
-    
-    .play-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 1.4em;
-    }
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    min-height: 100vh;
+    padding: 10px; /* Reduced padding */
+    margin: 0;
 }
