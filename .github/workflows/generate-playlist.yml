@@ -1,6 +1,7 @@
 name: Generate Playlist
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'music/songs/**'
