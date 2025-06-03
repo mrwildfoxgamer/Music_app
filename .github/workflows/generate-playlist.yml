@@ -28,9 +28,7 @@ jobs:
       run: node music/generate-playlist.js
     
     - name: Commit changes
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add .
-        git diff --staged --quiet || git commit -m "Auto-generate playlist"
-        git push
+      uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        commit_message: "Auto-generate playlist"
+        file_pattern: "playlist.json"
