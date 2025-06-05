@@ -1,14 +1,5 @@
 [
-  {
-    "id": 1,
-    "title": "Teeth",
-    "artist": "5 Seconds of Summer",
-    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/01%20-%205%20Seconds%20of%20Summer%20-%20Teeth.mp3",
-    "duration": "8:42",
-    "filename": "01 - 5 Seconds of Summer - Teeth.mp3",
-    "path": "music/songs/01 - 5 Seconds of Summer - Teeth.mp3"
-  },
-  {
+ {
     "id": 133,
     "title": "Loverboy",
     "artist": "A-Wall",
