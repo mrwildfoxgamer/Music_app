@@ -13,6 +13,8 @@ class EnhancedMusicPlayer {
         this.repeatMode = 'none'; // 'none', 'all', 'one'
         this.deferredPrompt = null;
         this.shuffledOrder = [];
+        this.isFocusedView = true; // Start in focused view
+        this.setupViewToggle();
         
         this.initializePlayer();
         this.loadPlaylist();
@@ -318,6 +320,36 @@ class EnhancedMusicPlayer {
             });
         }
     }
+
+    setupViewToggle() {
+    const viewToggleBtn = document.getElementById('viewToggleBtn');
+    if (viewToggleBtn) {
+        viewToggleBtn.addEventListener('click', () => this.toggleView());
+    }
+}
+
+toggleView() {
+    this.isFocusedView = !this.isFocusedView;
+    const playlist = document.getElementById('playlist');
+    const viewToggleBtn = document.getElementById('viewToggleBtn');
+    
+    if (this.isFocusedView) {
+        // Show only current song (focused view)
+        playlist.style.display = 'none';
+        if (viewToggleBtn) {
+            viewToggleBtn.innerHTML = '<i class="fas fa-list"></i>';
+            viewToggleBtn.title = 'Show Playlist';
+        }
+    } else {
+        // Show playlist
+        playlist.style.display = 'block';
+        playlist.classList.remove('hidden');
+        if (viewToggleBtn) {
+            viewToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+            viewToggleBtn.title = 'Hide Playlist';
+        }
+    }
+}
 }
 
 // Initialize enhanced music player
