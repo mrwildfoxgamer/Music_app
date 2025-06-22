@@ -20,7 +20,7 @@ const CONFIG = {
   MUSIC_FOLDER: 'music',                // e.g., 'music', 'songs', or '' for root
   
   // Supported audio file extensions
-  AUDIO_EXTENSIONS: ['.mp3', '.wav', '.ogg', '.m4a', '.aac', '.flac'],
+  AUDIO_EXTENSIONS: ['.webm','.mp3', '.wav', '.ogg', '.m4a', '.aac', '.flac'],
   
   // Output file
   OUTPUT_FILE: 'playlist.json',
