@@ -318,6 +318,7 @@ class EnhancedMusicPlayer {
             });
         }
     }
+
 }
 
 // Initialize enhanced music player

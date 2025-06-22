@@ -68,8 +68,14 @@
     <span id="volumeValue">100%</span>
 </div>
 
+<div class="view-toggle">
+    <button id="viewToggleBtn" class="control-btn" title="Show Playlist">
+        <i class="fas fa-list"></i>
+    </button>
+</div>
+
         <div id="loading" class="loading">Loading playlist...</div>
-        <div id="playlist" class="playlist hidden"></div>
+        <div id="playlist" class="playlist hidden" style="display: none;"></div>
     </div>
 
     <!-- Install Status Notification -->
@@ -91,6 +97,8 @@
                 this.deferredPrompt = null;
                 this.shuffledOrder = [];
                 this.installPromptDismissed = false;
+                this.isFocusedView = true; // Start in focused view
+                this.setupViewToggle();
                 
                 this.initializePlayer();
                 this.loadPlaylist();
@@ -195,6 +203,7 @@
                 this.checkiOSInstallation();
             }
 
+        
            checkiOSInstallation() {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     const isInStandaloneMode = window.navigator.standalone;
@@ -553,6 +562,40 @@
                     });
                 }
             }
+
+
+            setupViewToggle() {
+    const viewToggleBtn = document.getElementById('viewToggleBtn');
+    if (viewToggleBtn) {
+        viewToggleBtn.addEventListener('click', () => this.toggleView());
+    }
+}
+
+toggleView() {
+    this.isFocusedView = !this.isFocusedView;
+    const playlist = document.getElementById('playlist');
+    const viewToggleBtn = document.getElementById('viewToggleBtn');
+    
+    if (this.isFocusedView) {
+        // Show only current song (focused view)
+        playlist.style.display = 'none';
+        if (viewToggleBtn) {
+            viewToggleBtn.innerHTML = '<i class="fas fa-list"></i>';
+            viewToggleBtn.title = 'Show Playlist';
+        }
+    } else {
+        // Show playlist
+        playlist.style.display = 'block';
+        playlist.classList.remove('hidden');
+        if (viewToggleBtn) {
+            viewToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
+            viewToggleBtn.title = 'Hide Playlist';
+        }
+    }
+}
+
+
+
         }
 
         // Initialize enhanced music player
