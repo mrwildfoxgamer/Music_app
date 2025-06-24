@@ -1,0 +1,169 @@
+
+
+/* Audio Visualizer Styles */
+.visualizer-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    border-radius: 15px;
+    margin: 20px 0;
+    overflow: hidden;
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+#audioCanvas {
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: transparent;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+#audioCanvas:hover {
+    filter: brightness(1.1);
+}
+
+/* Visualizer controls */
+.visualizer-controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.visualizer-container:hover .visualizer-controls {
+    opacity: 1;
+}
+
+.visualizer-btn {
+    background: rgba(29, 185, 84, 0.8);
+    border: none;
+    border-radius: 6px;
+    padding: 6px 8px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(10px);
+}
+
+.visualizer-btn:hover {
+    background: rgba(29, 185, 84, 1);
+    transform: translateY(-1px);
+}
+
+.visualizer-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .visualizer-container {
+        height: 250px;
+        margin: 15px 0;
+    }
+    
+    .visualizer-controls {
+        bottom: 8px;
+        right: 8px;
+        gap: 6px;
+    }
+    
+    .visualizer-btn {
+        padding: 4px 6px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 480px) {
+    .visualizer-container {
+        height: 200px;
+        margin: 10px 0;
+        border-radius: 10px;
+    }
+    
+    #audioCanvas {
+        border-radius: 10px;
+    }
+}
+
+/* Integration with existing player styles */
+.player .visualizer-container {
+    background: linear-gradient(135deg, 
+        rgba(29, 185, 84, 0.05) 0%, 
+        rgba(0, 0, 0, 0.3) 100%);
+    border: 1px solid rgba(29, 185, 84, 0.2);
+}
+
+/* Animation when music is playing */
+.visualizer-container.playing {
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(29, 185, 84, 0.2);
+}
+
+.visualizer-container.playing::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        rgba(29, 185, 84, 0.3), 
+        rgba(30, 215, 96, 0.3),
+        rgba(29, 185, 84, 0.3));
+    border-radius: 17px;
+    z-index: -1;
+    animation: borderGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes borderGlow {
+    0% {
+        opacity: 0.3;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1.02);
+    }
+}
+
+/* Visualizer toggle button */
+.visualizer-toggle {
+    background: none;
+    border: 1px solid rgba(29, 185, 84, 0.5);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: #1DB954;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    margin: 10px 0;
+}
+
+.visualizer-toggle:hover {
+    background: rgba(29, 185, 84, 0.1);
+    border-color: #1DB954;
+}
+
+.visualizer-toggle.active {
+    background: #1DB954;
+    color: white;
+}
+
+/* Hide visualizer when not active */
+.visualizer-container.hidden {
+    display: none;
+}
