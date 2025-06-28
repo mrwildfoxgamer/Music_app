@@ -110,7 +110,7 @@ function createSpaceBackground() {
         const topStart = Math.random() * 100;
         const angle = Math.random() * 30 - 15;
         const size = 1 + Math.random() * 3;
-        const speed = 5 + Math.random() * 4; // Increased from 3 + Math.random() * 3
+        const speed = 3 + Math.random() * 3; // Increased from 3 + Math.random() * 3
         
         shootingStar.style.top = `${topStart}%`;
         shootingStar.style.setProperty('--angle', `${angle}deg`);
