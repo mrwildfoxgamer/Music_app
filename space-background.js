@@ -130,10 +130,9 @@ function createSpaceBackground() {
     }
     
     // Create shooting stars with faster intervals
-    setInterval(createShootingStar, 400);
     setInterval(createShootingStar, 300);
+    setInterval(createShootingStar, 400);
     setInterval(createShootingStar, 600);
-    setInterval(createShootingStar, 800);
     
     
     // Visibility API: Pause animations when tab is not visible
