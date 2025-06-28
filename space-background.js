@@ -1,54 +1,34 @@
-// Optimized space background with mobile performance improvements
+// Optimized space background with selected performance improvements
 function createSpaceBackground() {
-    // Detect mobile device
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth < 768;
-    
-    // Adjust counts based on device
-    const starCount = isMobile ? 150 : 400;
-    const spiralArms = isMobile ? 4 : 8;
-    
     // Create stars container with hardware acceleration
     const starsContainer = document.createElement('div');
     starsContainer.className = 'stars-container';
     starsContainer.style.willChange = 'transform';
     document.body.appendChild(starsContainer);
     
-    // Create galaxy core
+    // Create galaxy core with hardware acceleration
     const galaxy = document.createElement('div');
     galaxy.className = 'galaxy';
     galaxy.style.willChange = 'transform';
     starsContainer.appendChild(galaxy);
     
-    // Create spiral arms with reduced count on mobile
-    for (let i = 0; i < spiralArms; i++) {
+    // Create spiral arms with hardware acceleration
+    for (let i = 0; i < 8; i++) {
         const arm = document.createElement('div');
         arm.className = 'spiral-arm';
-        arm.style.transform = `rotate(${i * (360/spiralArms)}deg)`;
+        arm.style.transform = `rotate(${i * 45}deg)`;
         arm.style.willChange = 'transform';
         galaxy.appendChild(arm);
     }
     
-    // Batch DOM operations for stars
+    // DOM Batching: Batch DOM operations for stars
     const fragment = document.createDocumentFragment();
+    const starCount = 400;
     const starSizes = ['star-small', 'star-medium', 'star-large'];
-    const starWeights = [0.7, 0.25, 0.05]; // More small stars, fewer large ones
     
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
-        
-        // Weighted random selection for star sizes
-        const rand = Math.random();
-        let sizeIndex = 0;
-        let cumWeight = 0;
-        for (let j = 0; j < starWeights.length; j++) {
-            cumWeight += starWeights[j];
-            if (rand <= cumWeight) {
-                sizeIndex = j;
-                break;
-            }
-        }
-        
-        star.className = `star ${starSizes[sizeIndex]}`;
+        star.className = `star ${starSizes[Math.floor(Math.random() * starSizes.length)]}`;
         star.style.left = Math.random() * 100 + '%';
         star.style.top = Math.random() * 100 + '%';
         star.style.animationDelay = Math.random() * 5 + 's';
@@ -59,86 +39,144 @@ function createSpaceBackground() {
     
     starsContainer.appendChild(fragment);
     
-    // Optimized shooting star system
-    let shootingStarCount = 0;
-    const maxShootingStars = isMobile ? 2 : 4;
-    const shootingStarPool = [];
+    // Canvas-based shooting stars
+    const canvas = document.createElement('canvas');
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '1';
+    canvas.style.willChange = 'transform';
+    document.body.appendChild(canvas);
     
-    // Pre-create shooting star elements
+    const ctx = canvas.getContext('2d');
+    let animationId;
+    let isCanvasVisible = true;
+    
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+    
+    // Shooting star system
+    const shootingStars = [];
+    const maxShootingStars = 4;
+    
+    class ShootingStar {
+        constructor() {
+            this.reset();
+        }
+        
+        reset() {
+            this.x = -50;
+            this.y = Math.random() * canvas.height;
+            this.length = 50 + Math.random() * 100;
+            this.speed = 3 + Math.random() * 5;
+            this.angle = (Math.random() * 30 - 15) * Math.PI / 180;
+            this.opacity = 1;
+            this.size = 1 + Math.random() * 2;
+            this.active = true;
+        }
+        
+        update() {
+            if (!this.active) return;
+            
+            this.x += this.speed * Math.cos(this.angle);
+            this.y += this.speed * Math.sin(this.angle);
+            
+            if (this.x > canvas.width + 100 || this.y > canvas.height + 100 || this.y < -100) {
+                this.active = false;
+            }
+        }
+        
+        draw() {
+            if (!this.active) return;
+            
+            ctx.save();
+            ctx.globalAlpha = this.opacity;
+            
+            const gradient = ctx.createLinearGradient(
+                this.x, this.y,
+                this.x - this.length * Math.cos(this.angle),
+                this.y - this.length * Math.sin(this.angle)
+            );
+            
+            gradient.addColorStop(0, '#ffffff');
+            gradient.addColorStop(0.5, '#87ceeb');
+            gradient.addColorStop(1, 'transparent');
+            
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = this.size;
+            ctx.lineCap = 'round';
+            
+            ctx.beginPath();
+            ctx.moveTo(this.x, this.y);
+            ctx.lineTo(
+                this.x - this.length * Math.cos(this.angle),
+                this.y - this.length * Math.sin(this.angle)
+            );
+            ctx.stroke();
+            
+            ctx.restore();
+        }
+    }
+    
+    // Initialize shooting stars
     for (let i = 0; i < maxShootingStars; i++) {
-        const shootingStar = document.createElement('div');
-        shootingStar.className = 'shooting-star';
-        shootingStar.style.willChange = 'transform';
-        shootingStarPool.push(shootingStar);
+        shootingStars.push(new ShootingStar());
+        shootingStars[i].active = false;
     }
     
     function createShootingStar() {
-        if (shootingStarCount >= maxShootingStars) return;
-        
-        const shootingStar = shootingStarPool[shootingStarCount];
-        shootingStarCount++;
-        
-        // Reset and configure
-        const topStart = Math.random() * 100;
-        const angle = Math.random() * 30 - 15;
-        const size = 1 + Math.random() * 2; // Smaller max size
-        const speed = 2 + Math.random() * 2; // Faster animation
-        
-        shootingStar.style.top = `${topStart}%`;
-        shootingStar.style.setProperty('--angle', `${angle}deg`);
-        shootingStar.style.width = `${size}px`;
-        shootingStar.style.height = `${size}px`;
-        shootingStar.style.animationDuration = `${speed}s`;
-        
-        starsContainer.appendChild(shootingStar);
-        
-        // Remove and reset counter
-        setTimeout(() => {
-            if (shootingStar.parentNode) {
-                shootingStar.parentNode.removeChild(shootingStar);
-            }
-            shootingStarCount--;
-        }, speed * 1000);
+        const inactiveStar = shootingStars.find(star => !star.active);
+        if (inactiveStar) {
+            inactiveStar.reset();
+        }
     }
     
-    // Reduced frequency for mobile
-    const intervals = isMobile ? [2000, 3000] : [800, 1200, 1600];
-    intervals.forEach(interval => {
-        setInterval(createShootingStar, interval);
-    });
+    function animate() {
+        if (!isCanvasVisible) {
+            animationId = requestAnimationFrame(animate);
+            return;
+        }
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        shootingStars.forEach(star => {
+            star.update();
+            star.draw();
+        });
+        
+        animationId = requestAnimationFrame(animate);
+    }
     
-    // Pause animations when tab is not visible
-    let isVisible = true;
+    animate();
+    
+    // Create shooting stars with original intervals
+    setInterval(createShootingStar, 800);
+    setInterval(createShootingStar, 1200);
+    setInterval(createShootingStar, 1600);
+    
+    // Visibility API: Pause animations when tab is not visible
     document.addEventListener('visibilitychange', () => {
-        isVisible = !document.hidden;
+        const isVisible = !document.hidden;
+        isCanvasVisible = isVisible;
         starsContainer.style.animationPlayState = isVisible ? 'running' : 'paused';
         
-        // Pause all child animations
-        const allAnimated = starsContainer.querySelectorAll('.star, .spiral-arm, .shooting-star');
+        // Pause DOM-based animations
+        const allAnimated = starsContainer.querySelectorAll('.star, .spiral-arm');
         allAnimated.forEach(el => {
             el.style.animationPlayState = isVisible ? 'running' : 'paused';
         });
     });
-    
-    // Reduce frame rate on mobile using intersection observer
-    if (isMobile) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                } else {
-                    entry.target.style.animationPlayState = 'paused';
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        // Observe only shooting stars for mobile optimization
-        const shootingStars = starsContainer.querySelectorAll('.shooting-star');
-        shootingStars.forEach(star => observer.observe(star));
-    }
 }
 
-// Use requestAnimationFrame for smooth initialization
+// Faster Initialization: Use requestAnimationFrame for smooth initialization
 function initializeBackground() {
     requestAnimationFrame(() => {
         createSpaceBackground();
