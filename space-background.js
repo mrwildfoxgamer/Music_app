@@ -10,16 +10,10 @@ function createSpaceBackground() {
     galaxy.className = 'galaxy';
     starsContainer.appendChild(galaxy);
     
-    // Create spiral arms
-    for (let i = 0; i < 8; i++) {
-        const arm = document.createElement('div');
-        arm.className = 'spiral-arm';
-        arm.style.transform = `rotate(${i * 45}deg)`;
-        galaxy.appendChild(arm);
-    }
+   
     
     // Create stars
-    const starCount = 400;
+    const starCount = 300;
     const starSizes = ['star-small', 'star-medium', 'star-large'];
     
     for (let i = 0; i < starCount; i++) {
