@@ -90,7 +90,7 @@ function createSpaceBackground() {
     
     // Object Pooling: Pre-create shooting star elements
     let shootingStarCount = 0;
-    const maxShootingStars = 16;
+    const maxShootingStars = 100;
     const shootingStarPool = [];
     
     for (let i = 0; i < maxShootingStars; i++) {
