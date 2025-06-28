@@ -1,17 +1,25 @@
-// Create space background
+// Create enhanced space background
 function createSpaceBackground() {
     // Create stars container
     const starsContainer = document.createElement('div');
     starsContainer.className = 'stars-container';
     document.body.appendChild(starsContainer);
     
-    // Create galaxy
+    // Create galaxy core
     const galaxy = document.createElement('div');
     galaxy.className = 'galaxy';
-    document.body.appendChild(galaxy);
+    starsContainer.appendChild(galaxy);
+    
+    // Create spiral arms
+    for (let i = 0; i < 8; i++) {
+        const arm = document.createElement('div');
+        arm.className = 'spiral-arm';
+        arm.style.transform = `rotate(${i * 45}deg)`;
+        galaxy.appendChild(arm);
+    }
     
     // Create stars
-    const starCount = 200;
+    const starCount = 400;
     const starSizes = ['star-small', 'star-medium', 'star-large'];
     
     for (let i = 0; i < starCount; i++) {
@@ -23,7 +31,7 @@ function createSpaceBackground() {
         star.style.top = Math.random() * 100 + '%';
         
         // Random animation delay
-        star.style.animationDelay = Math.random() * 3 + 's';
+        star.style.animationDelay = Math.random() * 5 + 's';
         
         starsContainer.appendChild(star);
     }
@@ -33,9 +41,20 @@ function createSpaceBackground() {
         const shootingStar = document.createElement('div');
         shootingStar.className = 'shooting-star';
         
-        // Random starting position
-        shootingStar.style.left = '-100px';
-        shootingStar.style.top = Math.random() * 50 + '%';
+        // Random starting position and angle
+        const topStart = Math.random() * 100;
+        const angle = Math.random() * 30 - 15;
+        
+        shootingStar.style.top = `${topStart}%`;
+        shootingStar.style.setProperty('--angle', `${angle}deg`);
+        
+        // Random size and speed
+        const size = 1 + Math.random() * 3;
+        const speed = 3 + Math.random() * 3;
+        
+        shootingStar.style.width = `${size}px`;
+        shootingStar.style.height = `${size}px`;
+        shootingStar.style.animationDuration = `${speed}s`;
         
         starsContainer.appendChild(shootingStar);
         
@@ -44,11 +63,13 @@ function createSpaceBackground() {
             if (shootingStar.parentNode) {
                 shootingStar.parentNode.removeChild(shootingStar);
             }
-        }, 8000);
+        }, speed * 1000);
     }
     
-    // Create shooting stars periodically
-    setInterval(createShootingStar, 5000);
+    // Create shooting stars more frequently
+    setInterval(createShootingStar, 800);
+    setInterval(createShootingStar, 1200);
+    setInterval(createShootingStar, 1600);
 }
 
 // Initialize space background when DOM is loaded
