@@ -1,10 +1,32 @@
-// Optimized space background with selected performance improvements
+// Optimized space background with canvas stars and DOM shooting stars
 function createSpaceBackground() {
-    // Create stars container with hardware acceleration
+    // Create main container
     const starsContainer = document.createElement('div');
     starsContainer.className = 'stars-container';
     starsContainer.style.willChange = 'transform';
     document.body.appendChild(starsContainer);
+    
+    // Create canvas for background stars
+    const canvas = document.createElement('canvas');
+    canvas.className = 'stars-canvas';
+    canvas.style.position = 'fixed';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.zIndex = '-1';
+    canvas.style.pointerEvents = 'none';
+    starsContainer.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas size
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
     
     // Create galaxy core with hardware acceleration
     const galaxy = document.createElement('div');
@@ -21,23 +43,49 @@ function createSpaceBackground() {
         galaxy.appendChild(arm);
     }
     
-    // DOM Batching: Batch DOM operations for stars
-    const fragment = document.createDocumentFragment();
+    // Canvas stars data
+    const stars = [];
     const starCount = 400;
-    const starSizes = ['star-small', 'star-medium', 'star-large'];
     
+    // Initialize stars
     for (let i = 0; i < starCount; i++) {
-        const star = document.createElement('div');
-        star.className = `star ${starSizes[Math.floor(Math.random() * starSizes.length)]}`;
-        star.style.left = Math.random() * 100 + '%';
-        star.style.top = Math.random() * 100 + '%';
-        star.style.animationDelay = Math.random() * 5 + 's';
-        star.style.willChange = 'opacity';
-        
-        fragment.appendChild(star);
+        stars.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            size: Math.random() * 3 + 1,
+            opacity: Math.random(),
+            opacityDirection: Math.random() > 0.5 ? 1 : -1,
+            twinkleSpeed: Math.random() * 0.02 + 0.005
+        });
     }
     
-    starsContainer.appendChild(fragment);
+    // Animation loop for canvas stars
+    let animationId;
+    function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        stars.forEach(star => {
+            // Update opacity for twinkling effect
+            star.opacity += star.opacityDirection * star.twinkleSpeed;
+            if (star.opacity <= 0 || star.opacity >= 1) {
+                star.opacityDirection *= -1;
+                star.opacity = Math.max(0, Math.min(1, star.opacity));
+            }
+            
+            // Draw star
+            ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+            ctx.beginPath();
+            ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+            ctx.fill();
+        });
+        
+        if (!document.hidden) {
+            animationId = requestAnimationFrame(animateStars);
+        }
+    }
+    
+    // Start animation
+    animateStars();
     
     // Object Pooling: Pre-create shooting star elements
     let shootingStarCount = 0;
@@ -88,12 +136,25 @@ function createSpaceBackground() {
     // Visibility API: Pause animations when tab is not visible
     document.addEventListener('visibilitychange', () => {
         const isVisible = !document.hidden;
-        starsContainer.style.animationPlayState = isVisible ? 'running' : 'paused';
         
-        // Pause all child animations
-        const allAnimated = starsContainer.querySelectorAll('.star, .spiral-arm, .shooting-star');
+        if (isVisible) {
+            animateStars();
+        } else {
+            cancelAnimationFrame(animationId);
+        }
+        
+        // Pause spiral arms and shooting stars
+        const allAnimated = starsContainer.querySelectorAll('.spiral-arm, .shooting-star');
         allAnimated.forEach(el => {
             el.style.animationPlayState = isVisible ? 'running' : 'paused';
+        });
+    });
+    
+    // Handle window resize for stars
+    window.addEventListener('resize', () => {
+        stars.forEach(star => {
+            star.x = Math.random() * canvas.width;
+            star.y = Math.random() * canvas.height;
         });
     });
 }
