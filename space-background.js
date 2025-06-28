@@ -88,49 +88,46 @@ function createSpaceBackground() {
     // Start animation
     animateStars();
     
-    // Object Pooling: Pre-create shooting star elements
-    let shootingStarCount = 0;
-    const maxShootingStars = 100;
-    const shootingStarPool = [];
-    
-    for (let i = 0; i < maxShootingStars; i++) {
+     // Create shooting stars
+    function createShootingStar() {
         const shootingStar = document.createElement('div');
         shootingStar.className = 'shooting-star';
-        shootingStar.style.willChange = 'transform';
-        shootingStarPool.push(shootingStar);
-    }
-    
-    function createShootingStar() {
-        if (shootingStarCount >= maxShootingStars) return;
         
-        const shootingStar = shootingStarPool[shootingStarCount];
-        shootingStarCount++;
-        
-        // Reset and configure
+        // Random starting position and angle
         const topStart = Math.random() * 100;
         const angle = Math.random() * 30 - 15;
-        const size = 1 + Math.random() * 3;
-        const speed = 3 + Math.random() * 3; // Increased from 3 + Math.random() * 3
         
         shootingStar.style.top = `${topStart}%`;
         shootingStar.style.setProperty('--angle', `${angle}deg`);
+        
+        // Random size and speed
+        const size = 1 + Math.random() * 3;
+        const speed = 3 + Math.random() * 3;
+        
         shootingStar.style.width = `${size}px`;
         shootingStar.style.height = `${size}px`;
         shootingStar.style.animationDuration = `${speed}s`;
         
         starsContainer.appendChild(shootingStar);
         
-        // Remove and reset counter
+        // Remove after animation
         setTimeout(() => {
             if (shootingStar.parentNode) {
                 shootingStar.parentNode.removeChild(shootingStar);
             }
-            shootingStarCount--;
         }, speed * 1000);
     }
     
-    // Create shooting stars with faster intervals
-    setInterval(createShootingStar, 300);
+    // Create shooting stars more frequently
+    setInterval(createShootingStar, 800);
+    setInterval(createShootingStar, 1200);
+    setInterval(createShootingStar, 1600);
+}
+
+// Initialize space background when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    createSpaceBackground();
+});
    
     
     // Visibility API: Pause animations when tab is not visible
