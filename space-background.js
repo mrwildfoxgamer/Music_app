@@ -89,7 +89,7 @@ function createSpaceBackground() {
     
     // Object Pooling: Pre-create shooting star elements
     let shootingStarCount = 0;
-    const maxShootingStars = 4;
+    const maxShootingStars = 8;
     const shootingStarPool = [];
     
     for (let i = 0; i < maxShootingStars; i++) {
@@ -128,10 +128,11 @@ function createSpaceBackground() {
         }, speed * 1000);
     }
     
-    // Create shooting stars with original intervals
+    // Create shooting stars with faster intervals
+    setInterval(createShootingStar, 400);
+    setInterval(createShootingStar, 600);
     setInterval(createShootingStar, 800);
-    setInterval(createShootingStar, 1200);
-    setInterval(createShootingStar, 1600);
+    setInterval(createShootingStar, 1000);
     
     // Visibility API: Pause animations when tab is not visible
     document.addEventListener('visibilitychange', () => {
