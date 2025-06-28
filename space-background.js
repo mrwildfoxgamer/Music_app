@@ -1,5 +1,14 @@
-// Optimized space background with selected performance improvements
+// Mobile-optimized space background with performance improvements
 function createSpaceBackground() {
+    // Detect mobile device
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || 
+                     window.innerWidth <= 768;
+    
+    // Reduce complexity on mobile
+    const starCount = isMobile ? 150 : 400;
+    const spiralArms = isMobile ? 4 : 8;
+    const maxShootingStars = isMobile ? 2 : 4;
+    
     // Create stars container with hardware acceleration
     const starsContainer = document.createElement('div');
     starsContainer.className = 'stars-container';
@@ -12,19 +21,18 @@ function createSpaceBackground() {
     galaxy.style.willChange = 'transform';
     starsContainer.appendChild(galaxy);
     
-    // Create spiral arms with hardware acceleration
-    for (let i = 0; i < 8; i++) {
+    // Create spiral arms with reduced count on mobile
+    for (let i = 0; i < spiralArms; i++) {
         const arm = document.createElement('div');
         arm.className = 'spiral-arm';
-        arm.style.transform = `rotate(${i * 45}deg)`;
+        arm.style.transform = `rotate(${i * (360/spiralArms)}deg)`;
         arm.style.willChange = 'transform';
         galaxy.appendChild(arm);
     }
     
     // DOM Batching: Batch DOM operations for stars
     const fragment = document.createDocumentFragment();
-    const starCount = 400;
-    const starSizes = ['star-small', 'star-medium', 'star-large'];
+    const starSizes = isMobile ? ['star-small', 'star-medium'] : ['star-small', 'star-medium', 'star-large'];
     
     for (let i = 0; i < starCount; i++) {
         const star = document.createElement('div');
@@ -39,7 +47,7 @@ function createSpaceBackground() {
     
     starsContainer.appendChild(fragment);
     
-    // Canvas-based shooting stars
+    // Canvas-based shooting stars with mobile optimization
     const canvas = document.createElement('canvas');
     canvas.style.position = 'fixed';
     canvas.style.top = '0';
@@ -54,10 +62,18 @@ function createSpaceBackground() {
     const ctx = canvas.getContext('2d');
     let animationId;
     let isCanvasVisible = true;
+    let lastTime = 0;
+    const targetFPS = isMobile ? 30 : 60;
+    const frameInterval = 1000 / targetFPS;
     
     function resizeCanvas() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        // Use device pixel ratio for crisp rendering but limit on mobile
+        const pixelRatio = isMobile ? Math.min(window.devicePixelRatio, 2) : window.devicePixelRatio;
+        canvas.width = window.innerWidth * pixelRatio;
+        canvas.height = window.innerHeight * pixelRatio;
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        ctx.scale(pixelRatio, pixelRatio);
     }
     
     window.addEventListener('resize', resizeCanvas);
@@ -65,7 +81,6 @@ function createSpaceBackground() {
     
     // Shooting star system
     const shootingStars = [];
-    const maxShootingStars = 4;
     
     class ShootingStar {
         constructor() {
@@ -74,12 +89,12 @@ function createSpaceBackground() {
         
         reset() {
             this.x = -50;
-            this.y = Math.random() * canvas.height;
-            this.length = 50 + Math.random() * 100;
-            this.speed = 3 + Math.random() * 5;
+            this.y = Math.random() * window.innerHeight;
+            this.length = isMobile ? 30 + Math.random() * 50 : 50 + Math.random() * 100;
+            this.speed = isMobile ? 2 + Math.random() * 3 : 3 + Math.random() * 5;
             this.angle = (Math.random() * 30 - 15) * Math.PI / 180;
             this.opacity = 1;
-            this.size = 1 + Math.random() * 2;
+            this.size = isMobile ? 1 + Math.random() : 1 + Math.random() * 2;
             this.active = true;
         }
         
@@ -89,7 +104,7 @@ function createSpaceBackground() {
             this.x += this.speed * Math.cos(this.angle);
             this.y += this.speed * Math.sin(this.angle);
             
-            if (this.x > canvas.width + 100 || this.y > canvas.height + 100 || this.y < -100) {
+            if (this.x > window.innerWidth + 100 || this.y > window.innerHeight + 100 || this.y < -100) {
                 this.active = false;
             }
         }
@@ -139,13 +154,21 @@ function createSpaceBackground() {
         }
     }
     
-    function animate() {
+    function animate(currentTime) {
         if (!isCanvasVisible) {
             animationId = requestAnimationFrame(animate);
             return;
         }
         
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        // Throttle frame rate on mobile
+        if (currentTime - lastTime < frameInterval) {
+            animationId = requestAnimationFrame(animate);
+            return;
+        }
+        
+        lastTime = currentTime;
+        
+        ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
         
         shootingStars.forEach(star => {
             star.update();
@@ -157,10 +180,11 @@ function createSpaceBackground() {
     
     animate();
     
-    // Create shooting stars with original intervals
-    setInterval(createShootingStar, 800);
-    setInterval(createShootingStar, 1200);
-    setInterval(createShootingStar, 1600);
+    // Create shooting stars with adjusted intervals for mobile
+    const intervals = isMobile ? [1500, 2000] : [800, 1200, 1600];
+    intervals.forEach(interval => {
+        setInterval(createShootingStar, interval);
+    });
     
     // Visibility API: Pause animations when tab is not visible
     document.addEventListener('visibilitychange', () => {
@@ -168,22 +192,33 @@ function createSpaceBackground() {
         isCanvasVisible = isVisible;
         starsContainer.style.animationPlayState = isVisible ? 'running' : 'paused';
         
-        // Pause DOM-based animations
+        // Pause all child animations
         const allAnimated = starsContainer.querySelectorAll('.star, .spiral-arm');
         allAnimated.forEach(el => {
             el.style.animationPlayState = isVisible ? 'running' : 'paused';
         });
     });
+    
+    // Pause animations on mobile when scrolling
+    if (isMobile) {
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            isCanvasVisible = false;
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                isCanvasVisible = true;
+            }, 150);
+        });
+    }
 }
 
-// Faster Initialization: Use requestAnimationFrame for smooth initialization
+// Initialize when DOM is ready
 function initializeBackground() {
     requestAnimationFrame(() => {
         createSpaceBackground();
     });
 }
 
-// Initialize when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeBackground);
 } else {
