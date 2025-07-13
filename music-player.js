@@ -1,4 +1,4 @@
- class EnhancedMusicPlayer {
+class EnhancedMusicPlayer {
             constructor() {
                 this.audio = document.getElementById('audioPlayer');
                 this.playlist = [];
@@ -506,7 +506,172 @@ toggleView() {
     }
 }
 
+         // Add new properties for preloading
+        this.preloadCache = new Map(); // Cache for preloaded audio
+        this.preloadLimit = 5; // Number of songs to preload
+        this.preloadInProgress = false;
+        
+        this.initializePlayer();
+        this.loadPlaylist();
+        this.setupInstallPrompt();
+        this.setupMediaSession();
+        this.checkInstallStatus();
+    }
 
+    // Add new method for preloading songs
+    async preloadUpcomingSongs() {
+        if (this.preloadInProgress || !this.playlist.length) return;
+        
+        this.preloadInProgress = true;
+        
+        try {
+            let nextIndices = [];
+            let currentPos = this.currentIndex;
+            
+            // Determine next 5 song indices based on current play mode
+            for (let i = 0; i < this.preloadLimit; i++) {
+                if (this.isShuffled) {
+                    const currentShuffledPos = this.shuffledOrder.indexOf(currentPos);
+                    const nextShuffledPos = (currentShuffledPos + 1) % this.shuffledOrder.length;
+                    currentPos = this.shuffledOrder[nextShuffledPos];
+                } else {
+                    currentPos = (currentPos + 1) % this.playlist.length;
+                }
+                nextIndices.push(currentPos);
+            }
+
+            // Clear old cached songs that are no longer needed
+            for (let [index, audio] of this.preloadCache.entries()) {
+                if (!nextIndices.includes(index) && index !== this.currentIndex) {
+                    audio.src = ''; // Clear the source
+                    this.preloadCache.delete(index);
+                }
+            }
+
+            // Preload new songs
+            for (let index of nextIndices) {
+                if (!this.preloadCache.has(index)) {
+                    const song = this.playlist[index];
+                    const audio = new Audio();
+                    audio.preload = 'auto';
+                    
+                    // Create a promise that resolves when enough of the song is loaded
+                    const loadPromise = new Promise((resolve, reject) => {
+                        audio.addEventListener('canplaythrough', () => resolve(), { once: true });
+                        audio.addEventListener('error', (e) => reject(e), { once: true });
+                    });
+
+                    audio.src = song.url;
+                    this.preloadCache.set(index, audio);
+
+                    // Wait for enough of the song to be loaded before moving to the next
+                    await loadPromise;
+                }
+            }
+        } catch (error) {
+            console.error('Error preloading songs:', error);
+        } finally {
+            this.preloadInProgress = false;
+        }
+    }
+
+    // Modify playSong method to use preloaded audio when available
+    async playSong(index) {
+        if (index >= 0 && index < this.playlist.length) {
+            this.currentIndex = index;
+            const song = this.playlist[index];
+            
+            // If we have this song preloaded, use the preloaded audio
+            if (this.preloadCache.has(index)) {
+                const preloadedAudio = this.preloadCache.get(index);
+                
+                // Transfer the preloaded audio properties to the main audio element
+                this.audio.src = preloadedAudio.src;
+                await this.audio.load(); // Ensure the audio is loaded
+                
+                // Clean up the preloaded audio
+                this.preloadCache.delete(index);
+            } else {
+                // If not preloaded, load directly
+                this.audio.src = song.url;
+                await this.audio.load();
+            }
+            
+            const titleEl = document.getElementById('currentTitle');
+            const artistEl = document.getElementById('currentArtist');
+            
+            if (titleEl) titleEl.textContent = song.title;
+            if (artistEl) artistEl.textContent = song.artist;
+            
+            this.updatePlaylistView();
+            this.audio.play();
+            this.updateMediaSession();
+            
+            // Start preloading next songs
+            this.preloadUpcomingSongs();
+        }
+    }
+
+    // Modify togglePlay to trigger preloading
+    async togglePlay() {
+        if (this.playlist.length === 0) return;
+
+        if (this.audio.paused) {
+            if (!this.audio.src && this.playlist.length > 0) {
+                await this.playSong(0);
+            } else {
+                await this.audio.play();
+            }
+            // Start preloading when playback starts
+            this.preloadUpcomingSongs();
+        } else {
+            this.audio.pause();
+        }
+    }
+
+    // Modify handleSongEnd to maintain preloading
+    handleSongEnd() {
+        switch (this.repeatMode) {
+            case 'one':
+                this.audio.currentTime = 0;
+                this.audio.play();
+                break;
+            case 'all':
+                this.nextSong();
+                break;
+            default:
+                if (this.isShuffled || this.currentIndex < this.playlist.length - 1) {
+                    this.nextSong();
+                } else {
+                    this.updatePlayState(false);
+                }
+        }
+        // Ensure next songs are preloaded after current song ends
+        this.preloadUpcomingSongs();
+    }
+
+    // Clean up preloaded audio when shuffling
+    toggleShuffle() {
+        // Existing shuffle code
+        this.isShuffled = !this.isShuffled;
+        const shuffleBtn = document.getElementById('shuffleBtn');
+        
+        if (shuffleBtn) {
+            shuffleBtn.classList.toggle('active', this.isShuffled);
+            shuffleBtn.title = this.isShuffled ? 'Shuffle: On' : 'Shuffle: Off';
+        }
+        
+        if (this.isShuffled) {
+            this.createShuffledOrder();
+            // Clear existing preload cache as the order has changed
+            for (let [_, audio] of this.preloadCache.entries()) {
+                audio.src = '';
+            }
+            this.preloadCache.clear();
+            // Start preloading in new shuffle order
+            this.preloadUpcomingSongs();
+        }
+    }
 
         }
 
