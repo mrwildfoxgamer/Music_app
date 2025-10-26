@@ -45,6 +45,24 @@
     "path": "music/songs/Alec Benjamin - The Hill I Will Die On (Lyrics).mp3"
   },
   {
+    "id": 135,
+    "title": "Ordinary (Official Video)",
+    "artist": "Alex Warren",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Alex%20Warren%20-%20Ordinary%20(Official%20Video).webm",
+    "duration": "3:14",
+    "filename": "Alex Warren - Ordinary (Official Video).webm",
+    "path": "music/songs/Alex Warren - Ordinary (Official Video).webm"
+  },
+  {
+    "id": 136,
+    "title": "17 (Official Music Video)",
+    "artist": "Amanda Nolan",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Amanda%20Nolan%20-%2017%20(Official%20Music%20Video).webm",
+    "duration": "3:53",
+    "filename": "Amanda Nolan - 17 (Official Music Video).webm",
+    "path": "music/songs/Amanda Nolan - 17 (Official Music Video).webm"
+  },
+  {
     "id": 131,
     "title": "I Found (Official Lyric Video)",
     "artist": "Amber Run",
@@ -54,7 +72,7 @@
     "path": "music/songs/21 - Amber Run - I Found (Official Lyric Video).mp3"
   },
   {
-    "id": 136,
+    "id": 138,
     "title": "Save Myself (Official Video)",
     "artist": "Ashe",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Ashe%20-%20Save%20Myself%20(Official%20Video).webm",
@@ -63,7 +81,7 @@
     "path": "music/songs/Ashe - Save Myself (Official Video).webm"
   },
   {
-    "id": 135,
+    "id": 137,
     "title": "Till Forever Falls Apart (Official Video)",
     "artist": "Ashe & FINNEAS",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Ashe%20%26%20FINNEAS%20-%20Till%20Forever%20Falls%20Apart%20(Official%20Video).webm",
@@ -90,7 +108,7 @@
     "path": "music/songs/09 - Astrid S - It´s Ok If You Forget Me (Official Lyric Video).mp3"
   },
   {
-    "id": 137,
+    "id": 139,
     "title": "Panic Room (Lyrics)",
     "artist": "Au⧸Ra",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Au⧸Ra - Panic Room (Lyrics).webm",
@@ -117,7 +135,16 @@
     "path": "music/songs/03 - Beach House - Space Song.mp3"
   },
   {
-    "id": 138,
+    "id": 140,
+    "title": "She Gets The Flowers (Official Music Video)",
+    "artist": "Beth McCarthy",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Beth%20McCarthy%20-%20She%20Gets%20The%20Flowers%20(Official%20Music%20Video).webm",
+    "duration": "3:43",
+    "filename": "Beth McCarthy - She Gets The Flowers (Official Music Video).webm",
+    "path": "music/songs/Beth McCarthy - She Gets The Flowers (Official Music Video).webm"
+  },
+  {
+    "id": 141,
     "title": "Skinny Love (Official Music Video)",
     "artist": "Birdy",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Birdy%20-%20Skinny%20Love%20(Official%20Music%20Video).webm",
@@ -180,7 +207,7 @@
     "path": "music/songs/03 - Cigarettes After Sex - Sunsetz.mp3"
   },
   {
-    "id": 139,
+    "id": 142,
     "title": "I Hold You",
     "artist": "CLANN",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/CLANN%20-%20I%20Hold%20You.webm",
@@ -189,7 +216,7 @@
     "path": "music/songs/CLANN - I Hold You.webm"
   },
   {
-    "id": 140,
+    "id": 143,
     "title": "Missing You Sucks",
     "artist": "Clara Mae",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Clara%20Mae%20-%20Missing%20You%20Sucks.webm",
@@ -198,7 +225,7 @@
     "path": "music/songs/Clara Mae - Missing You Sucks.webm"
   },
   {
-    "id": 141,
+    "id": 144,
     "title": "Not Sad Anymore",
     "artist": "Clara Mae",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Clara%20Mae%20-%20Not%20Sad%20Anymore.webm",
@@ -216,7 +243,7 @@
     "path": "music/songs/07 - Conan Gray - Astronomy (Official Video).mp3"
   },
   {
-    "id": 142,
+    "id": 145,
     "title": "Heather (Official Lyric Video)",
     "artist": "Conan Gray",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Conan%20Gray%20-%20Heather%20(Official%20Lyric%20Video).mp3",
@@ -315,7 +342,7 @@
     "path": "music/songs/01 - Dean Lewis - Waves.mp3"
   },
   {
-    "id": 143,
+    "id": 146,
     "title": "Sand (Official Video)",
     "artist": "Dove Cameron",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Dove%20Cameron%20-%20Sand%20(Official%20Video).webm",
@@ -333,7 +360,16 @@
     "path": "music/songs/01 - Duncan Laurence - Arcade.mp3"
   },
   {
-    "id": 145,
+    "id": 147,
+    "title": "Nineteen",
+    "artist": "Dylan",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Dylan%20-%20Nineteen.webm",
+    "duration": "4:00",
+    "filename": "Dylan - Nineteen.webm",
+    "path": "music/songs/Dylan - Nineteen.webm"
+  },
+  {
+    "id": 149,
     "title": "Birthday Cake (Official Music Video)",
     "artist": "Dylan Conrique",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Dylan%20Conrique%20-%20Birthday%20Cake%20(Official%20Music%20Video).webm",
@@ -342,7 +378,7 @@
     "path": "music/songs/Dylan Conrique - Birthday Cake (Official Music Video).webm"
   },
   {
-    "id": 144,
+    "id": 148,
     "title": "birthday cake (duet) [Official Music Video]",
     "artist": "Dylan Conrique & Alexander Stewart",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Dylan%20Conrique%20%26%20Alexander%20Stewart%20-%20birthday%20cake%20(duet)%20%5BOfficial%20Music%20Video%5D.webm",
@@ -367,6 +403,15 @@
     "duration": "9:26",
     "filename": "01 - Egzod - Royalty.mp3",
     "path": "music/songs/01 - Egzod - Royalty.mp3"
+  },
+  {
+    "id": 150,
+    "title": "Brutus (Official Music Video)",
+    "artist": "Em Beihold",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Em%20Beihold%20-%20Brutus%20(Official%20Music%20Video).webm",
+    "duration": "2:36",
+    "filename": "Em Beihold - Brutus (Official Music Video).webm",
+    "path": "music/songs/Em Beihold - Brutus (Official Music Video).webm"
   },
   {
     "id": 121,
@@ -396,7 +441,7 @@
     "path": "music/songs/02 - Ghost - Mary On A Cross.mp3"
   },
   {
-    "id": 146,
+    "id": 151,
     "title": "Sailor Song (Official Music Video)",
     "artist": "Gigi Perez",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Gigi%20Perez%20-%20Sailor%20Song%20(Official%20Music%20Video).mp3",
@@ -423,7 +468,7 @@
     "path": "music/songs/03 - Gotye - Somebody That I Used To Know.mp3"
   },
   {
-    "id": 147,
+    "id": 152,
     "title": "21 (acoustic)",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Gracie%20Abrams%20-%2021%20(acoustic).webm",
@@ -441,7 +486,7 @@
     "path": "music/songs/20 - Gracie Abrams - I Love You, I_m Sorry (Live) ｜ Vevo Extended Play.mp3"
   },
   {
-    "id": 148,
+    "id": 153,
     "title": "Mean It",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Gracie%20Abrams%20-%20Mean%20It.webm",
@@ -450,7 +495,7 @@
     "path": "music/songs/Gracie Abrams - Mean It.webm"
   },
   {
-    "id": 149,
+    "id": 154,
     "title": "Mess It Up (Official Video)",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Gracie%20Abrams%20-%20Mess%20It%20Up%20(Official%20Video).webm",
@@ -459,7 +504,7 @@
     "path": "music/songs/Gracie Abrams - Mess It Up (Official Video).webm"
   },
   {
-    "id": 150,
+    "id": 155,
     "title": "Risk (Official Music Video)",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Gracie%20Abrams%20-%20Risk%20(Official%20Music%20Video).webm",
@@ -468,7 +513,7 @@
     "path": "music/songs/Gracie Abrams - Risk (Official Music Video).webm"
   },
   {
-    "id": 151,
+    "id": 156,
     "title": "Stay",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Gracie%20Abrams%20-%20Stay.webm",
@@ -540,7 +585,7 @@
     "path": "music/songs/10 - Indila - Love Story (Official Music Video).mp3"
   },
   {
-    "id": 152,
+    "id": 157,
     "title": "If You Ever Forget That You Love Me (Official Video)",
     "artist": "Isak Danielson",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Isak%20Danielson%20-%20If%20You%20Ever%20Forget%20That%20You%20Love%20Me%20(Official%20Video).webm",
@@ -549,7 +594,7 @@
     "path": "music/songs/Isak Danielson - If You Ever Forget That You Love Me (Official Video).webm"
   },
   {
-    "id": 155,
+    "id": 160,
     "title": "Constellations (Piano Version)",
     "artist": "Jade LeMac",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Jade%20LeMac%20-%20Constellations%20(Piano%20Version).webm",
@@ -558,7 +603,16 @@
     "path": "music/songs/Jade LeMac - Constellations (Piano Version).webm"
   },
   {
-    "id": 156,
+    "id": 161,
+    "title": "Say You Won't Let Go (Lyrics)",
+    "artist": "James Arthur",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/James%20Arthur%20-%20Say%20You%20Won't%20Let%20Go%20(Lyrics).webm",
+    "duration": "3:48",
+    "filename": "James Arthur - Say You Won't Let Go (Lyrics).webm",
+    "path": "music/songs/James Arthur - Say You Won't Let Go (Lyrics).webm"
+  },
+  {
+    "id": 162,
     "title": "2% [Official Lyric Video]",
     "artist": "Jenna Raine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Jenna%20Raine%20-%202%25%20%5BOfficial%20Lyric%20Video%5D.webm",
@@ -567,7 +621,7 @@
     "path": "music/songs/Jenna Raine - 2% [Official Lyric Video].webm"
   },
   {
-    "id": 158,
+    "id": 164,
     "title": "see you later (feat. JVKE) [Official Music Video]",
     "artist": "Jenna Raine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Jenna%20Raine%20-%20see%20you%20later%20(feat.%20JVKE)%20%5BOfficial%20Music%20Video%5D.webm",
@@ -576,7 +630,7 @@
     "path": "music/songs/Jenna Raine - see you later (feat. JVKE) [Official Music Video].webm"
   },
   {
-    "id": 157,
+    "id": 163,
     "title": "Who Am I (Official Audio)",
     "artist": "Jenna Raine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Jenna%20Raine%20-%20Who%20Am%20I%20(Official%20Audio).webm",
@@ -585,7 +639,7 @@
     "path": "music/songs/Jenna Raine - Who Am I (Official Audio).webm"
   },
   {
-    "id": 159,
+    "id": 165,
     "title": "If I Died Last Night (Official Video)",
     "artist": "Jessie Murph",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Jessie%20Murph%20-%20If%20I%20Died%20Last%20Night%20(Official%20Video).webm",
@@ -603,7 +657,7 @@
     "path": "music/songs/01 - Joji - Glimpse of Us.mp3"
   },
   {
-    "id": 153,
+    "id": 158,
     "title": "If The World Was Ending (Lyric Video) ft. Julia Michaels",
     "artist": "JP Saxe",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/JP%20Saxe%20-%20If%20The%20World%20Was%20Ending%20(Lyric%20Video)%20ft.%20Julia%20Michaels.webm",
@@ -612,7 +666,7 @@
     "path": "music/songs/JP Saxe - If The World Was Ending (Lyric Video) ft. Julia Michaels.webm"
   },
   {
-    "id": 160,
+    "id": 166,
     "title": "What A Time ft. Niall Horan",
     "artist": "Julia Michaels",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Julia%20Michaels%20-%20What%20A%20Time%20ft.%20Niall%20Horan.webm",
@@ -621,7 +675,7 @@
     "path": "music/songs/Julia Michaels - What A Time ft. Niall Horan.webm"
   },
   {
-    "id": 154,
+    "id": 159,
     "title": "her (official lyric video)",
     "artist": "JVKE",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/JVKE%20-%20her%20(official%20lyric%20video).mp3",
@@ -630,13 +684,22 @@
     "path": "music/songs/JVKE - her (official lyric video).mp3"
   },
   {
-    "id": 162,
+    "id": 168,
     "title": "L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev",
     "artist": "Kaavalaai Chekavar Lyrical Video",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3",
     "duration": "10:12",
     "filename": "Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3",
     "path": "music/songs/Kaavalaai Chekavar Lyrical Video - L2E Empuraan ｜ Mohanlal ｜ Prithviraj Sukumaran ｜ Deepak Dev.mp3"
+  },
+  {
+    "id": 169,
+    "title": "＂When I Fall＂ (Official Music Video)",
+    "artist": "Katy Nichole",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Katy Nichole - ＂When I Fall＂ (Official Music Video).webm",
+    "duration": "3:54",
+    "filename": "Katy Nichole - ＂When I Fall＂ (Official Music Video).webm",
+    "path": "music/songs/Katy Nichole - ＂When I Fall＂ (Official Music Video).webm"
   },
   {
     "id": 86,
@@ -657,7 +720,7 @@
     "path": "music/songs/01. Keane - Somewhere Only We Know.mp3"
   },
   {
-    "id": 183,
+    "id": 201,
     "title": "anatomy (Official Music Video)",
     "artist": "kenzie",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/kenzie%20-%20anatomy%20(Official%20Music%20Video).webm",
@@ -765,7 +828,16 @@
     "path": "music/songs/01 - League Of Legends - RISE.mp3"
   },
   {
-    "id": 163,
+    "id": 170,
+    "title": "Honest (Music Video)",
+    "artist": "Leanna Crawford",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Leanna%20Crawford%20-%20Honest%20(Music%20Video).webm",
+    "duration": "4:13",
+    "filename": "Leanna Crawford - Honest (Music Video).webm",
+    "path": "music/songs/Leanna Crawford - Honest (Music Video).webm"
+  },
+  {
+    "id": 171,
     "title": "drunk text me (Official Lyric Video)",
     "artist": "Lexi Jayde",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Lexi%20Jayde%20-%20drunk%20text%20me%20(Official%20Lyric%20Video).webm",
@@ -783,7 +855,7 @@
     "path": "music/songs/01 - Lizzy McAlpine - ceilings (official video).mp3"
   },
   {
-    "id": 164,
+    "id": 172,
     "title": "doomsday (official video)",
     "artist": "Lizzy McAlpine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Lizzy%20McAlpine%20-%20doomsday%20(official%20video).webm",
@@ -810,7 +882,7 @@
     "path": "music/songs/01. Lovesick By Choice - Pretty Brown Eyes.mp3"
   },
   {
-    "id": 165,
+    "id": 173,
     "title": "I Left My Heart (Official Audio)",
     "artist": "Lucy Blue",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Lucy%20Blue%20-%20I%20Left%20My%20Heart%20(Official%20Audio).webm",
@@ -819,13 +891,22 @@
     "path": "music/songs/Lucy Blue - I Left My Heart (Official Audio).webm"
   },
   {
-    "id": 166,
+    "id": 174,
     "title": "Don't Cry for your Daughters Eve (Official Animatic Music Video)",
     "artist": "Lydia the Bard",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Lydia%20the%20Bard%20-%20Don't%20Cry%20for%20your%20Daughters%20Eve%20(Official%20Animatic%20Music%20Video).webm",
     "duration": "4:45",
     "filename": "Lydia the Bard - Don't Cry for your Daughters Eve (Official Animatic Music Video).webm",
     "path": "music/songs/Lydia the Bard - Don't Cry for your Daughters Eve (Official Animatic Music Video).webm"
+  },
+  {
+    "id": 175,
+    "title": "You Might Not Like Her (Official Music Video)",
+    "artist": "Maddie Zahm",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Maddie%20Zahm%20-%20You%20Might%20Not%20Like%20Her%20(Official%20Music%20Video).webm",
+    "duration": "3:32",
+    "filename": "Maddie Zahm - You Might Not Like Her (Official Music Video).webm",
+    "path": "music/songs/Maddie Zahm - You Might Not Like Her (Official Music Video).webm"
   },
   {
     "id": 106,
@@ -846,7 +927,7 @@
     "path": "music/songs/01 - Madison Beer - Good In Goodbye.mp3"
   },
   {
-    "id": 167,
+    "id": 176,
     "title": "Selfish (Official Music Video)",
     "artist": "Madison Beer",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Madison%20Beer%20-%20Selfish%20(Official%20Music%20Video).webm",
@@ -855,7 +936,7 @@
     "path": "music/songs/Madison Beer - Selfish (Official Music Video).webm"
   },
   {
-    "id": 168,
+    "id": 177,
     "title": "I Can_t Fit In",
     "artist": "Marino",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Marino%20-%20I%20Can_t%20Fit%20In.m4a",
@@ -873,6 +954,15 @@
     "path": "music/songs/01 - Martin Arteta - Past Lives (feat. Martin Arteta).mp3"
   },
   {
+    "id": 202,
+    "title": "LIVING ROOM (Official Music Video)",
+    "artist": "maryjo, Mergui",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/maryjo%2C%20Mergui%20-%20LIVING%20ROOM%20(Official%20Music%20Video).webm",
+    "duration": "3:18",
+    "filename": "maryjo, Mergui - LIVING ROOM (Official Music Video).webm",
+    "path": "music/songs/maryjo, Mergui - LIVING ROOM (Official Music Video).webm"
+  },
+  {
     "id": 27,
     "title": "Astronaut In The Ocean",
     "artist": "Masked Wolf",
@@ -882,7 +972,7 @@
     "path": "music/songs/01 - Masked Wolf - Astronaut In The Ocean.mp3"
   },
   {
-    "id": 169,
+    "id": 178,
     "title": "do all my friends hate me？ (Official)",
     "artist": "Mckenna Grace",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Mckenna Grace - do all my friends hate me？ (Official).webm",
@@ -918,6 +1008,15 @@
     "path": "music/songs/15 - Modern Talking - Cheri Cheri Lady.mp3"
   },
   {
+    "id": 179,
+    "title": "Not All Men",
+    "artist": "Morgan St. Jean",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Morgan%20St.%20Jean%20-%20Not%20All%20Men.webm",
+    "duration": "3:09",
+    "filename": "Morgan St. Jean - Not All Men.webm",
+    "path": "music/songs/Morgan St. Jean - Not All Men.webm"
+  },
+  {
     "id": 109,
     "title": "After Dark",
     "artist": "Mr.Kitty",
@@ -925,6 +1024,15 @@
     "duration": "11:00",
     "filename": "09 - Mr.Kitty - After Dark.mp3",
     "path": "music/songs/09 - Mr.Kitty - After Dark.mp3"
+  },
+  {
+    "id": 180,
+    "title": "butterflies (visualizer)",
+    "artist": "Natalie Jane",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Natalie%20Jane%20-%20butterflies%20(visualizer).webm",
+    "duration": "2:57",
+    "filename": "Natalie Jane - butterflies (visualizer).webm",
+    "path": "music/songs/Natalie Jane - butterflies (visualizer).webm"
   },
   {
     "id": 28,
@@ -963,7 +1071,7 @@
     "path": "music/songs/15 - NewDad - How.mp3"
   },
   {
-    "id": 170,
+    "id": 181,
     "title": "Reed Wonder, Aurora Olivas - I_m All In",
     "artist": "Ninjaxxp",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Ninjaxxp%20-%20Reed%20Wonder%2C%20Aurora%20Olivas%20-%20I_m%20All%20In.m4a",
@@ -981,7 +1089,7 @@
     "path": "music/songs/04 - Noah Kahan - Anyway.mp3"
   },
   {
-    "id": 172,
+    "id": 183,
     "title": "All I Want (Official Video)",
     "artist": "Olivia Rodrigo",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Olivia%20Rodrigo%20-%20All%20I%20Want%20(Official%20Video).webm",
@@ -990,7 +1098,7 @@
     "path": "music/songs/Olivia Rodrigo - All I Want (Official Video).webm"
   },
   {
-    "id": 173,
+    "id": 184,
     "title": "drivers license (Lyric Video)",
     "artist": "Olivia Rodrigo",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Olivia%20Rodrigo%20-%20drivers%20license%20(Lyric%20Video).mp3",
@@ -1053,6 +1161,15 @@
     "path": "music/songs/04 - Prateek Kuhad - Co2.mp3"
   },
   {
+    "id": 185,
+    "title": "Murder the Man (Official Lyric Video)",
+    "artist": "Rachel Grae",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Rachel%20Grae%20-%20Murder%20the%20Man%20(Official%20Lyric%20Video).webm",
+    "duration": "2:50",
+    "filename": "Rachel Grae - Murder the Man (Official Lyric Video).webm",
+    "path": "music/songs/Rachel Grae - Murder the Man (Official Lyric Video).webm"
+  },
+  {
     "id": 70,
     "title": "No Surprises",
     "artist": "Radiohead",
@@ -1080,6 +1197,15 @@
     "path": "music/songs/01 - Robin Hustin - Light It Up.mp3"
   },
   {
+    "id": 186,
+    "title": "You And I (Official Lyric Video)",
+    "artist": "Roland Lewis",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Roland%20Lewis%20-%20You%20And%20I%20(Official%20Lyric%20Video).webm",
+    "duration": "3:38",
+    "filename": "Roland Lewis - You And I (Official Lyric Video).webm",
+    "path": "music/songs/Roland Lewis - You And I (Official Lyric Video).webm"
+  },
+  {
     "id": 107,
     "title": "If By Chance",
     "artist": "Ruth B.",
@@ -1089,7 +1215,7 @@
     "path": "music/songs/08 - Ruth B. - If By Chance.mp3"
   },
   {
-    "id": 174,
+    "id": 187,
     "title": "28 [Official Lyric Video]",
     "artist": "Ruth B. & Dean Lewis",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Ruth%20B.%20%26%20Dean%20Lewis%20-%2028%20%5BOfficial%20Lyric%20Video%5D.webm",
@@ -1098,7 +1224,7 @@
     "path": "music/songs/Ruth B. & Dean Lewis - 28 [Official Lyric Video].webm"
   },
   {
-    "id": 175,
+    "id": 188,
     "title": "Locksmith (Official Music Video)",
     "artist": "Sadie Jean",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Sadie%20Jean%20-%20Locksmith%20(Official%20Music%20Video).webm",
@@ -1107,7 +1233,7 @@
     "path": "music/songs/Sadie Jean - Locksmith (Official Music Video).webm"
   },
   {
-    "id": 176,
+    "id": 189,
     "title": "WYD Now？ (Official Music Video)",
     "artist": "Sadie Jean",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Sadie Jean - WYD Now？ (Official Music Video).webm",
@@ -1143,7 +1269,16 @@
     "path": "music/songs/01 - Samuel Kim - I Really Want to Stay at Your House.mp3"
   },
   {
-    "id": 177,
+    "id": 190,
+    "title": "Remember That Night？ [Official Music Video]",
+    "artist": "Sara Kays",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Sara Kays - Remember That Night？ [Official Music Video].webm",
+    "duration": "4:07",
+    "filename": "Sara Kays - Remember That Night？ [Official Music Video].webm",
+    "path": "music/songs/Sara Kays - Remember That Night？ [Official Music Video].webm"
+  },
+  {
+    "id": 191,
     "title": "Traffic Lights [Official Lyric Video]",
     "artist": "Sara Kays",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Sara%20Kays%20-%20Traffic%20Lights%20%5BOfficial%20Lyric%20Video%5D.webm",
@@ -1179,6 +1314,15 @@
     "path": "music/songs/14 - Sasha Alex Sloan - Smiling When I Die (Official Video).mp3"
   },
   {
+    "id": 192,
+    "title": "She's Mine (Official Video)",
+    "artist": "Sean Thomas",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Sean%20Thomas%20-%20She's%20Mine%20(Official%20Video).webm",
+    "duration": "4:20",
+    "filename": "Sean Thomas - She's Mine (Official Video).webm",
+    "path": "music/songs/Sean Thomas - She's Mine (Official Video).webm"
+  },
+  {
     "id": 123,
     "title": "zTeeth",
     "artist": "Seconds of Summer",
@@ -1195,6 +1339,15 @@
     "duration": "6:56",
     "filename": "01 - Sensi Sye - everything.mp3",
     "path": "music/songs/01 - Sensi Sye - everything.mp3"
+  },
+  {
+    "id": 193,
+    "title": "Love Me Still (Music Video)",
+    "artist": "Seph Schlueter",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Seph%20Schlueter%20-%20Love%20Me%20Still%20(Music%20Video).webm",
+    "duration": "4:09",
+    "filename": "Seph Schlueter - Love Me Still (Music Video).webm",
+    "path": "music/songs/Seph Schlueter - Love Me Still (Music Video).webm"
   },
   {
     "id": 99,
@@ -1251,7 +1404,7 @@
     "path": "music/songs/01 - Surf Curse - Freaks.mp3"
   },
   {
-    "id": 178,
+    "id": 195,
     "title": "We Hug Now (Official Video)",
     "artist": "Sydney Rose",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Sydney%20Rose%20-%20We%20Hug%20Now%20(Official%20Video).webm",
@@ -1267,6 +1420,15 @@
     "duration": "5:24",
     "filename": "02 - Tate McRae - you broke me first (Official Video).mp3",
     "path": "music/songs/02 - Tate McRae - you broke me first (Official Video).mp3"
+  },
+  {
+    "id": 196,
+    "title": "QUARTER LIFE CRISIS (Official Music Video)",
+    "artist": "Taylor Bickett",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Taylor%20Bickett%20-%20QUARTER%20LIFE%20CRISIS%20(Official%20Music%20Video).webm",
+    "duration": "3:40",
+    "filename": "Taylor Bickett - QUARTER LIFE CRISIS (Official Music Video).webm",
+    "path": "music/songs/Taylor Bickett - QUARTER LIFE CRISIS (Official Music Video).webm"
   },
   {
     "id": 118,
@@ -1323,7 +1485,7 @@
     "path": "music/songs/05 - The Marías - Hold It Together.mp3"
   },
   {
-    "id": 179,
+    "id": 197,
     "title": "Nobody New",
     "artist": "The Marías",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/The Marías - Nobody New.mp3",
@@ -1413,7 +1575,7 @@
     "path": "music/songs/01 - Tom Odell - Another Love.mp3"
   },
   {
-    "id": 181,
+    "id": 199,
     "title": "Black Friday (Official Music Video)",
     "artist": "Tom Odell",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Tom%20Odell%20-%20Black%20Friday%20(Official%20Music%20Video).webm",
@@ -1440,7 +1602,7 @@
     "path": "music/songs/05. Tom Rosenthal - Go Solo.mp3"
   },
   {
-    "id": 182,
+    "id": 200,
     "title": "Lights Are On (Official Video)",
     "artist": "Tom Rosenthal",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/Tom%20Rosenthal%20-%20Lights%20Are%20On%20(Official%20Video).webm",
@@ -1548,7 +1710,7 @@
     "path": "music/songs/11 - Džanum.mp3"
   },
   {
-    "id": 161,
+    "id": 167,
     "title": "K.",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/K..mp3",
@@ -1557,7 +1719,7 @@
     "path": "music/songs/K..mp3"
   },
   {
-    "id": 171,
+    "id": 182,
     "title": "No One Noticed (Extended English)",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/No%20One%20Noticed%20(Extended%20English).mp3",
@@ -1566,7 +1728,16 @@
     "path": "music/songs/No One Noticed (Extended English).mp3"
   },
   {
-    "id": 180,
+    "id": 194,
+    "title": "She Loved What Broke Her ( Lyrics )",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/She%20Loved%20What%20Broke%20Her%20(%20Lyrics%20).webm",
+    "duration": "6:41",
+    "filename": "She Loved What Broke Her ( Lyrics ).webm",
+    "path": "music/songs/She Loved What Broke Her ( Lyrics ).webm"
+  },
+  {
+    "id": 198,
     "title": "The Saddest Song (Lyrics)  ~ Alec Benjamin",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/songs/The%20Saddest%20Song%20(Lyrics)%20%20%7E%20Alec%20Benjamin.mp3",
