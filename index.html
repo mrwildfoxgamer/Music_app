@@ -68,13 +68,14 @@
     <span id="volumeValue">100%</span>
 </div>
 
-<div class="view-toggle">
-    <button id="viewToggleBtn" class="control-btn" title="Show Playlist">
-        <i class="fas fa-list"></i>
-    </button>
+<!-- Replaced View Toggle with Format Buttons -->
+<div class="format-toggle">
+    <button id="mp3Btn" class="format-btn active">MP3</button>
+    <button id="flacBtn" class="format-btn">FLAC</button>
 </div>
 
         <div id="loading" class="loading">Loading playlist...</div>
+        <!-- Playlist remains hidden by default -->
         <div id="playlist" class="playlist hidden" style="display: none;"></div>
     </div>
 

@@ -23,7 +23,7 @@ const CONFIG = {
   AUDIO_EXTENSIONS: ['.flac'],
   
   // Output file
-  OUTPUT_FILE: 'playlist1.json',
+  OUTPUT_FILE: 'playlist-flac.json',
   
   // Base URL for raw files (will be constructed automatically)
   BASE_URL: ''

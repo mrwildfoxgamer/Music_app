@@ -380,6 +380,48 @@ html {
     display: none !important;
 }
 
+/* Format Toggle Buttons */
+.format-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.format-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ccc;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    font-weight: 600;
+}
+
+.format-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.format-btn.active {
+    background: #174730;
+    border-color: #1DB954;
+    color: white;
+    box-shadow: 0 0 15px rgba(29, 185, 84, 0.3);
+}
+
+/* Playlist Scroll adjustments */
+.playlist {
+    max-height: 400px;
+    overflow-y: auto;
+    margin-top: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #174730 rgba(255,255,255,0.1);
+}
+
 /* Install status indicator */
 .install-status {
     position: fixed;
@@ -478,7 +520,6 @@ html {
     }
 
     .playlist {
-        max-height: 400px;
         margin-top: 30px;
     }
 }

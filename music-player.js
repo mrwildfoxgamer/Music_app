@@ -3,64 +3,183 @@ class EnhancedMusicPlayer {
         this.audio = document.getElementById('audioPlayer');
         this.playlist = [];
         this.currentIndex = 0;
+        this.currentFormat = 'mp3'; // Default format
         this.isPlaying = false;
         this.isShuffled = false;
         this.repeatMode = 'none';
         this.deferredPrompt = null;
         this.shuffledOrder = [];
         this.installPromptDismissed = false;
-        this.isFocusedView = true;
         this.preloadCache = new Map();
         this.preloadLimit = 5;
         this.preloadInProgress = false;
         
-        this.setupViewToggle();
+        // Setup new format buttons
+        this.setupFormatToggle();
+        
         this.initializePlayer();
-        this.loadPlaylist();
+        
+        // Default: Load MP3 playlist but keep it hidden (as per HTML structure)
+        this.loadPlaylist('mp3', false);
+        
         this.setupInstallPrompt();
         this.setupMediaSession();
         this.checkInstallStatus();
     }
 
+    setupFormatToggle() {
+        const mp3Btn = document.getElementById('mp3Btn');
+        const flacBtn = document.getElementById('flacBtn');
+        const playlistEl = document.getElementById('playlist');
+
+        if (mp3Btn) {
+            mp3Btn.addEventListener('click', () => {
+                if (this.currentFormat !== 'mp3') {
+                    // Switch to MP3
+                    this.switchFormat('mp3');
+                    // Show playlist if not already shown (user asked to show list on press)
+                    this.showPlaylist(true);
+                } else {
+                    // Already MP3: Toggle visibility
+                    this.togglePlaylistVisibility();
+                }
+            });
+        }
+
+        if (flacBtn) {
+            flacBtn.addEventListener('click', () => {
+                if (this.currentFormat !== 'flac') {
+                    // Switch to FLAC
+                    this.switchFormat('flac');
+                    // Show playlist and Play
+                    this.showPlaylist(true);
+                    // "Starts to play flac music" -> Attempt autoplay after switch
+                    this.autoPlayFirstSong = true; 
+                } else {
+                     // Already FLAC: Toggle visibility
+                    this.togglePlaylistVisibility();
+                }
+            });
+        }
+    }
+
+    togglePlaylistVisibility() {
+        const playlistEl = document.getElementById('playlist');
+        const isHidden = playlistEl.classList.contains('hidden') || playlistEl.style.display === 'none';
+        
+        if (isHidden) {
+            this.showPlaylist(true);
+        } else {
+            this.showPlaylist(false);
+        }
+    }
+
+    showPlaylist(show) {
+        const playlistEl = document.getElementById('playlist');
+        if (show) {
+            playlistEl.classList.remove('hidden');
+            playlistEl.style.display = 'block';
+        } else {
+            playlistEl.classList.add('hidden');
+            playlistEl.style.display = 'none';
+        }
+    }
+
+    async switchFormat(format) {
+        this.currentFormat = format;
+        
+        // Update UI buttons
+        document.getElementById('mp3Btn').classList.toggle('active', format === 'mp3');
+        document.getElementById('flacBtn').classList.toggle('active', format === 'flac');
+
+        // Reset Player State
+        this.audio.pause();
+        this.audio.currentTime = 0;
+        this.isPlaying = false;
+        this.currentIndex = 0;
+        this.updatePlayState(false);
+        this.preloadCache.clear();
+        
+        // Show loading
+        document.getElementById('loading').classList.remove('hidden');
+        document.getElementById('playlist').innerHTML = '';
+        
+        // Load new playlist
+        await this.loadPlaylist(format, true);
+    }
+
+    async loadPlaylist(format, isSwitching = false) {
+        try {
+            // Select file based on format
+            const playlistFile = format === 'flac' ? 'music/playlist-flac.json' : 'music/playlist.json';
+            
+            console.log(`Loading ${format} playlist from ${playlistFile}`);
+
+            const response = await fetch(playlistFile);
+            if (response.ok) {
+                this.playlist = await response.json();
+            } else {
+                throw new Error(`${format.toUpperCase()} Playlist not found`);
+            }
+
+            this.createShuffledOrder();
+            this.renderPlaylist();
+            
+            // Auto-load first song metadata
+            if (this.playlist.length > 0) {
+                // If we are switching formats and autoplay was requested (e.g. for FLAC)
+                if (this.autoPlayFirstSong && isSwitching) {
+                    await this.playSong(0);
+                    this.autoPlayFirstSong = false; // reset flag
+                } else {
+                    // Just load metadata
+                    this.audio.src = this.playlist[0].url;
+                    this.updateTitleUI(this.playlist[0]);
+                }
+            }
+
+            document.getElementById('loading').classList.add('hidden');
+        } catch (error) {
+            console.error('Error loading playlist:', error);
+            document.getElementById('loading').textContent = `No ${format.toUpperCase()} songs found`;
+        }
+    }
+
+    updateTitleUI(song) {
+        const titleEl = document.getElementById('currentTitle');
+        const artistEl = document.getElementById('currentArtist');
+        if (titleEl) titleEl.textContent = song.title;
+        if (artistEl) artistEl.textContent = song.artist;
+    }
+
+    // --- Standard Methods Below ---
+
     checkInstallStatus() {
         if (window.matchMedia('(display-mode: standalone)').matches || 
             window.navigator.standalone === true) {
-            console.log('App is running in standalone mode (installed)');
             return;
         }
-
         const dismissed = localStorage.getItem('installPromptDismissed');
-        if (dismissed) {
-            this.installPromptDismissed = true;
-        }
-
+        if (dismissed) this.installPromptDismissed = true;
         if (!this.installPromptDismissed) {
-            setTimeout(() => {
-                this.showInstallPromptFallback();
-            }, 3000);
+            setTimeout(() => this.showInstallPromptFallback(), 3000);
         }
     }
 
     showInstallPromptFallback() {
         if (!this.deferredPrompt && !this.installPromptDismissed) {
             const installPrompt = document.getElementById('installPrompt');
-            if (installPrompt) {
-                installPrompt.classList.remove('hidden');
-            }
+            if (installPrompt) installPrompt.classList.remove('hidden');
         }
     }
 
     setupInstallPrompt() {
         window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('PWA install prompt triggered');
             e.preventDefault();
             this.deferredPrompt = e;
-            
             if (!this.installPromptDismissed) {
                 const installPrompt = document.getElementById('installPrompt');
-                if (installPrompt) {
-                    installPrompt.classList.remove('hidden');
-                }
+                if (installPrompt) installPrompt.classList.remove('hidden');
             }
         });
 
@@ -68,23 +187,10 @@ class EnhancedMusicPlayer {
         if (installBtn) {
             installBtn.addEventListener('click', async () => {
                 if (this.deferredPrompt) {
-                    try {
-                        this.deferredPrompt.prompt();
-                        const result = await this.deferredPrompt.userChoice;
-                        console.log('Install result:', result);
-                        
-                        if (result.outcome === 'accepted') {
-                            this.showInstallStatus('App installing...', 3000);
-                        } else {
-                            this.showInstallStatus('Installation cancelled', 2000);
-                        }
-                        
-                        this.deferredPrompt = null;
-                        this.hideInstallPrompt();
-                    } catch (error) {
-                        console.error('Installation failed:', error);
-                        this.showInstallStatus('Installation failed', 2000);
-                    }
+                    this.deferredPrompt.prompt();
+                    const result = await this.deferredPrompt.userChoice;
+                    this.deferredPrompt = null;
+                    this.hideInstallPrompt();
                 } else {
                     this.showManualInstallInstructions();
                 }
@@ -94,122 +200,20 @@ class EnhancedMusicPlayer {
         const dismissBtn = document.getElementById('dismissBtn');
         if (dismissBtn) {
             dismissBtn.addEventListener('click', () => {
-                this.dismissInstallPrompt();
+                this.installPromptDismissed = true;
+                localStorage.setItem('installPromptDismissed', 'true');
+                this.hideInstallPrompt();
             });
         }
-
-        window.addEventListener('appinstalled', () => {
-            console.log('PWA was installed successfully');
-            this.showInstallStatus('App installed successfully!', 3000);
-            this.hideInstallPrompt();
-        });
-
-        this.checkiOSInstallation();
-    }
-
-    checkiOSInstallation() {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const isInStandaloneMode = window.navigator.standalone;
-        
-        if (isIOS && !isInStandaloneMode) {
-            setTimeout(() => {
-                const installPrompt = document.getElementById('installPrompt');
-                const installBtnText = document.querySelector('#installBtn');
-                if (installPrompt && installBtnText && !this.installPromptDismissed) {
-                    installPrompt.querySelector('p').innerHTML = 
-                        'Tap the share button <i class="fas fa-share"></i> and select "Add to Home Screen" to install this app!';
-                    installBtnText.innerHTML = '<i class="fas fa-info-circle"></i> Show Instructions';
-                    installPrompt.classList.remove('hidden');
-                }
-            }, 2000);
-        }
-    }
-
-    showManualInstallInstructions() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        let instructions = '';
-
-        if (userAgent.includes('chrome')) {
-            instructions = 'Click the menu (⋮) → "Install Music Player" or look for the install icon in the address bar.';
-        } else if (userAgent.includes('firefox')) {
-            instructions = 'Look for the install icon in the address bar or refresh the page to try again.';
-        } else if (userAgent.includes('safari')) {
-            instructions = 'Tap the Share button (↗️) → "Add to Home Screen" to install this app.';
-        } else {
-            instructions = 'Look for an install option in your browser menu or refresh the page to try again.';
-        }
-
-        alert(`Manual Installation:\n\n${instructions}`);
-    }
-
-    dismissInstallPrompt() {
-        this.installPromptDismissed = true;
-        localStorage.setItem('installPromptDismissed', 'true');
-        this.hideInstallPrompt();
-        this.showInstallStatus('You can install this app anytime from your browser menu', 3000);
     }
 
     hideInstallPrompt() {
         const installPrompt = document.getElementById('installPrompt');
-        if (installPrompt) {
-            installPrompt.classList.add('hidden');
-        }
+        if (installPrompt) installPrompt.classList.add('hidden');
     }
 
-    showInstallStatus(message, duration = 3000) {
-        const statusEl = document.getElementById('installStatus');
-        const textEl = document.getElementById('installStatusText');
-        
-        if (statusEl && textEl) {
-            textEl.textContent = message;
-            statusEl.classList.add('show');
-            
-            setTimeout(() => {
-                statusEl.classList.remove('show');
-            }, duration);
-        }
-    }
-
-    async loadPlaylist() {
-        try {
-            const samplePlaylist = [
-                {
-                    title: "Sample Song 1",
-                    artist: "Artist 1",
-                    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
-                },
-                {
-                    title: "Sample Song 2", 
-                    artist: "Artist 2",
-                    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
-                },
-                {
-                    title: "Sample Song 3",
-                    artist: "Artist 3", 
-                    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
-                }
-            ];
-
-            try {
-                const response = await fetch('music/playlist.json');
-                if (response.ok) {
-                    this.playlist = await response.json();
-                } else {
-                    throw new Error('Playlist not found');
-                }
-            } catch (error) {
-                console.log('Using sample playlist');
-                this.playlist = samplePlaylist;
-            }
-
-            this.createShuffledOrder();
-            this.renderPlaylist();
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('playlist').classList.remove('hidden');
-        } catch (error) {
-            console.error('Error loading playlist:', error);
-            document.getElementById('loading').textContent = 'Error loading playlist';
-        }
+    showManualInstallInstructions() {
+        alert('To install: Tap the share button or menu icon and select "Add to Home Screen" or "Install App".');
     }
 
     createShuffledOrder() {
@@ -228,6 +232,9 @@ class EnhancedMusicPlayer {
                     <h4>${this.escapeHtml(song.title)}</h4>
                     <p>${this.escapeHtml(song.artist)}</p>
                 </div>
+                <div class="song-format" style="font-size:0.7em; color: #666;">
+                    ${this.currentFormat.toUpperCase()}
+                </div>
             </div>
         `).join('');
 
@@ -238,11 +245,13 @@ class EnhancedMusicPlayer {
                 this.playSong(index);
             }
         });
+        
+        this.updatePlaylistView();
     }
 
     escapeHtml(text) {
         const div = document.createElement('div');
-        div.textContent = text;
+        div.textContent = text || 'Unknown';
         return div.innerHTML;
     }
 
@@ -272,8 +281,7 @@ class EnhancedMusicPlayer {
 
         if (volumeSlider) {
             volumeSlider.addEventListener('input', (e) => {
-                const volume = e.target.value / 100;
-                this.audio.volume = volume;
+                this.audio.volume = e.target.value / 100;
                 const volumeValue = document.getElementById('volumeValue');
                 if (volumeValue) volumeValue.textContent = e.target.value + '%';
             });
@@ -289,20 +297,13 @@ class EnhancedMusicPlayer {
     toggleShuffle() {
         this.isShuffled = !this.isShuffled;
         const shuffleBtn = document.getElementById('shuffleBtn');
-        
         if (shuffleBtn) {
             shuffleBtn.classList.toggle('active', this.isShuffled);
             shuffleBtn.title = this.isShuffled ? 'Shuffle: On' : 'Shuffle: Off';
         }
-        
         if (this.isShuffled) {
             this.createShuffledOrder();
-            // Clear existing preload cache as the order has changed
-            for (let [_, audio] of this.preloadCache.entries()) {
-                audio.src = '';
-            }
             this.preloadCache.clear();
-            // Start preloading in new shuffle order
             this.preloadUpcomingSongs();
         }
     }
@@ -316,7 +317,6 @@ class EnhancedMusicPlayer {
         if (repeatBtn) {
             repeatBtn.classList.remove('repeat-none', 'repeat-all', 'repeat-one');
             repeatBtn.classList.add(`repeat-${this.repeatMode}`);
-            repeatBtn.title = `Repeat: ${this.repeatMode}`;
             
             switch(this.repeatMode) {
                 case 'all':
@@ -370,7 +370,6 @@ class EnhancedMusicPlayer {
                     this.updatePlayState(false);
                 }
         }
-        // Ensure next songs are preloaded after current song ends
         this.preloadUpcomingSongs();
     }
 
@@ -379,33 +378,26 @@ class EnhancedMusicPlayer {
             this.currentIndex = index;
             const song = this.playlist[index];
             
-            // If we have this song preloaded, use the preloaded audio
             if (this.preloadCache.has(index)) {
                 const preloadedAudio = this.preloadCache.get(index);
-                
-                // Transfer the preloaded audio properties to the main audio element
                 this.audio.src = preloadedAudio.src;
-                await this.audio.load(); // Ensure the audio is loaded
-                
-                // Clean up the preloaded audio
+                await this.audio.load();
                 this.preloadCache.delete(index);
             } else {
-                // If not preloaded, load directly
                 this.audio.src = song.url;
                 await this.audio.load();
             }
             
-            const titleEl = document.getElementById('currentTitle');
-            const artistEl = document.getElementById('currentArtist');
-            
-            if (titleEl) titleEl.textContent = song.title;
-            if (artistEl) artistEl.textContent = song.artist;
-            
+            this.updateTitleUI(song);
             this.updatePlaylistView();
-            this.audio.play();
-            this.updateMediaSession();
             
-            // Start preloading next songs
+            try {
+                await this.audio.play();
+            } catch(e) {
+                console.log("Autoplay prevented or interrupted");
+            }
+            
+            this.updateMediaSession();
             this.preloadUpcomingSongs();
         }
     }
@@ -415,11 +407,10 @@ class EnhancedMusicPlayer {
 
         if (this.audio.paused) {
             if (!this.audio.src && this.playlist.length > 0) {
-                await this.playSong(0);
+                await this.playSong(this.currentIndex);
             } else {
                 await this.audio.play();
             }
-            // Start preloading when playback starts
             this.preloadUpcomingSongs();
         } else {
             this.audio.pause();
@@ -428,14 +419,12 @@ class EnhancedMusicPlayer {
 
     previousSong() {
         if (this.playlist.length === 0) return;
-        const newIndex = this.getPreviousIndex();
-        this.playSong(newIndex);
+        this.playSong(this.getPreviousIndex());
     }
 
     nextSong() {
         if (this.playlist.length === 0) return;
-        const newIndex = this.getNextIndex();
-        this.playSong(newIndex);
+        this.playSong(this.getNextIndex());
     }
 
     updatePlayState(isPlaying) {
@@ -448,11 +437,9 @@ class EnhancedMusicPlayer {
 
     updateProgress() {
         if (!this.audio.duration) return;
-
         const percent = (this.audio.currentTime / this.audio.duration) * 100;
         const progressEl = document.getElementById('progress');
         const currentTimeEl = document.getElementById('currentTime');
-        
         if (progressEl) progressEl.style.width = percent + '%';
         if (currentTimeEl) currentTimeEl.textContent = this.formatTime(this.audio.currentTime);
     }
@@ -492,51 +479,18 @@ class EnhancedMusicPlayer {
             navigator.mediaSession.metadata = new MediaMetadata({
                 title: song.title,
                 artist: song.artist,
-                album: 'My Music Collection'
+                album: `My ${this.currentFormat.toUpperCase()} Collection`,
+                artwork: [{ src: 'Icons/512.png', sizes: '512x512', type: 'image/png' }]
             });
-        }
-    }
-
-    setupViewToggle() {
-        const viewToggleBtn = document.getElementById('viewToggleBtn');
-        if (viewToggleBtn) {
-            viewToggleBtn.addEventListener('click', () => this.toggleView());
-        }
-    }
-
-    toggleView() {
-        this.isFocusedView = !this.isFocusedView;
-        const playlist = document.getElementById('playlist');
-        const viewToggleBtn = document.getElementById('viewToggleBtn');
-        
-        if (this.isFocusedView) {
-            // Show only current song (focused view)
-            playlist.style.display = 'none';
-            if (viewToggleBtn) {
-                viewToggleBtn.innerHTML = '<i class="fas fa-list"></i>';
-                viewToggleBtn.title = 'Show Playlist';
-            }
-        } else {
-            // Show playlist
-            playlist.style.display = 'block';
-            playlist.classList.remove('hidden');
-            if (viewToggleBtn) {
-                viewToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-                viewToggleBtn.title = 'Hide Playlist';
-            }
         }
     }
 
     async preloadUpcomingSongs() {
         if (this.preloadInProgress || !this.playlist.length) return;
-        
         this.preloadInProgress = true;
-        
         try {
             let nextIndices = [];
             let currentPos = this.currentIndex;
-            
-            // Determine next 5 song indices based on current play mode
             for (let i = 0; i < this.preloadLimit; i++) {
                 if (this.isShuffled) {
                     const currentShuffledPos = this.shuffledOrder.indexOf(currentPos);
@@ -547,32 +501,23 @@ class EnhancedMusicPlayer {
                 }
                 nextIndices.push(currentPos);
             }
-
-            // Clear old cached songs that are no longer needed
             for (let [index, audio] of this.preloadCache.entries()) {
                 if (!nextIndices.includes(index) && index !== this.currentIndex) {
-                    audio.src = ''; // Clear the source
+                    audio.src = '';
                     this.preloadCache.delete(index);
                 }
             }
-
-            // Preload new songs
             for (let index of nextIndices) {
                 if (!this.preloadCache.has(index)) {
                     const song = this.playlist[index];
                     const audio = new Audio();
                     audio.preload = 'auto';
-                    
-                    // Create a promise that resolves when enough of the song is loaded
                     const loadPromise = new Promise((resolve, reject) => {
                         audio.addEventListener('canplaythrough', () => resolve(), { once: true });
                         audio.addEventListener('error', (e) => reject(e), { once: true });
                     });
-
                     audio.src = song.url;
                     this.preloadCache.set(index, audio);
-
-                    // Wait for enough of the song to be loaded before moving to the next
                     await loadPromise;
                 }
             }
@@ -584,20 +529,16 @@ class EnhancedMusicPlayer {
     }
 }
 
-// Initialize enhanced music player
+// Initialize
 document.addEventListener('DOMContentLoaded', () => {
     window.musicPlayer = new EnhancedMusicPlayer();
 });
 
-// Register service worker
+// Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
         navigator.serviceWorker.register('./sw.js')
-            .then((registration) => {
-                console.log('SW registered successfully:', registration);
-            })
-            .catch((registrationError) => {
-                console.log('SW registration failed:', registrationError);
-            });
+            .then((registration) => console.log('SW registered successfully'))
+            .catch((err) => console.log('SW registration failed', err));
     });
 }
