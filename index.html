@@ -67,21 +67,12 @@
     <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="100">
     <span id="volumeValue">100%</span>
 </div>
-<!-- Source selector: MP3 / FLAC -->
-<div class="source-toggle" style="display:flex;gap:8px;align-items:center;margin-top:8px;">
-  <button id="mp3Btn" class="control-btn source-btn active" title="Show MP3 playlist">
-    MP3
-  </button>
-  <button id="flacBtn" class="control-btn source-btn" title="Show FLAC playlist">
-    FLAC
-  </button>
 
-  <!-- keep the existing playlist show/hide button if you want -->
-  <button id="viewToggleBtn" class="control-btn" title="Show Playlist" style="margin-left:8px;">
-    <i class="fas fa-list"></i>
-  </button>
+<div class="view-toggle">
+    <button id="viewToggleBtn" class="control-btn" title="Show Playlist">
+        <i class="fas fa-list"></i>
+    </button>
 </div>
-
 
         <div id="loading" class="loading">Loading playlist...</div>
         <div id="playlist" class="playlist hidden" style="display: none;"></div>
