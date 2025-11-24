@@ -1,603 +1,289 @@
-class EnhancedMusicPlayer {
-    constructor() {
-        this.audio = document.getElementById('audioPlayer');
-        this.playlist = [];
-        this.currentIndex = 0;
-        this.isPlaying = false;
-        this.isShuffled = false;
-        this.repeatMode = 'none';
-        this.deferredPrompt = null;
-        this.shuffledOrder = [];
-        this.installPromptDismissed = false;
-        this.isFocusedView = true;
-        this.preloadCache = new Map();
-        this.preloadLimit = 5;
-        this.preloadInProgress = false;
-        
-        this.setupViewToggle();
-        this.initializePlayer();
-        this.loadPlaylist();
-        this.setupInstallPrompt();
-        this.setupMediaSession();
-        this.checkInstallStatus();
+/**
+ * music-player.js
+ * Full replacement implementing MP3 <-> FLAC source switching with fallbacks.
+ *
+ * Expected HTML element IDs:
+ *  - audio element:        #audioPlayer
+ *  - playlist container:   #playlist
+ *  - loading message:      #loading
+ *  - current title:        #currentTitle
+ *  - current artist:       #currentArtist
+ *  - mp3 button:           #mp3Btn
+ *  - flac button:          #flacBtn
+ *  - playlist toggle btn:  #viewToggleBtn (optional)
+ *
+ * Playlist file formats supported:
+ *  - Array of objects: [ { title, artist, src } , ... ]
+ *  - Object with songs property: { songs: [ ... ] }
+ *
+ * Candidate playlist locations tried (in order):
+ *  - For MP3:  'playlist.json', 'music/playlist.json'
+ *  - For FLAC: 'music/FLAC/playlist.json', 'music/playlist.json', 'playlist.json'
+ *
+ * If a playlist mixes extensions, this script will filter by .mp3 or .flac when a source is selected.
+ */
+
+(function () {
+  'use strict';
+
+  // DOM references (null-safe)
+  const audio = document.getElementById('audioPlayer');
+  const playlistContainer = document.getElementById('playlist');
+  const loadingEl = document.getElementById('loading') || createInlineLoading();
+  const currentTitleEl = document.getElementById('currentTitle');
+  const currentArtistEl = document.getElementById('currentArtist');
+
+  const mp3Btn = document.getElementById('mp3Btn');
+  const flacBtn = document.getElementById('flacBtn');
+  const viewToggleBtn = document.getElementById('viewToggleBtn');
+
+  // Internal state
+  let songs = [];
+  let currentIndex = -1;
+  let currentSource = 'mp3'; // 'mp3' or 'flac'
+
+  // Utility: create a minimal loading element if the page doesn't have one
+  function createInlineLoading() {
+    const div = document.createElement('div');
+    div.id = 'loading';
+    div.style.display = 'none';
+    if (playlistContainer && playlistContainer.parentNode) {
+      playlistContainer.parentNode.insertBefore(div, playlistContainer);
+    } else {
+      document.body.appendChild(div);
+    }
+    return div;
+  }
+
+  // Helper: set active button visual state
+  function setActiveSourceBtn(source) {
+    currentSource = source;
+    if (mp3Btn) mp3Btn.classList.toggle('active', source === 'mp3');
+    if (flacBtn) flacBtn.classList.toggle('active', source === 'flac');
+  }
+
+  // Helper: best-effort fetch JSON, returns parsed object or null
+  async function tryFetchJson(url) {
+    try {
+      const res = await fetch(url, { cache: 'no-cache' });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch (e) {
+      // network or parse error
+      return null;
+    }
+  }
+
+  // Detect FLAC support in the current browser
+  function browserCanPlayFlac() {
+    try {
+      if (!audio || typeof audio.canPlayType !== 'function') return false;
+      // Some browsers recognize 'audio/flac' MIME, some 'audio/x-flac'
+      const r = audio.canPlayType('audio/flac') || audio.canPlayType('audio/x-flac');
+      return !!r && r !== 'no';
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // Normalize playlist entries — return { title, artist, src }
+  function normalizeEntry(item) {
+    if (!item) return null;
+    const src = (item.src || item.file || item.url || item.path || item.source || '').toString();
+    const title = item.title || item.name || (src ? src.split('/').pop() : 'Unknown');
+    const artist = item.artist || item.artistName || item.album || '';
+    return { title, artist, src };
+  }
+
+  // Build playlist UI
+  function renderPlaylist() {
+    if (!playlistContainer) return;
+    playlistContainer.innerHTML = '';
+
+    if (!songs || songs.length === 0) {
+      const msg = document.createElement('div');
+      msg.className = 'playlist-empty';
+      msg.textContent = 'No songs to show for this source.';
+      playlistContainer.appendChild(msg);
+      return;
     }
 
-    checkInstallStatus() {
-        if (window.matchMedia('(display-mode: standalone)').matches || 
-            window.navigator.standalone === true) {
-            console.log('App is running in standalone mode (installed)');
-            return;
-        }
+    songs.forEach((song, i) => {
+      const item = document.createElement('div');
+      item.className = 'playlist-item';
+      item.dataset.index = i;
 
-        const dismissed = localStorage.getItem('installPromptDismissed');
-        if (dismissed) {
-            this.installPromptDismissed = true;
-        }
+      const titleDiv = document.createElement('div');
+      titleDiv.className = 'pl-title';
+      titleDiv.textContent = song.title || song.src.split('/').pop();
 
-        if (!this.installPromptDismissed) {
-            setTimeout(() => {
-                this.showInstallPromptFallback();
-            }, 3000);
-        }
-    }
+      const artistDiv = document.createElement('div');
+      artistDiv.className = 'pl-artist';
+      artistDiv.textContent = song.artist || '';
 
-    showInstallPromptFallback() {
-        if (!this.deferredPrompt && !this.installPromptDismissed) {
-            const installPrompt = document.getElementById('installPrompt');
-            if (installPrompt) {
-                installPrompt.classList.remove('hidden');
-            }
-        }
-    }
+      item.appendChild(titleDiv);
+      item.appendChild(artistDiv);
 
-    setupInstallPrompt() {
-        window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('PWA install prompt triggered');
-            e.preventDefault();
-            this.deferredPrompt = e;
-            
-            if (!this.installPromptDismissed) {
-                const installPrompt = document.getElementById('installPrompt');
-                if (installPrompt) {
-                    installPrompt.classList.remove('hidden');
-                }
-            }
-        });
+      item.addEventListener('click', () => {
+        playIndex(i);
+      });
 
-        const installBtn = document.getElementById('installBtn');
-        if (installBtn) {
-            installBtn.addEventListener('click', async () => {
-                if (this.deferredPrompt) {
-                    try {
-                        this.deferredPrompt.prompt();
-                        const result = await this.deferredPrompt.userChoice;
-                        console.log('Install result:', result);
-                        
-                        if (result.outcome === 'accepted') {
-                            this.showInstallStatus('App installing...', 3000);
-                        } else {
-                            this.showInstallStatus('Installation cancelled', 2000);
-                        }
-                        
-                        this.deferredPrompt = null;
-                        this.hideInstallPrompt();
-                    } catch (error) {
-                        console.error('Installation failed:', error);
-                        this.showInstallStatus('Installation failed', 2000);
-                    }
-                } else {
-                    this.showManualInstallInstructions();
-                }
-            });
-        }
-
-        const dismissBtn = document.getElementById('dismissBtn');
-        if (dismissBtn) {
-            dismissBtn.addEventListener('click', () => {
-                this.dismissInstallPrompt();
-            });
-        }
-
-        window.addEventListener('appinstalled', () => {
-            console.log('PWA was installed successfully');
-            this.showInstallStatus('App installed successfully!', 3000);
-            this.hideInstallPrompt();
-        });
-
-        this.checkiOSInstallation();
-    }
-
-    checkiOSInstallation() {
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const isInStandaloneMode = window.navigator.standalone;
-        
-        if (isIOS && !isInStandaloneMode) {
-            setTimeout(() => {
-                const installPrompt = document.getElementById('installPrompt');
-                const installBtnText = document.querySelector('#installBtn');
-                if (installPrompt && installBtnText && !this.installPromptDismissed) {
-                    installPrompt.querySelector('p').innerHTML = 
-                        'Tap the share button <i class="fas fa-share"></i> and select "Add to Home Screen" to install this app!';
-                    installBtnText.innerHTML = '<i class="fas fa-info-circle"></i> Show Instructions';
-                    installPrompt.classList.remove('hidden');
-                }
-            }, 2000);
-        }
-    }
-
-    showManualInstallInstructions() {
-        const userAgent = navigator.userAgent.toLowerCase();
-        let instructions = '';
-
-        if (userAgent.includes('chrome')) {
-            instructions = 'Click the menu (⋮) → "Install Music Player" or look for the install icon in the address bar.';
-        } else if (userAgent.includes('firefox')) {
-            instructions = 'Look for the install icon in the address bar or refresh the page to try again.';
-        } else if (userAgent.includes('safari')) {
-            instructions = 'Tap the Share button (↗️) → "Add to Home Screen" to install this app.';
-        } else {
-            instructions = 'Look for an install option in your browser menu or refresh the page to try again.';
-        }
-
-        alert(`Manual Installation:\n\n${instructions}`);
-    }
-
-    dismissInstallPrompt() {
-        this.installPromptDismissed = true;
-        localStorage.setItem('installPromptDismissed', 'true');
-        this.hideInstallPrompt();
-        this.showInstallStatus('You can install this app anytime from your browser menu', 3000);
-    }
-
-    hideInstallPrompt() {
-        const installPrompt = document.getElementById('installPrompt');
-        if (installPrompt) {
-            installPrompt.classList.add('hidden');
-        }
-    }
-
-    showInstallStatus(message, duration = 3000) {
-        const statusEl = document.getElementById('installStatus');
-        const textEl = document.getElementById('installStatusText');
-        
-        if (statusEl && textEl) {
-            textEl.textContent = message;
-            statusEl.classList.add('show');
-            
-            setTimeout(() => {
-                statusEl.classList.remove('show');
-            }, duration);
-        }
-    }
-
-    async loadPlaylist() {
-        try {
-            const samplePlaylist = [
-                {
-                    title: "Sample Song 1",
-                    artist: "Artist 1",
-                    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
-                },
-                {
-                    title: "Sample Song 2", 
-                    artist: "Artist 2",
-                    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
-                },
-                {
-                    title: "Sample Song 3",
-                    artist: "Artist 3", 
-                    url: "https://www.soundjay.com/misc/sounds/bell-ringing-05.wav"
-                }
-            ];
-
-            try {
-                const response = await fetch('music/playlist.json');
-                if (response.ok) {
-                    this.playlist = await response.json();
-                } else {
-                    throw new Error('Playlist not found');
-                }
-            } catch (error) {
-                console.log('Using sample playlist');
-                this.playlist = samplePlaylist;
-            }
-
-            this.createShuffledOrder();
-            this.renderPlaylist();
-            document.getElementById('loading').classList.add('hidden');
-            document.getElementById('playlist').classList.remove('hidden');
-        } catch (error) {
-            console.error('Error loading playlist:', error);
-            document.getElementById('loading').textContent = 'Error loading playlist';
-        }
-    }
-
-    createShuffledOrder() {
-        this.shuffledOrder = [...Array(this.playlist.length).keys()];
-        for (let i = this.shuffledOrder.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [this.shuffledOrder[i], this.shuffledOrder[j]] = [this.shuffledOrder[j], this.shuffledOrder[i]];
-        }
-    }
-
-    renderPlaylist() {
-        const playlistEl = document.getElementById('playlist');
-        playlistEl.innerHTML = this.playlist.map((song, index) => `
-            <div class="song-item" data-index="${index}">
-                <div class="song-info">
-                    <h4>${this.escapeHtml(song.title)}</h4>
-                    <p>${this.escapeHtml(song.artist)}</p>
-                </div>
-            </div>
-        `).join('');
-
-        playlistEl.addEventListener('click', (e) => {
-            const songItem = e.target.closest('.song-item');
-            if (songItem) {
-                const index = parseInt(songItem.dataset.index);
-                this.playSong(index);
-            }
-        });
-    }
-
-    escapeHtml(text) {
-        const div = document.createElement('div');
-        div.textContent = text;
-        return div.innerHTML;
-    }
-
-    initializePlayer() {
-        const playBtn = document.getElementById('playBtn');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        const shuffleBtn = document.getElementById('shuffleBtn');
-        const repeatBtn = document.getElementById('repeatBtn');
-        const progressBar = document.getElementById('progressBar');
-        const volumeSlider = document.getElementById('volumeSlider');
-
-        if (playBtn) playBtn.addEventListener('click', () => this.togglePlay());
-        if (prevBtn) prevBtn.addEventListener('click', () => this.previousSong());
-        if (nextBtn) nextBtn.addEventListener('click', () => this.nextSong());
-        if (shuffleBtn) shuffleBtn.addEventListener('click', () => this.toggleShuffle());
-        if (repeatBtn) repeatBtn.addEventListener('click', () => this.toggleRepeat());
-        
-        if (progressBar) {
-            progressBar.addEventListener('click', (e) => {
-                if (!this.audio.duration) return;
-                const rect = progressBar.getBoundingClientRect();
-                const percent = (e.clientX - rect.left) / rect.width;
-                this.audio.currentTime = percent * this.audio.duration;
-            });
-        }
-
-        if (volumeSlider) {
-            volumeSlider.addEventListener('input', (e) => {
-                const volume = e.target.value / 100;
-                this.audio.volume = volume;
-                const volumeValue = document.getElementById('volumeValue');
-                if (volumeValue) volumeValue.textContent = e.target.value + '%';
-            });
-        }
-
-        this.audio.addEventListener('timeupdate', () => this.updateProgress());
-        this.audio.addEventListener('ended', () => this.handleSongEnd());
-        this.audio.addEventListener('loadedmetadata', () => this.updateDuration());
-        this.audio.addEventListener('play', () => this.updatePlayState(true));
-        this.audio.addEventListener('pause', () => this.updatePlayState(false));
-    }
-
-    toggleShuffle() {
-        this.isShuffled = !this.isShuffled;
-        const shuffleBtn = document.getElementById('shuffleBtn');
-        
-        if (shuffleBtn) {
-            shuffleBtn.classList.toggle('active', this.isShuffled);
-            shuffleBtn.title = this.isShuffled ? 'Shuffle: On' : 'Shuffle: Off';
-        }
-        
-        if (this.isShuffled) {
-            this.createShuffledOrder();
-            // Clear existing preload cache as the order has changed
-            for (let [_, audio] of this.preloadCache.entries()) {
-                audio.src = '';
-            }
-            this.preloadCache.clear();
-            // Start preloading in new shuffle order
-            this.preloadUpcomingSongs();
-        }
-    }
-
-    toggleRepeat() {
-        const modes = ['none', 'all', 'one'];
-        const currentIndex = modes.indexOf(this.repeatMode);
-        this.repeatMode = modes[(currentIndex + 1) % modes.length];
-        
-        const repeatBtn = document.getElementById('repeatBtn');
-        if (repeatBtn) {
-            repeatBtn.classList.remove('repeat-none', 'repeat-all', 'repeat-one');
-            repeatBtn.classList.add(`repeat-${this.repeatMode}`);
-            repeatBtn.title = `Repeat: ${this.repeatMode}`;
-            
-            switch(this.repeatMode) {
-                case 'all':
-                    repeatBtn.classList.add('active');
-                    repeatBtn.innerHTML = '<i class="fas fa-redo"></i>';
-                    break;
-                case 'one':
-                    repeatBtn.classList.add('active');
-                    repeatBtn.innerHTML = '<i class="fas fa-redo-alt"></i>';
-                    break;
-                default:
-                    repeatBtn.classList.remove('active');
-                    repeatBtn.innerHTML = '<i class="fas fa-redo"></i>';
-            }
-        }
-    }
-
-    getNextIndex() {
-        if (this.isShuffled) {
-            const currentShuffledPos = this.shuffledOrder.indexOf(this.currentIndex);
-            const nextShuffledPos = (currentShuffledPos + 1) % this.shuffledOrder.length;
-            return this.shuffledOrder[nextShuffledPos];
-        } else {
-            return this.currentIndex < this.playlist.length - 1 ? this.currentIndex + 1 : 0;
-        }
-    }
-
-    getPreviousIndex() {
-        if (this.isShuffled) {
-            const currentShuffledPos = this.shuffledOrder.indexOf(this.currentIndex);
-            const prevShuffledPos = currentShuffledPos > 0 ? currentShuffledPos - 1 : this.shuffledOrder.length - 1;
-            return this.shuffledOrder[prevShuffledPos];
-        } else {
-            return this.currentIndex > 0 ? this.currentIndex - 1 : this.playlist.length - 1;
-        }
-    }
-
-    handleSongEnd() {
-        switch (this.repeatMode) {
-            case 'one':
-                this.audio.currentTime = 0;
-                this.audio.play();
-                break;
-            case 'all':
-                this.nextSong();
-                break;
-            default:
-                if (this.isShuffled || this.currentIndex < this.playlist.length - 1) {
-                    this.nextSong();
-                } else {
-                    this.updatePlayState(false);
-                }
-        }
-        // Ensure next songs are preloaded after current song ends
-        this.preloadUpcomingSongs();
-    }
-
-    async playSong(index) {
-        if (index >= 0 && index < this.playlist.length) {
-            this.currentIndex = index;
-            const song = this.playlist[index];
-            
-            // If we have this song preloaded, use the preloaded audio
-            if (this.preloadCache.has(index)) {
-                const preloadedAudio = this.preloadCache.get(index);
-                
-                // Transfer the preloaded audio properties to the main audio element
-                this.audio.src = preloadedAudio.src;
-                await this.audio.load(); // Ensure the audio is loaded
-                
-                // Clean up the preloaded audio
-                this.preloadCache.delete(index);
-            } else {
-                // If not preloaded, load directly
-                this.audio.src = song.url;
-                await this.audio.load();
-            }
-            
-            const titleEl = document.getElementById('currentTitle');
-            const artistEl = document.getElementById('currentArtist');
-            
-            if (titleEl) titleEl.textContent = song.title;
-            if (artistEl) artistEl.textContent = song.artist;
-            
-            this.updatePlaylistView();
-            this.audio.play();
-            this.updateMediaSession();
-            
-            // Start preloading next songs
-            this.preloadUpcomingSongs();
-        }
-    }
-
-    async togglePlay() {
-        if (this.playlist.length === 0) return;
-
-        if (this.audio.paused) {
-            if (!this.audio.src && this.playlist.length > 0) {
-                await this.playSong(0);
-            } else {
-                await this.audio.play();
-            }
-            // Start preloading when playback starts
-            this.preloadUpcomingSongs();
-        } else {
-            this.audio.pause();
-        }
-    }
-
-    previousSong() {
-        if (this.playlist.length === 0) return;
-        const newIndex = this.getPreviousIndex();
-        this.playSong(newIndex);
-    }
-
-    nextSong() {
-        if (this.playlist.length === 0) return;
-        const newIndex = this.getNextIndex();
-        this.playSong(newIndex);
-    }
-
-    updatePlayState(isPlaying) {
-        this.isPlaying = isPlaying;
-        const playBtn = document.getElementById('playBtn');
-        if (playBtn) {
-            playBtn.innerHTML = isPlaying ? '<i class="fas fa-pause"></i>' : '<i class="fas fa-play"></i>';
-        }
-    }
-
-    updateProgress() {
-        if (!this.audio.duration) return;
-
-        const percent = (this.audio.currentTime / this.audio.duration) * 100;
-        const progressEl = document.getElementById('progress');
-        const currentTimeEl = document.getElementById('currentTime');
-        
-        if (progressEl) progressEl.style.width = percent + '%';
-        if (currentTimeEl) currentTimeEl.textContent = this.formatTime(this.audio.currentTime);
-    }
-
-    updateDuration() {
-        const totalTimeEl = document.getElementById('totalTime');
-        if (totalTimeEl && this.audio.duration) {
-            totalTimeEl.textContent = this.formatTime(this.audio.duration);
-        }
-    }
-
-    updatePlaylistView() {
-        document.querySelectorAll('.song-item').forEach((item, index) => {
-            item.classList.toggle('active', index === this.currentIndex);
-        });
-    }
-
-    formatTime(seconds) {
-        if (isNaN(seconds) || seconds === null) return '0:00';
-        const mins = Math.floor(seconds / 60);
-        const secs = Math.floor(seconds % 60);
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
-    }
-
-    setupMediaSession() {
-        if ('mediaSession' in navigator) {
-            navigator.mediaSession.setActionHandler('play', () => this.togglePlay());
-            navigator.mediaSession.setActionHandler('pause', () => this.togglePlay());
-            navigator.mediaSession.setActionHandler('previoustrack', () => this.previousSong());
-            navigator.mediaSession.setActionHandler('nexttrack', () => this.nextSong());
-        }
-    }
-
-    updateMediaSession() {
-        if ('mediaSession' in navigator && this.currentIndex < this.playlist.length) {
-            const song = this.playlist[this.currentIndex];
-            navigator.mediaSession.metadata = new MediaMetadata({
-                title: song.title,
-                artist: song.artist,
-                album: 'My Music Collection'
-            });
-        }
-    }
-
-    setupViewToggle() {
-        const viewToggleBtn = document.getElementById('viewToggleBtn');
-        if (viewToggleBtn) {
-            viewToggleBtn.addEventListener('click', () => this.toggleView());
-        }
-    }
-
-    toggleView() {
-        this.isFocusedView = !this.isFocusedView;
-        const playlist = document.getElementById('playlist');
-        const viewToggleBtn = document.getElementById('viewToggleBtn');
-        
-        if (this.isFocusedView) {
-            // Show only current song (focused view)
-            playlist.style.display = 'none';
-            if (viewToggleBtn) {
-                viewToggleBtn.innerHTML = '<i class="fas fa-list"></i>';
-                viewToggleBtn.title = 'Show Playlist';
-            }
-        } else {
-            // Show playlist
-            playlist.style.display = 'block';
-            playlist.classList.remove('hidden');
-            if (viewToggleBtn) {
-                viewToggleBtn.innerHTML = '<i class="fas fa-music"></i>';
-                viewToggleBtn.title = 'Hide Playlist';
-            }
-        }
-    }
-
-    async preloadUpcomingSongs() {
-        if (this.preloadInProgress || !this.playlist.length) return;
-        
-        this.preloadInProgress = true;
-        
-        try {
-            let nextIndices = [];
-            let currentPos = this.currentIndex;
-            
-            // Determine next 5 song indices based on current play mode
-            for (let i = 0; i < this.preloadLimit; i++) {
-                if (this.isShuffled) {
-                    const currentShuffledPos = this.shuffledOrder.indexOf(currentPos);
-                    const nextShuffledPos = (currentShuffledPos + 1) % this.shuffledOrder.length;
-                    currentPos = this.shuffledOrder[nextShuffledPos];
-                } else {
-                    currentPos = (currentPos + 1) % this.playlist.length;
-                }
-                nextIndices.push(currentPos);
-            }
-
-            // Clear old cached songs that are no longer needed
-            for (let [index, audio] of this.preloadCache.entries()) {
-                if (!nextIndices.includes(index) && index !== this.currentIndex) {
-                    audio.src = ''; // Clear the source
-                    this.preloadCache.delete(index);
-                }
-            }
-
-            // Preload new songs
-            for (let index of nextIndices) {
-                if (!this.preloadCache.has(index)) {
-                    const song = this.playlist[index];
-                    const audio = new Audio();
-                    audio.preload = 'auto';
-                    
-                    // Create a promise that resolves when enough of the song is loaded
-                    const loadPromise = new Promise((resolve, reject) => {
-                        audio.addEventListener('canplaythrough', () => resolve(), { once: true });
-                        audio.addEventListener('error', (e) => reject(e), { once: true });
-                    });
-
-                    audio.src = song.url;
-                    this.preloadCache.set(index, audio);
-
-                    // Wait for enough of the song to be loaded before moving to the next
-                    await loadPromise;
-                }
-            }
-        } catch (error) {
-            console.error('Error preloading songs:', error);
-        } finally {
-            this.preloadInProgress = false;
-        }
-    }
-}
-
-// Initialize enhanced music player
-document.addEventListener('DOMContentLoaded', () => {
-    window.musicPlayer = new EnhancedMusicPlayer();
-});
-
-// Register service worker
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-            .then((registration) => {
-                console.log('SW registered successfully:', registration);
-            })
-            .catch((registrationError) => {
-                console.log('SW registration failed:', registrationError);
-            });
+      playlistContainer.appendChild(item);
     });
-}
+  }
+
+  // Set audio src and play
+  function playIndex(i) {
+    if (!songs || !songs[i]) return;
+    currentIndex = i;
+    const s = songs[i];
+    if (!s || !s.src) return;
+    if (!audio) {
+      console.warn('audio element not found');
+      return;
+    }
+    audio.src = s.src;
+    if (currentTitleEl) currentTitleEl.textContent = s.title || '';
+    if (currentArtistEl) currentArtistEl.textContent = s.artist || '';
+    audio.play().catch(err => {
+      // Autoplay/policy might prevent immediate play; just log
+      console.warn('Audio play failed:', err);
+    });
+
+    // visually mark active item
+    markActivePlaylistItem();
+  }
+
+  function markActivePlaylistItem() {
+    if (!playlistContainer) return;
+    const items = playlistContainer.querySelectorAll('.playlist-item');
+    items.forEach(it => it.classList.remove('playing'));
+    const cur = playlistContainer.querySelector(`.playlist-item[data-index="${currentIndex}"]`);
+    if (cur) cur.classList.add('playing');
+  }
+
+  // Load playlist for a given source ('mp3' or 'flac')
+  async function loadPlaylistForSource(source) {
+    if (!playlistContainer) return;
+    loadingEl.style.display = '';
+    loadingEl.textContent = 'Loading playlist...';
+    playlistContainer.innerHTML = '';
+    songs = [];
+    currentIndex = -1;
+
+    // Candidate files to try (ordered)
+    const candidates = source === 'flac'
+      ? ['music/FLAC/playlist.json', 'music/playlist.json', 'playlist.json']
+      : ['playlist.json', 'music/playlist.json'];
+
+    let data = null, usedPath = null;
+    for (const p of candidates) {
+      data = await tryFetchJson(p);
+      if (data) { usedPath = p; break; }
+    }
+
+    if (!data) {
+      loadingEl.textContent = 'No playlist found.';
+      return;
+    }
+
+    // Accept an array or object with songs property
+    let list = Array.isArray(data) ? data : (Array.isArray(data.songs) ? data.songs : []);
+    if (!list || list.length === 0) {
+      loadingEl.textContent = 'Playlist is empty.';
+      return;
+    }
+
+    // Normalize entries
+    const normalized = list.map(normalizeEntry).filter(Boolean);
+
+    // Filter by extension for the requested source
+    const ext = source === 'flac' ? '.flac' : '.mp3';
+    const filtered = normalized.filter(e => e.src.toLowerCase().endsWith(ext));
+
+    // If filter yields nothing, fall back to all entries (avoid giving user empty UX when they have mixed metadata)
+    songs = filtered.length ? filtered : normalized;
+
+    // If still empty, show message
+    if (!songs.length) {
+      loadingEl.textContent = `No ${source.toUpperCase()} tracks found in playlist.`;
+      return;
+    }
+
+    // Build UI
+    renderPlaylist();
+    loadingEl.style.display = 'none';
+
+    // Auto-play first track if none playing
+    playIndex(0);
+  }
+
+  // Hook up UI events
+  function wireUpControls() {
+    if (mp3Btn) {
+      mp3Btn.addEventListener('click', () => {
+        setActiveSourceBtn('mp3');
+        loadPlaylistForSource('mp3');
+      });
+    }
+
+    if (flacBtn) {
+      flacBtn.addEventListener('click', () => {
+        setActiveSourceBtn('flac');
+        loadPlaylistForSource('flac');
+      });
+    }
+
+    if (viewToggleBtn && playlistContainer) {
+      viewToggleBtn.addEventListener('click', () => {
+        const hidden = playlistContainer.style.display === 'none' || playlistContainer.classList.contains('hidden');
+        if (hidden) {
+          playlistContainer.style.display = '';
+          playlistContainer.classList.remove('hidden');
+        } else {
+          playlistContainer.style.display = 'none';
+          playlistContainer.classList.add('hidden');
+        }
+      });
+    }
+
+    // Audio end -> play next
+    if (audio) {
+      audio.addEventListener('ended', () => {
+        if (songs && songs.length && currentIndex + 1 < songs.length) {
+          playIndex(currentIndex + 1);
+        } else {
+          // optionally loop or stop
+          currentIndex = -1;
+          markActivePlaylistItem();
+        }
+      });
+    }
+  }
+
+  // Initialize player on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', () => {
+    wireUpControls();
+
+    // Detect FLAC support and disable the FLAC button if not supported
+    if (flacBtn && !browserCanPlayFlac()) {
+      flacBtn.disabled = true;
+      flacBtn.title = 'FLAC playback unsupported in this browser';
+      flacBtn.classList.add('disabled');
+    }
+
+    // Default to MP3
+    setActiveSourceBtn('mp3');
+    loadPlaylistForSource('mp3');
+  });
+
+  // Expose small API for debugging (optional)
+  window.__simpleMusicPlayer = {
+    loadPlaylistForSource,
+    playIndex,
+    getSongs: () => songs,
+    getCurrentIndex: () => currentIndex,
+  };
+
+})();
+

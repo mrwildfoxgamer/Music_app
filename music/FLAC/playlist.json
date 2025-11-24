@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "2 days into college",
+    "artist": "Aimee Carty",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/01%20-%20Aimee%20Carty%20-%202%20days%20into%20college.flac",
+    "duration": "16:32",
+    "filename": "01 - Aimee Carty - 2 days into college.flac",
+    "path": "music/FLAC/01 - Aimee Carty - 2 days into college.flac"
+  },
+  {
+    "id": 10,
+    "title": "Devil Doesn’t Bargain",
+    "artist": "Alec Benjamin",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/10 - Alec Benjamin - Devil Doesn’t Bargain.flac",
+    "duration": "20:42",
+    "filename": "10 - Alec Benjamin - Devil Doesn’t Bargain.flac",
+    "path": "music/FLAC/10 - Alec Benjamin - Devil Doesn’t Bargain.flac"
+  },
+  {
+    "id": 4,
+    "title": "GO TO HELL",
+    "artist": "Clinton Kane",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/01.%20Clinton%20Kane%20-%20GO%20TO%20HELL.flac",
+    "duration": "23:11",
+    "filename": "01. Clinton Kane - GO TO HELL.flac",
+    "path": "music/FLAC/01. Clinton Kane - GO TO HELL.flac"
+  },
+  {
+    "id": 8,
+    "title": "Still",
+    "artist": "Dove Cameron",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/02%20-%20Dove%20Cameron%20-%20Still.flac",
+    "duration": "20:23",
+    "filename": "02 - Dove Cameron - Still.flac",
+    "path": "music/FLAC/02 - Dove Cameron - Still.flac"
+  },
+  {
+    "id": 2,
+    "title": "We Go Down Together",
+    "artist": "Dove Cameron",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/01%20-%20Dove%20Cameron%20-%20We%20Go%20Down%20Together.flac",
+    "duration": "21:14",
+    "filename": "01 - Dove Cameron - We Go Down Together.flac",
+    "path": "music/FLAC/01 - Dove Cameron - We Go Down Together.flac"
+  },
+  {
+    "id": 6,
+    "title": "Maybe My Soulmate Died",
+    "artist": "iamnotshane",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/01.%20iamnotshane%20-%20Maybe%20My%20Soulmate%20Died.flac",
+    "duration": "12:57",
+    "filename": "01. iamnotshane - Maybe My Soulmate Died.flac",
+    "path": "music/FLAC/01. iamnotshane - Maybe My Soulmate Died.flac"
+  },
+  {
+    "id": 5,
+    "title": "Don't Cry for your Daughters Eve",
+    "artist": "Lydia the Bard",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/01.%20Lydia%20the%20Bard%20-%20Don't%20Cry%20for%20your%20Daughters%20Eve.flac",
+    "duration": "30:17",
+    "filename": "01. Lydia the Bard - Don't Cry for your Daughters Eve.flac",
+    "path": "music/FLAC/01. Lydia the Bard - Don't Cry for your Daughters Eve.flac"
+  },
+  {
+    "id": 9,
+    "title": "Skin and Bones",
+    "artist": "Morgan St. Jean",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/03.%20Morgan%20St.%20Jean%20-%20Skin%20and%20Bones.flac",
+    "duration": "18:31",
+    "filename": "03. Morgan St. Jean - Skin and Bones.flac",
+    "path": "music/FLAC/03. Morgan St. Jean - Skin and Bones.flac"
+  },
+  {
+    "id": 3,
+    "title": "Tattoos",
+    "artist": "Natalie Jane",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/01%20-%20Natalie%20Jane%20-%20Tattoos.flac",
+    "duration": "20:29",
+    "filename": "01 - Natalie Jane - Tattoos.flac",
+    "path": "music/FLAC/01 - Natalie Jane - Tattoos.flac"
+  },
+  {
+    "id": 7,
+    "title": "01_Dylan_Conrique,_Noak_Hellsing_Bitter_feat_Noak_Hellsing",
+    "artist": "Unknown Artist",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/01_Dylan_Conrique%2C_Noak_Hellsing_Bitter_feat_Noak_Hellsing.flac",
+    "duration": "26:54",
+    "filename": "01_Dylan_Conrique,_Noak_Hellsing_Bitter_feat_Noak_Hellsing.flac",
+    "path": "music/FLAC/01_Dylan_Conrique,_Noak_Hellsing_Bitter_feat_Noak_Hellsing.flac"
+  }
+]
