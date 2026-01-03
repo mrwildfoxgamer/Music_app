@@ -24,7 +24,7 @@ https://mskwild.netlify.app/
 
 ## Screenshots
 
-![App Screenshot](https://mskwild.netlify.app/)
+![App Screenshot](blob:https://github.com/7708c84a-7281-4ac2-9943-e58653f8ed04)
 
 
 ## Usage/Examples
