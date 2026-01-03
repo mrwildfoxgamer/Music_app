@@ -24,7 +24,10 @@ https://mskwild.netlify.app/
 
 ## Screenshots
 
-![App Screenshot](blob:https://github.com/7708c84a-7281-4ac2-9943-e58653f8ed04)
+![App Screenshot](https://github.com/mrwildfoxgamer/Music_app/tree/main/images/1.jpeg)
+![App Screenshot](https://github.com/mrwildfoxgamer/Music_app/tree/main/images/2.jpeg)
+![App Screenshot](https://github.com/mrwildfoxgamer/Music_app/tree/main/images/3.jpeg)
+
 
 
 ## Usage/Examples
