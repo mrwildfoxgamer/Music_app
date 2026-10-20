@@ -1,5 +1,23 @@
 [
   {
+    "id": 11,
+    "title": "Lay All Your Love On Me",
+    "artist": "ABBA",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/ABBA%20-%20Lay%20All%20Your%20Love%20On%20Me.flac",
+    "duration": "36:52",
+    "filename": "ABBA - Lay All Your Love On Me.flac",
+    "path": "music/FLAC/ABBA - Lay All Your Love On Me.flac"
+  },
+  {
+    "id": 12,
+    "title": "Set Fire to the Rain",
+    "artist": "Adele",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Adele%20-%20Set%20Fire%20to%20the%20Rain.flac",
+    "duration": "30:48",
+    "filename": "Adele - Set Fire to the Rain.flac",
+    "path": "music/FLAC/Adele - Set Fire to the Rain.flac"
+  },
+  {
     "id": 1,
     "title": "2 days into college",
     "artist": "Aimee Carty",
@@ -18,7 +36,7 @@
     "path": "music/FLAC/10 - Alec Benjamin - Devil Doesn’t Bargain.flac"
   },
   {
-    "id": 11,
+    "id": 13,
     "title": "Ordinary",
     "artist": "Alex Warren",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Alex%20Warren%20-%20Ordinary.flac",
@@ -27,7 +45,7 @@
     "path": "music/FLAC/Alex Warren - Ordinary.flac"
   },
   {
-    "id": 12,
+    "id": 14,
     "title": "Radiohead",
     "artist": "All I Need",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/All%20I%20Need%20-%20Radiohead.flac",
@@ -36,7 +54,7 @@
     "path": "music/FLAC/All I Need - Radiohead.flac"
   },
   {
-    "id": 13,
+    "id": 15,
     "title": "Gilbert O'Sullivan",
     "artist": "Alone Again (Naturally)",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Alone%20Again%20(Naturally)%20-%20Gilbert%20O'Sullivan.flac",
@@ -45,7 +63,16 @@
     "path": "music/FLAC/Alone Again (Naturally) - Gilbert O'Sullivan.flac"
   },
   {
-    "id": 14,
+    "id": 16,
+    "title": "Forever Young",
+    "artist": "Alphaville",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Alphaville%20-%20Forever%20Young.flac",
+    "duration": "25:22",
+    "filename": "Alphaville - Forever Young.flac",
+    "path": "music/FLAC/Alphaville - Forever Young.flac"
+  },
+  {
+    "id": 17,
     "title": "17",
     "artist": "Amanda Nolan",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Amanda%20Nolan%20-%2017.flac",
@@ -54,7 +81,16 @@
     "path": "music/FLAC/Amanda Nolan - 17.flac"
   },
   {
-    "id": 15,
+    "id": 18,
+    "title": "Gimme! Gimme! Gimme! (A Man After Midnight) - From 'Mamma Mia!' Original Motion Picture Soundtrack",
+    "artist": "Amanda Seyfried",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Amanda%20Seyfried%20-%20Gimme!%20Gimme!%20Gimme!%20(A%20Man%20After%20Midnight)%20-%20From%20'Mamma%20Mia!'%20Original%20Motion%20Picture%20Soundtrack.flac",
+    "duration": "30:16",
+    "filename": "Amanda Seyfried - Gimme! Gimme! Gimme! (A Man After Midnight) - From 'Mamma Mia!' Original Motion Picture Soundtrack.flac",
+    "path": "music/FLAC/Amanda Seyfried - Gimme! Gimme! Gimme! (A Man After Midnight) - From 'Mamma Mia!' Original Motion Picture Soundtrack.flac"
+  },
+  {
+    "id": 19,
     "title": "I Found",
     "artist": "Amber Run",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Amber%20Run%20-%20I%20Found.flac",
@@ -63,7 +99,16 @@
     "path": "music/FLAC/Amber Run - I Found.flac"
   },
   {
-    "id": 16,
+    "id": 20,
+    "title": "Midnight Tide",
+    "artist": "Andrea Accorsi",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Andrea%20Accorsi%20-%20Midnight%20Tide.flac",
+    "duration": "13:28",
+    "filename": "Andrea Accorsi - Midnight Tide.flac",
+    "path": "music/FLAC/Andrea Accorsi - Midnight Tide.flac"
+  },
+  {
+    "id": 21,
     "title": "Marigolds",
     "artist": "Andrea Bejar",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Andrea%20Bejar%20-%20Marigolds.flac",
@@ -72,7 +117,7 @@
     "path": "music/FLAC/Andrea Bejar - Marigolds.flac"
   },
   {
-    "id": 17,
+    "id": 22,
     "title": "Save Myself",
     "artist": "Ashe",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Ashe%20-%20Save%20Myself.flac",
@@ -81,7 +126,7 @@
     "path": "music/FLAC/Ashe - Save Myself.flac"
   },
   {
-    "id": 18,
+    "id": 23,
     "title": "It s Ok If You Forget Me",
     "artist": "Astrid S",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Astrid%20S%20-%20It%20s%20Ok%20If%20You%20Forget%20Me.flac",
@@ -90,7 +135,7 @@
     "path": "music/FLAC/Astrid S - It s Ok If You Forget Me.flac"
   },
   {
-    "id": 19,
+    "id": 24,
     "title": "Panic Room",
     "artist": "AuRa",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/AuRa%20-%20Panic%20Room.flac",
@@ -99,7 +144,16 @@
     "path": "music/FLAC/AuRa - Panic Room.flac"
   },
   {
-    "id": 110,
+    "id": 25,
+    "title": "Hotel Room",
+    "artist": "Ax and the Hatchetmen",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Ax%20and%20the%20Hatchetmen%20-%20Hotel%20Room.flac",
+    "duration": "20:18",
+    "filename": "Ax and the Hatchetmen - Hotel Room.flac",
+    "path": "music/FLAC/Ax and the Hatchetmen - Hotel Room.flac"
+  },
+  {
+    "id": 133,
     "title": "sombr",
     "artist": "back to friends",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/back%20to%20friends%20-%20sombr.flac",
@@ -108,7 +162,7 @@
     "path": "music/FLAC/back to friends - sombr.flac"
   },
   {
-    "id": 20,
+    "id": 26,
     "title": "Flower Face",
     "artist": "Back to You",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Back%20to%20You%20-%20Flower%20Face.flac",
@@ -117,7 +171,7 @@
     "path": "music/FLAC/Back to You - Flower Face.flac"
   },
   {
-    "id": 21,
+    "id": 27,
     "title": "The Ronettes",
     "artist": "Be My Baby",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Be%20My%20Baby%20-%20The%20Ronettes.flac",
@@ -126,7 +180,7 @@
     "path": "music/FLAC/Be My Baby - The Ronettes.flac"
   },
   {
-    "id": 22,
+    "id": 28,
     "title": "She Gets the Flowers",
     "artist": "Beth McCarthy",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Beth%20McCarthy%20-%20She%20Gets%20the%20Flowers.flac",
@@ -135,7 +189,16 @@
     "path": "music/FLAC/Beth McCarthy - She Gets the Flowers.flac"
   },
   {
-    "id": 23,
+    "id": 29,
+    "title": "BIRDS OF A FEATHER",
+    "artist": "Billie Eilish",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Billie%20Eilish%20-%20BIRDS%20OF%20A%20FEATHER.flac",
+    "duration": "25:19",
+    "filename": "Billie Eilish - BIRDS OF A FEATHER.flac",
+    "path": "music/FLAC/Billie Eilish - BIRDS OF A FEATHER.flac"
+  },
+  {
+    "id": 30,
     "title": "Skinny Love",
     "artist": "Birdy",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Birdy%20-%20Skinny%20Love.flac",
@@ -144,7 +207,7 @@
     "path": "music/FLAC/Birdy - Skinny Love.flac"
   },
   {
-    "id": 111,
+    "id": 134,
     "title": "Madison Beer",
     "artist": "bittersweet",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/bittersweet%20-%20Madison%20Beer.flac",
@@ -153,7 +216,7 @@
     "path": "music/FLAC/bittersweet - Madison Beer.flac"
   },
   {
-    "id": 24,
+    "id": 31,
     "title": "Gracie Abrams",
     "artist": "Block me out",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Block%20me%20out%20-%20Gracie%20Abrams.flac",
@@ -162,7 +225,7 @@
     "path": "music/FLAC/Block me out - Gracie Abrams.flac"
   },
   {
-    "id": 25,
+    "id": 32,
     "title": "Morten Harket",
     "artist": "Can't Take My Eyes off You",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Can't%20Take%20My%20Eyes%20off%20You%20-%20Morten%20Harket.flac",
@@ -171,7 +234,16 @@
     "path": "music/FLAC/Can't Take My Eyes off You - Morten Harket.flac"
   },
   {
-    "id": 26,
+    "id": 33,
+    "title": "Disfruto",
+    "artist": "Carla Morrison",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Carla%20Morrison%20-%20Disfruto.flac",
+    "duration": "23:44",
+    "filename": "Carla Morrison - Disfruto.flac",
+    "path": "music/FLAC/Carla Morrison - Disfruto.flac"
+  },
+  {
+    "id": 34,
     "title": "Sara Kays",
     "artist": "Chosen Last",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Chosen%20Last%20-%20Sara%20Kays.flac",
@@ -180,7 +252,16 @@
     "path": "music/FLAC/Chosen Last - Sara Kays.flac"
   },
   {
-    "id": 27,
+    "id": 35,
+    "title": "Heavenly",
+    "artist": "Cigarettes After Sex",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Cigarettes%20After%20Sex%20-%20Heavenly.flac",
+    "duration": "32:35",
+    "filename": "Cigarettes After Sex - Heavenly.flac",
+    "path": "music/FLAC/Cigarettes After Sex - Heavenly.flac"
+  },
+  {
+    "id": 36,
     "title": "I Hold You",
     "artist": "Clann",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Clann%20-%20I%20Hold%20You.flac",
@@ -189,7 +270,7 @@
     "path": "music/FLAC/Clann - I Hold You.flac"
   },
   {
-    "id": 28,
+    "id": 37,
     "title": "Missing You Sucks",
     "artist": "Clara Mae",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Clara%20Mae%20-%20Missing%20You%20Sucks.flac",
@@ -198,7 +279,7 @@
     "path": "music/FLAC/Clara Mae - Missing You Sucks.flac"
   },
   {
-    "id": 29,
+    "id": 38,
     "title": "Not Sad Anymore",
     "artist": "Clara Mae",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Clara%20Mae%20-%20Not%20Sad%20Anymore.flac",
@@ -216,7 +297,7 @@
     "path": "music/FLAC/01. Clinton Kane - GO TO HELL.flac"
   },
   {
-    "id": 30,
+    "id": 39,
     "title": "Astronomy",
     "artist": "Conan Gray",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Conan%20Gray%20-%20Astronomy.flac",
@@ -225,7 +306,7 @@
     "path": "music/FLAC/Conan Gray - Astronomy.flac"
   },
   {
-    "id": 32,
+    "id": 41,
     "title": "Lana Del Rey",
     "artist": "Dark Paradise",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Dark%20Paradise%20-%20Lana%20Del%20Rey.flac",
@@ -234,7 +315,16 @@
     "path": "music/FLAC/Dark Paradise - Lana Del Rey.flac"
   },
   {
-    "id": 33,
+    "id": 42,
+    "title": "American Pie",
+    "artist": "Don McLean",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Don%20McLean%20-%20American%20Pie.flac",
+    "duration": "50:27",
+    "filename": "Don McLean - American Pie.flac",
+    "path": "music/FLAC/Don McLean - American Pie.flac"
+  },
+  {
+    "id": 43,
     "title": "Sasha Alex Sloan",
     "artist": "Don't Laugh I'll Cry",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Don't%20Laugh%20I'll%20Cry%20-%20Sasha%20Alex%20Sloan.flac",
@@ -243,7 +333,7 @@
     "path": "music/FLAC/Don't Laugh I'll Cry - Sasha Alex Sloan.flac"
   },
   {
-    "id": 34,
+    "id": 44,
     "title": "Sand",
     "artist": "Dove Cameron",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Dove%20Cameron%20-%20Sand.flac",
@@ -270,7 +360,16 @@
     "path": "music/FLAC/01 - Dove Cameron - We Go Down Together.flac"
   },
   {
-    "id": 35,
+    "id": 45,
+    "title": "Where'd All the Time Go?",
+    "artist": "Dr. Dog",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Dr.%20Dog%20-%20Where'd%20All%20the%20Time%20Go%3F.flac",
+    "duration": "26:10",
+    "filename": "Dr. Dog - Where'd All the Time Go?.flac",
+    "path": "music/FLAC/Dr. Dog - Where'd All the Time Go?.flac"
+  },
+  {
+    "id": 46,
     "title": "Nineteen",
     "artist": "Dylan",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Dylan%20-%20Nineteen.flac",
@@ -279,7 +378,7 @@
     "path": "music/FLAC/Dylan - Nineteen.flac"
   },
   {
-    "id": 36,
+    "id": 47,
     "title": "Birthday Cake",
     "artist": "Dylan Conrique",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Dylan%20Conrique%20-%20Birthday%20Cake.flac",
@@ -288,7 +387,7 @@
     "path": "music/FLAC/Dylan Conrique - Birthday Cake.flac"
   },
   {
-    "id": 37,
+    "id": 48,
     "title": "birthday cake (duet)",
     "artist": "Dylan Conrique",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Dylan%20Conrique%20-%20birthday%20cake%20(duet).flac",
@@ -297,7 +396,7 @@
     "path": "music/FLAC/Dylan Conrique - birthday cake (duet).flac"
   },
   {
-    "id": 38,
+    "id": 49,
     "title": "Photograph",
     "artist": "Ed Sheeran",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Ed%20Sheeran%20-%20Photograph.flac",
@@ -306,7 +405,16 @@
     "path": "music/FLAC/Ed Sheeran - Photograph.flac"
   },
   {
-    "id": 39,
+    "id": 50,
+    "title": "Beretta (De Los Cerros La Escuela)",
+    "artist": "El De Las R's",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/El%20De%20Las%20R's%20-%20Beretta%20(De%20Los%20Cerros%20La%20Escuela).flac",
+    "duration": "7:58",
+    "filename": "El De Las R's - Beretta (De Los Cerros La Escuela).flac",
+    "path": "music/FLAC/El De Las R's - Beretta (De Los Cerros La Escuela).flac"
+  },
+  {
+    "id": 51,
     "title": "Brutus",
     "artist": "Em Beihold",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Em%20Beihold%20-%20Brutus.flac",
@@ -315,7 +423,7 @@
     "path": "music/FLAC/Em Beihold - Brutus.flac"
   },
   {
-    "id": 40,
+    "id": 52,
     "title": "Richy Mitch & The Coal Miners",
     "artist": "Evergreen",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Evergreen%20-%20Richy%20Mitch%20%26%20The%20Coal%20Miners.flac",
@@ -324,7 +432,7 @@
     "path": "music/FLAC/Evergreen - Richy Mitch & The Coal Miners.flac"
   },
   {
-    "id": 41,
+    "id": 53,
     "title": "Creedence Clearwater Revival",
     "artist": "Fortunate Son",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Fortunate%20Son%20-%20Creedence%20Clearwater%20Revival.flac",
@@ -333,7 +441,34 @@
     "path": "music/FLAC/Fortunate Son - Creedence Clearwater Revival.flac"
   },
   {
-    "id": 42,
+    "id": 54,
+    "title": "Can't Take My Eyes off You",
+    "artist": "Frankie Valli",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Frankie%20Valli%20-%20Can't%20Take%20My%20Eyes%20off%20You.flac",
+    "duration": "24:13",
+    "filename": "Frankie Valli - Can't Take My Eyes off You.flac",
+    "path": "music/FLAC/Frankie Valli - Can't Take My Eyes off You.flac"
+  },
+  {
+    "id": 55,
+    "title": "En Jeevan",
+    "artist": "G. V. Prakash",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/G.%20V.%20Prakash%20-%20En%20Jeevan.flac",
+    "duration": "35:15",
+    "filename": "G. V. Prakash - En Jeevan.flac",
+    "path": "music/FLAC/G. V. Prakash - En Jeevan.flac"
+  },
+  {
+    "id": 135,
+    "title": "midnight love",
+    "artist": "girl in red",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/girl%20in%20red%20-%20midnight%20love.flac",
+    "duration": "21:49",
+    "filename": "girl in red - midnight love.flac",
+    "path": "music/FLAC/girl in red - midnight love.flac"
+  },
+  {
+    "id": 56,
     "title": "i hate u, i love u (feat. olivia o brien)",
     "artist": "Gnash",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gnash%20-%20i%20hate%20u%2C%20i%20love%20u%20(feat.%20olivia%20o%20brien).flac",
@@ -342,7 +477,7 @@
     "path": "music/FLAC/Gnash - i hate u, i love u (feat. olivia o brien).flac"
   },
   {
-    "id": 43,
+    "id": 57,
     "title": "21",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gracie%20Abrams%20-%2021.flac",
@@ -351,7 +486,7 @@
     "path": "music/FLAC/Gracie Abrams - 21.flac"
   },
   {
-    "id": 44,
+    "id": 58,
     "title": "I Love You, I'm Sorry",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gracie%20Abrams%20-%20I%20Love%20You%2C%20I'm%20Sorry.flac",
@@ -360,7 +495,7 @@
     "path": "music/FLAC/Gracie Abrams - I Love You, I'm Sorry.flac"
   },
   {
-    "id": 45,
+    "id": 59,
     "title": "I Told You Things",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gracie%20Abrams%20-%20I%20Told%20You%20Things.flac",
@@ -369,7 +504,7 @@
     "path": "music/FLAC/Gracie Abrams - I Told You Things.flac"
   },
   {
-    "id": 46,
+    "id": 60,
     "title": "Mean It",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gracie%20Abrams%20-%20Mean%20It.flac",
@@ -378,7 +513,7 @@
     "path": "music/FLAC/Gracie Abrams - Mean It.flac"
   },
   {
-    "id": 47,
+    "id": 61,
     "title": "Mess It Up",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gracie%20Abrams%20-%20Mess%20It%20Up.flac",
@@ -387,7 +522,7 @@
     "path": "music/FLAC/Gracie Abrams - Mess It Up.flac"
   },
   {
-    "id": 48,
+    "id": 62,
     "title": "Risk",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gracie%20Abrams%20-%20Risk.flac",
@@ -396,7 +531,7 @@
     "path": "music/FLAC/Gracie Abrams - Risk.flac"
   },
   {
-    "id": 49,
+    "id": 63,
     "title": "Stay",
     "artist": "Gracie Abrams",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Gracie%20Abrams%20-%20Stay.flac",
@@ -405,7 +540,7 @@
     "path": "music/FLAC/Gracie Abrams - Stay.flac"
   },
   {
-    "id": 50,
+    "id": 64,
     "title": "She & Him",
     "artist": "I Thought I Saw Your Face Today",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/I%20Thought%20I%20Saw%20Your%20Face%20Today%20-%20She%20%26%20Him.flac",
@@ -423,7 +558,7 @@
     "path": "music/FLAC/01. iamnotshane - Maybe My Soulmate Died.flac"
   },
   {
-    "id": 52,
+    "id": 66,
     "title": "If You Ever Forget That You Love Me",
     "artist": "Isak Danielson",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Isak%20Danielson%20-%20If%20You%20Ever%20Forget%20That%20You%20Love%20Me.flac",
@@ -432,7 +567,7 @@
     "path": "music/FLAC/Isak Danielson - If You Ever Forget That You Love Me.flac"
   },
   {
-    "id": 53,
+    "id": 67,
     "title": "Constellations (Piano Version)",
     "artist": "Jade LeMac",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Jade%20LeMac%20-%20Constellations%20(Piano%20Version).flac",
@@ -441,7 +576,7 @@
     "path": "music/FLAC/Jade LeMac - Constellations (Piano Version).flac"
   },
   {
-    "id": 54,
+    "id": 68,
     "title": "Say You Won t Let Go",
     "artist": "James Arthur",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/James%20Arthur%20-%20Say%20You%20Won%20t%20Let%20Go.flac",
@@ -450,7 +585,16 @@
     "path": "music/FLAC/James Arthur - Say You Won t Let Go.flac"
   },
   {
-    "id": 55,
+    "id": 69,
+    "title": "like my father",
+    "artist": "Jax",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Jax%20-%20like%20my%20father.flac",
+    "duration": "16:31",
+    "filename": "Jax - like my father.flac",
+    "path": "music/FLAC/Jax - like my father.flac"
+  },
+  {
+    "id": 70,
     "title": "2%",
     "artist": "Jenna Raine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Jenna%20Raine%20-%202%25.flac",
@@ -459,7 +603,7 @@
     "path": "music/FLAC/Jenna Raine - 2%.flac"
   },
   {
-    "id": 57,
+    "id": 72,
     "title": "see you later (ten years)",
     "artist": "Jenna Raine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Jenna%20Raine%20-%20see%20you%20later%20(ten%20years).flac",
@@ -468,7 +612,7 @@
     "path": "music/FLAC/Jenna Raine - see you later (ten years).flac"
   },
   {
-    "id": 56,
+    "id": 71,
     "title": "Who Am I",
     "artist": "Jenna Raine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Jenna%20Raine%20-%20Who%20Am%20I.flac",
@@ -477,7 +621,7 @@
     "path": "music/FLAC/Jenna Raine - Who Am I.flac"
   },
   {
-    "id": 58,
+    "id": 73,
     "title": "If I Died Last Night",
     "artist": "Jessie Murph",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Jessie%20Murph%20-%20If%20I%20Died%20Last%20Night.flac",
@@ -486,7 +630,7 @@
     "path": "music/FLAC/Jessie Murph - If I Died Last Night.flac"
   },
   {
-    "id": 59,
+    "id": 74,
     "title": "If the World Was Ending (feat. Julia Michaels)",
     "artist": "Jp Saxe",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Jp%20Saxe%20-%20If%20the%20World%20Was%20Ending%20(feat.%20Julia%20Michaels).flac",
@@ -495,7 +639,7 @@
     "path": "music/FLAC/Jp Saxe - If the World Was Ending (feat. Julia Michaels).flac"
   },
   {
-    "id": 60,
+    "id": 75,
     "title": "Grover Washington, Jr.; Bill Withers",
     "artist": "Just the Two of Us (feat. Bill Withers)",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Just%20the%20Two%20of%20Us%20(feat.%20Bill%20Withers)%20-%20Grover%20Washington%2C%20Jr.%3B%20Bill%20Withers.flac",
@@ -504,7 +648,25 @@
     "path": "music/FLAC/Just the Two of Us (feat. Bill Withers) - Grover Washington, Jr.; Bill Withers.flac"
   },
   {
-    "id": 61,
+    "id": 76,
+    "title": "Loner",
+    "artist": "Kali Uchis",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Kali%20Uchis%20-%20Loner.flac",
+    "duration": "23:54",
+    "filename": "Kali Uchis - Loner.flac",
+    "path": "music/FLAC/Kali Uchis - Loner.flac"
+  },
+  {
+    "id": 77,
+    "title": "Melting",
+    "artist": "Kali Uchis",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Kali%20Uchis%20-%20Melting.flac",
+    "duration": "21:33",
+    "filename": "Kali Uchis - Melting.flac",
+    "path": "music/FLAC/Kali Uchis - Melting.flac"
+  },
+  {
+    "id": 78,
     "title": "When I Fall",
     "artist": "Katy Nichole",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Katy%20Nichole%20-%20When%20I%20Fall.flac",
@@ -513,7 +675,7 @@
     "path": "music/FLAC/Katy Nichole - When I Fall.flac"
   },
   {
-    "id": 112,
+    "id": 136,
     "title": "anatomy",
     "artist": "kenzie",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/kenzie%20-%20anatomy.flac",
@@ -522,7 +684,7 @@
     "path": "music/FLAC/kenzie - anatomy.flac"
   },
   {
-    "id": 62,
+    "id": 79,
     "title": "Love",
     "artist": "Lana Del Rey",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Lana%20Del%20Rey%20-%20Love.flac",
@@ -531,7 +693,7 @@
     "path": "music/FLAC/Lana Del Rey - Love.flac"
   },
   {
-    "id": 63,
+    "id": 80,
     "title": "Honest",
     "artist": "Leanna Crawford",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Leanna%20Crawford%20-%20Honest.flac",
@@ -540,7 +702,7 @@
     "path": "music/FLAC/Leanna Crawford - Honest.flac"
   },
   {
-    "id": 64,
+    "id": 81,
     "title": "Radiohead",
     "artist": "Let Down",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Let%20Down%20-%20Radiohead.flac",
@@ -549,7 +711,7 @@
     "path": "music/FLAC/Let Down - Radiohead.flac"
   },
   {
-    "id": 65,
+    "id": 82,
     "title": "drunk text me",
     "artist": "Lexi Jayde",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Lexi%20Jayde%20-%20drunk%20text%20me.flac",
@@ -558,7 +720,7 @@
     "path": "music/FLAC/Lexi Jayde - drunk text me.flac"
   },
   {
-    "id": 66,
+    "id": 83,
     "title": "ceilings",
     "artist": "Lizzy McAlpine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Lizzy%20McAlpine%20-%20ceilings.flac",
@@ -567,7 +729,7 @@
     "path": "music/FLAC/Lizzy McAlpine - ceilings.flac"
   },
   {
-    "id": 67,
+    "id": 84,
     "title": "doomsday",
     "artist": "Lizzy McAlpine",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Lizzy%20McAlpine%20-%20doomsday.flac",
@@ -576,7 +738,7 @@
     "path": "music/FLAC/Lizzy McAlpine - doomsday.flac"
   },
   {
-    "id": 68,
+    "id": 85,
     "title": "I Left My Heart",
     "artist": "Lucy Blue",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Lucy%20Blue%20-%20I%20Left%20My%20Heart.flac",
@@ -594,7 +756,16 @@
     "path": "music/FLAC/01. Lydia the Bard - Don't Cry for your Daughters Eve.flac"
   },
   {
-    "id": 70,
+    "id": 87,
+    "title": "Chamber Of Reflection",
+    "artist": "Mac DeMarco",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Mac%20DeMarco%20-%20Chamber%20Of%20Reflection.flac",
+    "duration": "27:23",
+    "filename": "Mac DeMarco - Chamber Of Reflection.flac",
+    "path": "music/FLAC/Mac DeMarco - Chamber Of Reflection.flac"
+  },
+  {
+    "id": 88,
     "title": "You Might Not Like Her",
     "artist": "Maddie Zahm",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Maddie%20Zahm%20-%20You%20Might%20Not%20Like%20Her.flac",
@@ -603,7 +774,7 @@
     "path": "music/FLAC/Maddie Zahm - You Might Not Like Her.flac"
   },
   {
-    "id": 71,
+    "id": 89,
     "title": "MEAN!",
     "artist": "Madeline The Person",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Madeline%20The%20Person%20-%20MEAN!.flac",
@@ -612,7 +783,7 @@
     "path": "music/FLAC/Madeline The Person - MEAN!.flac"
   },
   {
-    "id": 72,
+    "id": 90,
     "title": "Selfish",
     "artist": "Madison Beer",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Madison%20Beer%20-%20Selfish.flac",
@@ -621,7 +792,16 @@
     "path": "music/FLAC/Madison Beer - Selfish.flac"
   },
   {
-    "id": 73,
+    "id": 91,
+    "title": "Past Lives",
+    "artist": "Martin Arteta",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Martin%20Arteta%20-%20Past%20Lives.flac",
+    "duration": "10:26",
+    "filename": "Martin Arteta - Past Lives.flac",
+    "path": "music/FLAC/Martin Arteta - Past Lives.flac"
+  },
+  {
+    "id": 92,
     "title": "LIVING ROOM",
     "artist": "Maryjo",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Maryjo%20-%20LIVING%20ROOM.flac",
@@ -630,7 +810,7 @@
     "path": "music/FLAC/Maryjo - LIVING ROOM.flac"
   },
   {
-    "id": 74,
+    "id": 93,
     "title": "Miki Matsubara",
     "artist": "Mayonaka no Door~stay with me",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Mayonaka%20no%20Door%7Estay%20with%20me%20-%20Miki%20Matsubara.flac",
@@ -639,7 +819,16 @@
     "path": "music/FLAC/Mayonaka no Door~stay with me - Miki Matsubara.flac"
   },
   {
-    "id": 75,
+    "id": 94,
+    "title": "Fade Into You",
+    "artist": "Mazzy Star",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Mazzy%20Star%20-%20Fade%20Into%20You.flac",
+    "duration": "34:01",
+    "filename": "Mazzy Star - Fade Into You.flac",
+    "path": "music/FLAC/Mazzy Star - Fade Into You.flac"
+  },
+  {
+    "id": 95,
     "title": "do all my friends hate me",
     "artist": "Mckenna Grace",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Mckenna%20Grace%20-%20do%20all%20my%20friends%20hate%20me.flac",
@@ -648,7 +837,7 @@
     "path": "music/FLAC/Mckenna Grace - do all my friends hate me.flac"
   },
   {
-    "id": 76,
+    "id": 96,
     "title": "My Love Mine All Mine",
     "artist": "Mitski",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Mitski%20-%20My%20Love%20Mine%20All%20Mine.flac",
@@ -657,7 +846,7 @@
     "path": "music/FLAC/Mitski - My Love Mine All Mine.flac"
   },
   {
-    "id": 77,
+    "id": 97,
     "title": "Not All Men",
     "artist": "Morgan St. Jean",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Morgan%20St.%20Jean%20-%20Not%20All%20Men.flac",
@@ -675,7 +864,7 @@
     "path": "music/FLAC/03. Morgan St. Jean - Skin and Bones.flac"
   },
   {
-    "id": 78,
+    "id": 98,
     "title": "butterflies",
     "artist": "Natalie Jane",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Natalie%20Jane%20-%20butterflies.flac",
@@ -693,7 +882,7 @@
     "path": "music/FLAC/01 - Natalie Jane - Tattoos.flac"
   },
   {
-    "id": 79,
+    "id": 99,
     "title": "How",
     "artist": "NewDad",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/NewDad%20-%20How.flac",
@@ -702,7 +891,7 @@
     "path": "music/FLAC/NewDad - How.flac"
   },
   {
-    "id": 80,
+    "id": 100,
     "title": "Sasha Alex Sloan",
     "artist": "Normal",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Normal%20-%20Sasha%20Alex%20Sloan.flac",
@@ -711,7 +900,7 @@
     "path": "music/FLAC/Normal - Sasha Alex Sloan.flac"
   },
   {
-    "id": 81,
+    "id": 101,
     "title": "All I Want",
     "artist": "Olivia Rodrigo",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Olivia%20Rodrigo%20-%20All%20I%20Want.flac",
@@ -720,7 +909,16 @@
     "path": "music/FLAC/Olivia Rodrigo - All I Want.flac"
   },
   {
-    "id": 83,
+    "id": 103,
+    "title": "Put Your Head on My Shoulder",
+    "artist": "Paul Anka",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Paul%20Anka%20-%20Put%20Your%20Head%20on%20My%20Shoulder.flac",
+    "duration": "16:33",
+    "filename": "Paul Anka - Put Your Head on My Shoulder.flac",
+    "path": "music/FLAC/Paul Anka - Put Your Head on My Shoulder.flac"
+  },
+  {
+    "id": 104,
     "title": "Love Story - Indila",
     "artist": "Penguin Piano",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Penguin%20Piano%20-%20Love%20Story%20-%20Indila.flac",
@@ -729,7 +927,7 @@
     "path": "music/FLAC/Penguin Piano - Love Story - Indila.flac"
   },
   {
-    "id": 84,
+    "id": 105,
     "title": "Murder the Man",
     "artist": "Rachel Grae",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Rachel%20Grae%20-%20Murder%20the%20Man.flac",
@@ -738,7 +936,7 @@
     "path": "music/FLAC/Rachel Grae - Murder the Man.flac"
   },
   {
-    "id": 85,
+    "id": 106,
     "title": "You and I",
     "artist": "Roland Lewis",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Roland%20Lewis%20-%20You%20and%20I.flac",
@@ -747,7 +945,7 @@
     "path": "music/FLAC/Roland Lewis - You and I.flac"
   },
   {
-    "id": 86,
+    "id": 107,
     "title": "28 (with Dean Lewis)",
     "artist": "Ruth B.",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Ruth%20B.%20-%2028%20(with%20Dean%20Lewis).flac",
@@ -756,7 +954,7 @@
     "path": "music/FLAC/Ruth B. - 28 (with Dean Lewis).flac"
   },
   {
-    "id": 87,
+    "id": 108,
     "title": "Locksmith",
     "artist": "Sadie Jean",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sadie%20Jean%20-%20Locksmith.flac",
@@ -765,7 +963,7 @@
     "path": "music/FLAC/Sadie Jean - Locksmith.flac"
   },
   {
-    "id": 88,
+    "id": 109,
     "title": "WYD Now",
     "artist": "Sadie Jean",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sadie%20Jean%20-%20WYD%20Now.flac",
@@ -774,7 +972,7 @@
     "path": "music/FLAC/Sadie Jean - WYD Now.flac"
   },
   {
-    "id": 89,
+    "id": 110,
     "title": "Remember That Night",
     "artist": "Sara Kays",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sara%20Kays%20-%20Remember%20That%20Night.flac",
@@ -783,7 +981,7 @@
     "path": "music/FLAC/Sara Kays - Remember That Night.flac"
   },
   {
-    "id": 90,
+    "id": 111,
     "title": "Traffic Lights",
     "artist": "Sara Kays",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sara%20Kays%20-%20Traffic%20Lights.flac",
@@ -792,7 +990,7 @@
     "path": "music/FLAC/Sara Kays - Traffic Lights.flac"
   },
   {
-    "id": 91,
+    "id": 112,
     "title": "smiling when i die",
     "artist": "Sasha Alex Sloan",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sasha%20Alex%20Sloan%20-%20smiling%20when%20i%20die.flac",
@@ -801,7 +999,7 @@
     "path": "music/FLAC/Sasha Alex Sloan - smiling when i die.flac"
   },
   {
-    "id": 92,
+    "id": 113,
     "title": "She s Mine",
     "artist": "Sean Thomas",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sean%20Thomas%20-%20She%20s%20Mine.flac",
@@ -810,7 +1008,7 @@
     "path": "music/FLAC/Sean Thomas - She s Mine.flac"
   },
   {
-    "id": 93,
+    "id": 114,
     "title": "Love Me Still",
     "artist": "Seph Schlueter",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Seph%20Schlueter%20-%20Love%20Me%20Still.flac",
@@ -819,7 +1017,7 @@
     "path": "music/FLAC/Seph Schlueter - Love Me Still.flac"
   },
   {
-    "id": 94,
+    "id": 115,
     "title": "Sadie Jean",
     "artist": "Slow Burn",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Slow%20Burn%20-%20Sadie%20Jean.flac",
@@ -828,7 +1026,7 @@
     "path": "music/FLAC/Slow Burn - Sadie Jean.flac"
   },
   {
-    "id": 95,
+    "id": 116,
     "title": "The Pool",
     "artist": "Stephen Sanchez",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Stephen%20Sanchez%20-%20The%20Pool.flac",
@@ -837,7 +1035,7 @@
     "path": "music/FLAC/Stephen Sanchez - The Pool.flac"
   },
   {
-    "id": 96,
+    "id": 117,
     "title": "Sandy Shore",
     "artist": "Sunday Without You",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sunday%20Without%20You%20-%20Sandy%20Shore.flac",
@@ -846,7 +1044,7 @@
     "path": "music/FLAC/Sunday Without You - Sandy Shore.flac"
   },
   {
-    "id": 97,
+    "id": 118,
     "title": "We Hug Now",
     "artist": "Sydney Rose",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Sydney%20Rose%20-%20We%20Hug%20Now.flac",
@@ -855,7 +1053,7 @@
     "path": "music/FLAC/Sydney Rose - We Hug Now.flac"
   },
   {
-    "id": 98,
+    "id": 119,
     "title": "you broke me first",
     "artist": "Tate McRae",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Tate%20McRae%20-%20you%20broke%20me%20first.flac",
@@ -864,7 +1062,7 @@
     "path": "music/FLAC/Tate McRae - you broke me first.flac"
   },
   {
-    "id": 99,
+    "id": 120,
     "title": "Quarter Life Crisis",
     "artist": "Taylor Bickett",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Taylor%20Bickett%20-%20Quarter%20Life%20Crisis.flac",
@@ -873,7 +1071,7 @@
     "path": "music/FLAC/Taylor Bickett - Quarter Life Crisis.flac"
   },
   {
-    "id": 100,
+    "id": 121,
     "title": "Džanum",
     "artist": "Teya Dora",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Teya Dora - Džanum.flac",
@@ -882,7 +1080,7 @@
     "path": "music/FLAC/Teya Dora - Džanum.flac"
   },
   {
-    "id": 101,
+    "id": 122,
     "title": "Skeeter Davis",
     "artist": "The End of the World",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/The%20End%20of%20the%20World%20-%20Skeeter%20Davis.flac",
@@ -891,7 +1089,7 @@
     "path": "music/FLAC/The End of the World - Skeeter Davis.flac"
   },
   {
-    "id": 102,
+    "id": 123,
     "title": "Far from Any Road",
     "artist": "The Handsome Family",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/The%20Handsome%20Family%20-%20Far%20from%20Any%20Road.flac",
@@ -900,7 +1098,7 @@
     "path": "music/FLAC/The Handsome Family - Far from Any Road.flac"
   },
   {
-    "id": 103,
+    "id": 124,
     "title": "Hold It Together",
     "artist": "The Marías",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/The Marías - Hold It Together.flac",
@@ -909,7 +1107,7 @@
     "path": "music/FLAC/The Marías - Hold It Together.flac"
   },
   {
-    "id": 104,
+    "id": 125,
     "title": "DeVotchKa; Mychael Danna",
     "artist": "The Winner Is",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/The%20Winner%20Is%20-%20DeVotchKa%3B%20Mychael%20Danna.flac",
@@ -918,7 +1116,7 @@
     "path": "music/FLAC/The Winner Is - DeVotchKa; Mychael Danna.flac"
   },
   {
-    "id": 105,
+    "id": 126,
     "title": "ABBA",
     "artist": "The Winner Takes It All",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/The%20Winner%20Takes%20It%20All%20-%20ABBA.flac",
@@ -927,7 +1125,7 @@
     "path": "music/FLAC/The Winner Takes It All - ABBA.flac"
   },
   {
-    "id": 106,
+    "id": 127,
     "title": "Black Friday",
     "artist": "Tom Odell",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Tom%20Odell%20-%20Black%20Friday.flac",
@@ -936,7 +1134,7 @@
     "path": "music/FLAC/Tom Odell - Black Friday.flac"
   },
   {
-    "id": 107,
+    "id": 128,
     "title": "Lights Are On",
     "artist": "Tom Rosenthal",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Tom%20Rosenthal%20-%20Lights%20Are%20On.flac",
@@ -954,7 +1152,7 @@
     "path": "music/FLAC/01_Dylan_Conrique,_Noak_Hellsing_Bitter_feat_Noak_Hellsing.flac"
   },
   {
-    "id": 31,
+    "id": 40,
     "title": "Covered_Up_What_a_Time_Instrumental_Version_Originally_Perfor",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Covered_Up_What_a_Time_Instrumental_Version_Originally_Perfor.flac",
@@ -963,7 +1161,7 @@
     "path": "music/FLAC/Covered_Up_What_a_Time_Instrumental_Version_Originally_Perfor.flac"
   },
   {
-    "id": 51,
+    "id": 65,
     "title": "I ll Still Have Me CD 1 TRACK 1 (FLAC)",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/I%20ll%20Still%20Have%20Me%20CD%201%20TRACK%201%20(FLAC).flac",
@@ -972,7 +1170,7 @@
     "path": "music/FLAC/I ll Still Have Me CD 1 TRACK 1 (FLAC).flac"
   },
   {
-    "id": 69,
+    "id": 86,
     "title": "Lydia_the_Bard_Don_t_Cry_for_your_Daughters_Eve_feat_Ben_Tom",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Lydia_the_Bard_Don_t_Cry_for_your_Daughters_Eve_feat_Ben_Tom.flac",
@@ -981,7 +1179,7 @@
     "path": "music/FLAC/Lydia_the_Bard_Don_t_Cry_for_your_Daughters_Eve_feat_Ben_Tom.flac"
   },
   {
-    "id": 82,
+    "id": 102,
     "title": "Olivia_Rodrigo_Can_t_Catch_Me_Now_from_The_Hunger_Games_The",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Olivia_Rodrigo_Can_t_Catch_Me_Now_from_The_Hunger_Games_The.flac",
@@ -990,7 +1188,7 @@
     "path": "music/FLAC/Olivia_Rodrigo_Can_t_Catch_Me_Now_from_The_Hunger_Games_The.flac"
   },
   {
-    "id": 108,
+    "id": 130,
     "title": "Vox_Freaks_Till_Forever_Falls_Apart_Originally_Performed_by_A",
     "artist": "Unknown Artist",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Vox_Freaks_Till_Forever_Falls_Apart_Originally_Performed_by_A.flac",
@@ -999,12 +1197,30 @@
     "path": "music/FLAC/Vox_Freaks_Till_Forever_Falls_Apart_Originally_Performed_by_A.flac"
   },
   {
-    "id": 109,
+    "id": 129,
+    "title": "Riptide",
+    "artist": "Vance Joy",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Vance%20Joy%20-%20Riptide.flac",
+    "duration": "25:35",
+    "filename": "Vance Joy - Riptide.flac",
+    "path": "music/FLAC/Vance Joy - Riptide.flac"
+  },
+  {
+    "id": 131,
     "title": "Billie Eilish",
     "artist": "WILDFLOWER",
     "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/WILDFLOWER%20-%20Billie%20Eilish.flac",
     "duration": "24:28",
     "filename": "WILDFLOWER - Billie Eilish.flac",
     "path": "music/FLAC/WILDFLOWER - Billie Eilish.flac"
+  },
+  {
+    "id": 132,
+    "title": "Mind Over Matter (Reprise)",
+    "artist": "Young the Giant",
+    "url": "https://raw.githubusercontent.com/mrwildfoxgamer/Music_app/main/music/FLAC/Young%20the%20Giant%20-%20Mind%20Over%20Matter%20(Reprise).flac",
+    "duration": "28:47",
+    "filename": "Young the Giant - Mind Over Matter (Reprise).flac",
+    "path": "music/FLAC/Young the Giant - Mind Over Matter (Reprise).flac"
   }
 ]
